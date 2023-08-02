@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { Theme, ThemeContext } from "./ThemeContext";
-import { LOCAL_STORAGE_THEME_KEY } from "./ThemeProvider";
+import { LOCAL_STORAGE_THEME_KEY } from "../ui/ThemeProvider";
 
 
 
