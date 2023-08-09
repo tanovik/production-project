@@ -7,18 +7,22 @@ import { routeConfig } from 'shared/config/routeConfig/routeConfig';
 const AppRouter = () => {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-        <Routes>
-            {/* <Route path={'/about'} element={<AboutPage />} />
+            <Routes>
+                {/* <Route path={'/about'} element={<AboutPage />} />
             <Route path={'/'} element={<MainPage />} /> */}
-            {Object.values(routeConfig).map(({element, path}) => (
-                <Route
-                key ={path}
-                path={path}
-                element={element}
-                />
-            ))}
-        </Routes>
-    </Suspense>
+                {Object.values(routeConfig).map(({ element, path }) => (
+                    <Route
+                        key={path}
+                        path={path}
+                        element={(
+                            <div className="page-rapper">
+                                {element}
+                            </div>
+                        )}
+                    />
+                ))}
+            </Routes>
+        </Suspense>
     );
 };
 
