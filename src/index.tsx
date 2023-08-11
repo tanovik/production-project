@@ -10,22 +10,54 @@
 // import { createRoot } from 'react-dom/client'
 // createRoot(document.getElementById('root')).render(<h1>Your App</h1>)
 
-import React from 'react';
-import { createRoot } from 'react-dom/client';
-import App from './app/App';
-import { BrowserRouter } from 'react-router-dom';
-import { ThemeProvider } from 'app/providers/ThemeProvider';
-import "shared/config/i18n/i18n"
 
-const container = document.getElementById('root');
-const root = createRoot(container);
-root.render(<React.StrictMode>
+// root.render( 
+// <React.StrictMode>
+//     <BrowserRouter>
+//         <ThemeProvider>
+//             <App />
+//         </ThemeProvider>
+//     </BrowserRouter>
+//  </React.StrictMode>
+// );
+
+// import { createRoot } from 'react-dom/client';
+// import App from './app/App';
+// import { BrowserRouter } from 'react-router-dom';
+// import { ThemeProvider } from 'app/providers/ThemeProvider';
+// import "shared/config/i18n/i18n"
+// import React from 'react';
+
+// const container = document.getElementById('root');
+// const root = createRoot(container);
+// root.render( 
+//     <React.StrictMode>
+//     <BrowserRouter>
+//         <ThemeProvider>
+//             <App />
+//         </ThemeProvider>
+//     </BrowserRouter>
+//     </React.StrictMode>
+// );
+
+
+
+
+
+
+import {render} from "react-dom";
+import App from "./app/App";
+import {BrowserRouter} from "react-router-dom";
+import {ThemeProvider} from "app/providers/ThemeProvider";
+
+import "./shared/config/i18n/i18n";
+
+render(
     <BrowserRouter>
         <ThemeProvider>
             <App />
         </ThemeProvider>
-    </BrowserRouter>
-</React.StrictMode>);
-
-
+    </BrowserRouter>,
+    document.getElementById('root')
+)
 
