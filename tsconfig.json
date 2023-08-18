@@ -15,10 +15,13 @@
       "allowSyntheticDefaultImports": true,
       "esModuleInterop": true,
       // "allowUmdGlobalAccess": true,
+      "strictNullChecks": true//
     },
     "ts-node": {
       "compilerOptions": {
-        "module": "CommonJS"
+        "module": "CommonJS",
+        
       }
-    }
+    },
+
   }
