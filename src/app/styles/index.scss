@@ -1,6 +1,9 @@
 @import "reset";
-@import "variables/global.scss";
+
+@import "variables/global";
+
 @import "themes/dark";
+
 @import "themes/normal";
 
 .app {
@@ -13,6 +16,7 @@
 .content-page{
     display: flex;
 }
+
 .page-rapper{
     flex-grow: 1;
     padding: 20px;

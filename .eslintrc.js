@@ -3,7 +3,11 @@ module.exports = {
     browser: true,
     es2021: true,
   },
-  extends: ["standard-with-typescript", "plugin:react/recommended"],
+  extends: [
+	"standard-with-typescript", 
+	"plugin:react/recommended",
+	"plugin:i18next/recommended"
+],
   parser: "@typescript-eslint/parser",
   overrides: [
     {
@@ -24,7 +28,7 @@ module.exports = {
     sourceType: "module",
     project: ["tsconfig.json"],
   },
-  plugins: ["react", "@typescript-eslint"],
+  plugins: ["react", "@typescript-eslint","i18next"],
   rules: {
     "react/jsx-indent": [2, 4],
 	"react/jsx-indent-props": [2, 4],
@@ -49,7 +53,8 @@ module.exports = {
     "@typescript-eslint/strict-boolean-expressions": "warn",
 	"@typescript-eslint/indent": [2, 4],
 	"@typescript-eslint/no-non-null-assertion": "warn",
-	"@typescript-eslint/naming-convention": "warn"
+	"@typescript-eslint/naming-convention": "warn",
+	"i18next/no-literal-string": ['error', {markupOnly: true}]
   },
   globals: {
     "__IS_DEV__": true,
