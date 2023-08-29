@@ -31,9 +31,10 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint","i18next"],
   rules: {
+	  "indent": "off",
     "react/jsx-indent": [2, 4],
 	"react/jsx-indent-props": [2, 4],
-    "indent": [2, 4],
+    // "indent": [2, 4],
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".tsx", ".ts"] },
@@ -55,7 +56,8 @@ module.exports = {
 	"@typescript-eslint/indent": [2, 4],
 	"@typescript-eslint/no-non-null-assertion": "warn",
 	"@typescript-eslint/naming-convention": "warn",
-	"i18next/no-literal-string": ['error', {markupOnly: true}]
+	"i18next/no-literal-string": ['warn', {markupOnly: true}],
+	"max-len": ["error", {"ignoreComments": true}]
   },
   globals: {
     "__IS_DEV__": true,

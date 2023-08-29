@@ -10,7 +10,9 @@ const App = (): JSX.Element => {
     const { theme } = useTheme()
 
     return (
-        <div className={classNames('app', { hovered: true, selected: false }, [theme, 'cls11', 'class32'])}>
+        <div className={classNames('app',
+            { hovered: true, selected: false },
+            [theme, 'cls11', 'class32'])}>
             {/* <div className={`app ${theme}`}> */}
             <Suspense fallback=''>
 
