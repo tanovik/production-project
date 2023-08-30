@@ -1,3 +1,4 @@
 # **/*.js
 .eslintrc.js
 i18n.ts
+i18nForTest.ts
