@@ -5,10 +5,11 @@ module.exports = {
     jest: true,
   },
   extends: [
-	"standard-with-typescript", 
-	"plugin:react/recommended",
-	"plugin:i18next/recommended"
-],
+    "standard-with-typescript",
+    "plugin:react/recommended",
+    "plugin:i18next/recommended",
+    "plugin:storybook/recommended"
+  ],
   parser: "@typescript-eslint/parser",
   overrides: [
     {
@@ -56,10 +57,23 @@ module.exports = {
 	"@typescript-eslint/indent": [2, 4],
 	"@typescript-eslint/no-non-null-assertion": "warn",
 	"@typescript-eslint/naming-convention": "warn",
-	"i18next/no-literal-string": ['warn', {markupOnly: true}],
-	"max-len": ["error", {"ignoreComments": true, "code": 100}]
+	"i18next/no-literal-string": ['warn', {markupOnly: true,
+	"ignoreAttribute":['data-testid', 'to']
+	}],
+	"import/no-webpack-loader-syntax": "off",
+	"max-len": ["error", {"ignoreComments": true, "code": 100}],
+	"react/display-name": "off",
+	"@typescript-eslint/prefer-includes": "off"
   },
   globals: {
     "__IS_DEV__": true,
   },
+  overrides:[
+	{
+		files: ['**/src/**/*.test.{ts,tsx}'],
+		rules: {
+			'i18next/no-literal-string':"off"
+		}
+	}
+  ]
 };
