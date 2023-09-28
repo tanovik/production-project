@@ -18,8 +18,10 @@ jobs:
     uses: actions/setup-node@v1
     with:
        node-version: ${{ matrix.node-version }}
-  - name: install modules
-    run: npm install
+  - name: install modules except of loki because of conflicting peer dependency
+    run: npm install --omit=optional
+  - name: install loki separately
+    run: npm i -D loki --legacy-peer-deps
   - name: build production project
     run: npm run build:prod
   - name: linting typescript
