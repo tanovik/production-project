@@ -63,7 +63,10 @@ module.exports = {
 	"import/no-webpack-loader-syntax": "off",
 	"max-len": ["error", {"ignoreComments": true, "code": 100}],
 	"react/display-name": "off",
-	"@typescript-eslint/prefer-includes": "off"
+	"@typescript-eslint/prefer-includes": "off",
+	"@typescript-eslint/no-var-requires": "warn",
+	"@typescript-eslint/no-floating-promises": "warn"
+
   },
   globals: {
     "__IS_DEV__": true,
