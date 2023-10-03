@@ -30,7 +30,7 @@ module.exports = {
     sourceType: "module",
     project: ["tsconfig.json"],
   },
-  plugins: ["react", "@typescript-eslint","i18next"],
+  plugins: ["react", "@typescript-eslint","i18next",  "react-hooks"],
   rules: {
 	  "indent": "off",
     "react/jsx-indent": [2, 4],
@@ -65,17 +65,20 @@ module.exports = {
 	"react/display-name": "off",
 	"@typescript-eslint/prefer-includes": "off",
 	"@typescript-eslint/no-var-requires": "warn",
-	"@typescript-eslint/no-floating-promises": "warn"
-
+	"@typescript-eslint/no-floating-promises": "warn",
+	"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
+    "react-hooks/exhaustive-deps": "warn" ,// Checks effect dependencies
+	"@typescript-eslint/prefer-nullish-coalescing": "warn"
   },
   globals: {
     "__IS_DEV__": true,
   },
   overrides:[
 	{
-		files: ['**/src/**/*.test.{ts,tsx}'],
+		files: ['**/src/**/*.{test,stories}.{ts,tsx}'],
 		rules: {
-			'i18next/no-literal-string':"off"
+			'i18next/no-literal-string':"off",
+			'max-len':"off"
 		}
 	}
   ]
