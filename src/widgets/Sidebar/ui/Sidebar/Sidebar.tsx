@@ -27,7 +27,7 @@ export const Sidebar: React.FC<SidebarProps> = ({ className }) => {
                 { [cls.collapsed]: collapsed },
                 [className ?? ''])}>
             <Button
-                data-testId="sidebar-toggle"
+                data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={cls.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
