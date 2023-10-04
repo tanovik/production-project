@@ -32,14 +32,13 @@ module.exports = {
   },
   plugins: ["react", "@typescript-eslint","i18next",  "react-hooks"],
   rules: {
+	"import/no-extraneous-dependencies":"warn",
 	  "indent": "off",
     "react/jsx-indent": [2, 4],
 	"react/jsx-indent-props": [2, 4],
-    // "indent": [2, 4],
     "react/jsx-filename-extension": [
       2,
       { extensions: [".js", ".jsx", ".tsx", ".ts"] },
-      // { extensions: [".js", ".jsx", ".tsx"] },
     ],
     "import/no-unresolved": "off",
     "import/prefer-default-export": "off",
@@ -51,7 +50,6 @@ module.exports = {
     "react/function-component-definition": "off",
     "no-shadow": "off",
     "import/extensions": "off",
-    "import/no-extraneous-dependencies": "warn",
     "no-underscore-dangle": "off",
     "@typescript-eslint/strict-boolean-expressions": "warn",
 	"@typescript-eslint/indent": [2, 4],
@@ -68,7 +66,9 @@ module.exports = {
 	"@typescript-eslint/no-floating-promises": "warn",
 	"react-hooks/rules-of-hooks": "error", // Checks rules of Hooks
     "react-hooks/exhaustive-deps": "warn" ,// Checks effect dependencies
-	"@typescript-eslint/prefer-nullish-coalescing": "warn"
+	"@typescript-eslint/prefer-nullish-coalescing": "warn",
+	"@typescript-eslint/no-empty-interface": "warn",
+	"@typescript-eslint/no-empty-interface": "warn"
   },
   globals: {
     "__IS_DEV__": true,
