@@ -4,6 +4,7 @@
     opacity: 0;
     pointer-events: none;
     z-index: -1;
+    color: var(--primary-color);
 }
 
 .overlay{
@@ -18,7 +19,7 @@
 .content{
     padding: 20px;
     border-radius: 12px;
-    background-color: var(--modal-bg-color);
+    background-color: var(--bg-color);
     transition: 0.3s transform;
     transform: scale(0.5);
     max-width: 60%;
@@ -26,7 +27,7 @@
 
 .opened{
     opacity: 1;
-    pointer-events:auto;
+    pointer-events: auto;
     z-index: var(--modal-z-index);
 
     .content{
