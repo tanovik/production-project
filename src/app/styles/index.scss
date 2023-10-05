@@ -6,9 +6,13 @@
 
 @import "themes/normal";
 
-body{
+
+
+.app,
+.app_modal {
     font: var(--font-m);
     color: var(--primary-color);
+
 }
 
 .app {
