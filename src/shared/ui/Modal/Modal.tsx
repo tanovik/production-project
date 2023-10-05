@@ -9,16 +9,21 @@ interface ModalProps {
     children?: React.ReactNode
     isOpen: boolean
     onClose?: () => void
+    lazy?: boolean
 
 }
 
 const ANIMATION_DELAY = 300
 
-export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClose }) => {
+export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClose, lazy }) => {
     const [isClosing, setIsClosing] = useState(false)
+
+    const [isMounted, setIsMounted] = useState(false)
+
     const timerRef = useRef<ReturnType<typeof setTimeout>>()
+
     const { theme } = useTheme()
-    console.log('theme', theme)
+
     const closeHandler = useCallback((): void => {
         if (onClose != null) {
             setIsClosing(true)
@@ -41,6 +46,12 @@ export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClo
 
     useEffect(() => {
         if (isOpen) {
+            setIsMounted(true)
+        }
+    }, [isOpen])
+
+    useEffect(() => {
+        if (isOpen) {
             window.addEventListener('keydown', onKeyDown)
         }
         return () => {
@@ -54,6 +65,10 @@ export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClo
         [cls.isClosing]: isClosing
 
     }
+
+    if (lazy && !isMounted) {
+        return null
+    }
     return (
         <Portal>
             <div className={classNames(cls.modal, mods, [className ?? '', theme, 'app_modal'])}>
@@ -63,9 +78,6 @@ export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClo
                         className={cls.content}
                         onClick={onContentClick}>
                         {children}
-                        Lorem Ipsum is simply dummy text of the printing
-                        and typesetting industry. Lorem Ipsum has been the
-                        industry
                     </div>
                 </div>
             </div>

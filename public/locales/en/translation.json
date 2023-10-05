@@ -9,6 +9,7 @@
   "Главная": "Main Page",
   "Произошла непредвиденная ошибка": "An unexpected error has occured",
   "throw an error": "throw an error",
-  "Короткий язык" : "EN"
-
+  "Короткий язык": "EN",
+  "Enter password": "Enter password",
+  "Enter usename": "Enter username"
 }
