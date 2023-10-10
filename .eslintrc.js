@@ -59,7 +59,7 @@ module.exports = {
 	"ignoreAttribute":['data-testid', 'to']
 	}],
 	"import/no-webpack-loader-syntax": "off",
-	"max-len": ["error", {"ignoreComments": true, "code": 100}],
+	"max-len": ["error", {"ignoreComments": true, "code": 120}],
 	"react/display-name": "off",
 	"@typescript-eslint/prefer-includes": "off",
 	"@typescript-eslint/no-var-requires": "warn",

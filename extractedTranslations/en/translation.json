@@ -1,6 +1,10 @@
 {
+  "Authorization form": "",
   "Enter password": "Enter password",
   "Enter usename": "Enter usename",
+  "Log in": "Log in",
+  "Log out": "",
+  "You entered an incorrect login or password": "",
   "decrement": "decrement",
   "increment": "increment",
   "throw an error": "throw an error",

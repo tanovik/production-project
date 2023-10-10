@@ -11,5 +11,9 @@
   "throw an error": "выбросить ошибку",
   "Короткий язык": "RU",
   "Enter usename": "Введите логин",
-  "Enter password": "Введите пароль"
+  "Enter password": "Введите пароль",
+  "Authorization form": "Форма авторизации",
+  "You entered an incorrect login or password": "Вы ввели  неверный логин или пароль",
+  "Log in": "Войти",
+  "Log out": "Выйти"
 }
