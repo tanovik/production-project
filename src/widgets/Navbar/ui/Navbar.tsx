@@ -38,6 +38,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
                 </Button>
                 <LoginModal isOpen={isAuthModal}
                     onClose={onCloseModal}/>
+
             </div>
         )
     }
@@ -51,8 +52,9 @@ export const Navbar: React.FC<NavbarProps> = ({ className }) => {
             >
                 {t('Log in')}
             </Button>
-            <LoginModal isOpen={isAuthModal}
-                onClose={onCloseModal}/>
+
+            {isAuthModal && <LoginModal isOpen={isAuthModal}
+                onClose={onCloseModal}/>}
         </div>
     )
 }

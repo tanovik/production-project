@@ -68,7 +68,10 @@ module.exports = {
     "react-hooks/exhaustive-deps": "warn" ,// Checks effect dependencies
 	"@typescript-eslint/prefer-nullish-coalescing": "warn",
 	"@typescript-eslint/no-empty-interface": "warn",
-	"@typescript-eslint/no-empty-interface": "warn"
+	"@typescript-eslint/no-dynamic-delete": "warn",
+	"@typescript-eslint/no-confusing-void-expression": "warn",
+	"@typescript-eslint/ban-ts-comment": "warn",
+	"@typescript-eslint/prefer-ts-expect-error": "warn"
   },
   globals: {
     "__IS_DEV__": true,

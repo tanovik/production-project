@@ -24,8 +24,14 @@ export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClo
 
     const { theme } = useTheme()
 
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true)
+        }
+    }, [isOpen])
+
     const closeHandler = useCallback((): void => {
-        if (onClose != null) {
+        if (onClose) {
             setIsClosing(true)
             timerRef.current = setTimeout(() => {
                 onClose()
@@ -34,9 +40,6 @@ export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClo
         }
     }, [onClose])
 
-    const onContentClick = (e: React.MouseEvent): void => {
-        e.stopPropagation()
-    }
     // each rerender creates a new func so its better to use useCallback
     const onKeyDown = useCallback((e: KeyboardEvent): void => {
         if (e.key === 'Escape') {
@@ -44,12 +47,9 @@ export const Modal: React.FC<ModalProps> = ({ className, children, isOpen, onClo
         }
     }, [closeHandler])
 
-    useEffect(() => {
-        if (isOpen) {
-            setIsMounted(true)
-        }
-    }, [isOpen])
-
+    const onContentClick = (e: React.MouseEvent): void => {
+        e.stopPropagation()
+    }
     useEffect(() => {
         if (isOpen) {
             window.addEventListener('keydown', onKeyDown)

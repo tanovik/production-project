@@ -2,25 +2,45 @@ import { type ReducersMapObject, configureStore } from '@reduxjs/toolkit'
 import { type StateSchema } from './StateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
-import { loginReducer } from 'features/AuthByUsername'
+import { createReducerManager } from './reducerManager'
 
-type AppStore = ReturnType<typeof configureStore>
+export type AppStore = ReturnType<typeof configureStore>
 
-export function createReduxStore (initialState?: StateSchema): AppStore {
+export function createReduxStore (
+    initialState?: StateSchema,
+    asyncReducers?: ReducersMapObject<StateSchema>
+): AppStore {
     const rootReducers: ReducersMapObject<StateSchema> = {
+        ...asyncReducers,
         counter: counterReducer,
-        user: userReducer,
-        loginForm: loginReducer
-    }
+        user: userReducer
 
-    return configureStore<StateSchema>({
-        reducer: rootReducers,
+        // async reducers:
+        // loginForm?: loginReducer
+
+    }
+    const reducerManager = createReducerManager(rootReducers)
+
+    const store = configureStore<StateSchema>({
+        reducer: reducerManager.reduce,
         devTools: __IS_DEV__,
         preloadedState: initialState
     })
+
+    // @ts-expect-error
+    store.reducerManager = reducerManager
+    return store
 }
-// const store = createReduxStore()
-// export type AppDispatch = typeof store.dispatch
+
+// export function configureStore (initialState) {
+//     const reducerManager = createReducerManager(staticReducers)
+
+// Create a store with the root reducer function being the one exposed by the manager.
+// const store = createStore(reducerManager.reduce, initialState)
+
+// Optional: Put the reducer manager on the store so it is easily accessible
+// store.reducerManager = reducerManager
+// }
 
 // Infer the `RootState` and `AppDispatch` types from the store itself
 // export type RootState = ReturnType<typeof store.getState>
