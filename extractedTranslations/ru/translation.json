@@ -1,9 +1,13 @@
 {
+  "About Page": "About Page",
   "Authorization form": "Authorization form",
   "Enter password": "Enter password",
   "Enter usename": "Enter usename",
   "Log in": "Log in",
   "Log out": "Log out",
+  "Main Page": "Main Page",
+  "PROFILE PAGE": "PROFILE PAGE",
+  "Profile Page": "Profile Page",
   "You entered an incorrect login or password": "You entered an incorrect login or password",
   "decrement": "decrement",
   "increment": "increment",

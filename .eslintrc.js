@@ -71,7 +71,8 @@ module.exports = {
 	"@typescript-eslint/no-dynamic-delete": "warn",
 	"@typescript-eslint/no-confusing-void-expression": "warn",
 	"@typescript-eslint/ban-ts-comment": "warn",
-	"@typescript-eslint/prefer-ts-expect-error": "warn"
+	"@typescript-eslint/prefer-ts-expect-error": "warn",
+	"@typescript-eslint/no-misused-promises": "warn"
   },
   globals: {
     "__IS_DEV__": true,

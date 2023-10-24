@@ -12,7 +12,7 @@ const MainPage = (): JSX.Element => {
     return (
         <div>
             {/* <BugButton/> */}
-            {t('Главная')}
+            {t('Main Page')}
             {/* <Counter/> */}
             <Input onChange={onChange} value={value}/>
         </div>

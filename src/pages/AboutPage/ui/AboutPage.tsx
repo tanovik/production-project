@@ -4,8 +4,7 @@ const AboutPage = (): JSX.Element => {
     const { t } = useTranslation()
     return (
         <div>
-            {t('О сайте')}
-            {/* <Counter/> */}
+            {t('About Page')}
 
         </div>
     )
