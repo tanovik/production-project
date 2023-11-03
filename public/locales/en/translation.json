@@ -1,7 +1,7 @@
 {
   "Тестовый пример": "Test example",
   "Перевод": "Translate",
-  "Язык": "English",
+  "Language": "Русский",
   "Страница не найдена": "Page not found",
   "переключить": "toggle",
   "О сайте": "About",
@@ -9,7 +9,6 @@
   "Главная": "Main Page",
   "Произошла непредвиденная ошибка": "An unexpected error has occured",
   "throw an error": "throw an error",
-  "Короткий язык": "EN",
   "Enter password": "Enter password",
   "Enter usename": "Enter username",
   "Authorization form": "Authorization form",
@@ -18,5 +17,7 @@
   "Log out": "Log out",
   "Profile Page": "Profile Page",
   "About Page": "About Page",
-  "Main Page": "Main Page"
+  "Main Page": "Main Page",
+  "Short language": "RU",
+  "Choose your country": "Choose your country"
 }

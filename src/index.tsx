@@ -9,16 +9,16 @@ import { StoreProvider } from 'app/providers/StoreProvider'
 
 const root = createRoot(document.getElementById('root') as Element)
 root.render(
-    <StoreProvider>
-        <BrowserRouter>
+    <BrowserRouter>
+        <StoreProvider>
             <ErrorBoundary>
                 <ThemeProvider>
                     <App />
                 </ThemeProvider>
             </ErrorBoundary>
-        </BrowserRouter>
-    </StoreProvider>)
-
+        </StoreProvider>
+    </BrowserRouter>
+)
 // import { render } from "react-dom";
 
 // render (

@@ -27,7 +27,7 @@ export const Navbar: React.FC<NavbarProps> = memo(({ className }) => {
 
     if (authData) {
         return (
-            <div className={classNames(cls.navbar, {}, [className ?? ''])}>
+            <div className={classNames(cls.navbar, {}, [className])}>
 
                 <Button
                     theme={ButtonTheme.CLEAR_INVERTED}
@@ -43,7 +43,7 @@ export const Navbar: React.FC<NavbarProps> = memo(({ className }) => {
         )
     }
     return (
-        <div className={classNames(cls.navbar, {}, [className ?? ''])}>
+        <div className={classNames(cls.navbar, {}, [className])}>
 
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}

@@ -1,15 +1,28 @@
-import { type ReducersMapObject, configureStore } from '@reduxjs/toolkit'
-import { type StateSchema } from './StateSchema'
+import {
+    type ReducersMapObject, configureStore,
+    type AnyAction, type CombinedState,
+    type Reducer,
+    type EmptyObject,
+    type MiddlewareArray,
+    type ThunkMiddleware
+} from '@reduxjs/toolkit'
+import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
+import { $api } from 'shared/api/api'
+import { type NavigateOptions, type To } from 'react-router-dom'
+import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 
 export type AppStore = ReturnType<typeof configureStore>
+type createReduxStoreReturnType = ToolkitStore<EmptyObject & StateSchema, AnyAction, MiddlewareArray<
+[ThunkMiddleware<CombinedState<StateSchema>, AnyAction, ThunkExtraArg>]>>
 
 export function createReduxStore (
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>
-): AppStore {
+    asyncReducers?: ReducersMapObject<StateSchema>,
+    navigate?: (to: To, options?: NavigateOptions) => void
+): createReduxStoreReturnType {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
@@ -21,10 +34,21 @@ export function createReduxStore (
     }
     const reducerManager = createReducerManager(rootReducers)
 
-    const store = configureStore<StateSchema>({
-        reducer: reducerManager.reduce,
+    const extraArg: ThunkExtraArg = {
+        api: $api,
+        navigate
+    }
+    const store = configureStore({
+        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>, AnyAction>,
+        // reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
         devTools: __IS_DEV__,
-        preloadedState: initialState
+        preloadedState: initialState,
+        middleware: getDefaultMiddleware => getDefaultMiddleware({
+            thunk: {
+                extraArgument: extraArg
+
+            }
+        })
     })
 
     // @ts-expect-error

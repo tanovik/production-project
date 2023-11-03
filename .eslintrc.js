@@ -1,4 +1,5 @@
 module.exports = {
+	root: true,
   env: {
     browser: true,
     es2021: true,
@@ -72,10 +73,13 @@ module.exports = {
 	"@typescript-eslint/no-confusing-void-expression": "warn",
 	"@typescript-eslint/ban-ts-comment": "warn",
 	"@typescript-eslint/prefer-ts-expect-error": "warn",
-	"@typescript-eslint/no-misused-promises": "warn"
+	"@typescript-eslint/no-misused-promises": "warn",
+	"no-undef": "warn",
+	"@typescript-eslint/no-invalid-void-type": "warn"
   },
   globals: {
     "__IS_DEV__": true,
+    "__API__": true,
   },
   overrides:[
 	{

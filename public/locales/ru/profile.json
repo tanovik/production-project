@@ -1,0 +1,10 @@
+{
+  "Profile": "Профиль",
+  "Edit": "Редактировать",
+  "Enter your first name": "Введите ваше имя",
+  "Enter your last name": "Введите вашу фамилию",
+  "Profile failed to load": "Произошла ошибка при загрузке профиля",
+  "Try to refresh the page please": "Попробуйте обновить страницу",
+  "Cancel": "Отменить",
+  "Save": "Сохранить"
+}

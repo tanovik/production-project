@@ -6,7 +6,7 @@ interface LoaderProps {
 }
 export const Loader: React.FC<LoaderProps> = ({ className }) => {
     return (
-        <div className={classNames('lds-ring', {}, [className ?? ''])}>
+        <div className={classNames('lds-ring', {}, [className])}>
             <div></div><div>
             </div><div></div><div></div>
         </div>

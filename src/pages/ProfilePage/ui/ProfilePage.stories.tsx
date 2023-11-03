@@ -16,9 +16,13 @@ type Story = StoryObj<typeof meta>
 export const Light: Story = {
     args: {}
 }
-Light.decorators = [StoreDecorator({})]
+Light.decorators = [StoreDecorator({
+    profile: { data: { firstName: 'Lana' }, isLoading: false, readonly: true }
+})]
 
 export const Dark: Story = {
     args: {}
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
+Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
+    profile: { data: { firstName: 'Lana' }, isLoading: false, readonly: true }
+})]

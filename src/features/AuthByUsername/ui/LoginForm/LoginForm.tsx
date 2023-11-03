@@ -52,7 +52,7 @@ const LoginForm: React.FC<LoginFormProps> = memo(({ className, onSuccess }) => {
             removeAfterUnmount={true}
             reducers={initialReducers}
         >
-            <div className={classNames(cls.loginForm, {}, [className ?? ''])}>
+            <div className={classNames(cls.loginForm, {}, [className])}>
                 <Text title={t('Authorization form')} />
                 {error && <Text
                     text={t('You entered an incorrect login or password')}

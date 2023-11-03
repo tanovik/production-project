@@ -14,7 +14,7 @@ export const PageError: React.FC<PageErrorProps> =
         location.reload()
     }
     return (
-        <div className={classNames(cls.pageError, {}, [className ?? ''])}>
+        <div className={classNames(cls.pageError, {}, [className])}>
             <p>{t('Произошла непредвиденная ошибка')}</p>
             <Button onClick={reloadPage}>{t('Обновить страницу')}</Button>
         </div>

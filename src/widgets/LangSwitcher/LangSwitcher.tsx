@@ -18,13 +18,13 @@ export const LangSwitcher: React.FC<LangSwitcherProps> = memo(({ className, shor
     }
     return (
         <Button
-            className={classNames('', {}, [className ?? ''])}
+            className={classNames('', {}, [className])}
             theme={ButtonTheme.CLEAR}
             onClick={() => {
                 void toggle()
             }}>
             {/* onClick={toggle}> */}
-            {t(short ? 'Короткий язык' : 'Язык')}
+            {t(short ? 'Short language' : 'Language')}
         </Button>
     )
 })
