@@ -44,5 +44,5 @@ export class ErrorBoundary
         return children
     }
 }
-
+// if we want to use translation in class component ErrorBoundry
 // export default withTranslation()(ErrorBoundary)

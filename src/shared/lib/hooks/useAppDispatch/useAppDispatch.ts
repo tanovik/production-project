@@ -3,7 +3,5 @@ import { useDispatch } from 'react-redux'
 
 // export const useAppDispatch = (): AppDispatch => useDispatch<AppDispatch>()
 
-// export const useAppDispatch = (): any => useDispatch<AppDispatch>()
-
 export const useAppDispatch = (): any => useDispatch<AppDispatch>()
 // export const useAppDispatch = (): Dispatch<AnyAction> => useDispatch<AppDispatch>()

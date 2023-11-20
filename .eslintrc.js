@@ -31,7 +31,12 @@ module.exports = {
     sourceType: "module",
     project: ["tsconfig.json"],
   },
-  plugins: ["react", "@typescript-eslint","i18next",  "react-hooks"],
+  plugins: [
+	"react", 
+	"@typescript-eslint",
+	"i18next",  
+	"react-hooks"
+],
   rules: {
 	"import/no-extraneous-dependencies":"warn",
 	  "indent": "off",
@@ -80,6 +85,7 @@ module.exports = {
   globals: {
     "__IS_DEV__": true,
     "__API__": true,
+    "__PROJECT__": true,
   },
   overrides:[
 	{

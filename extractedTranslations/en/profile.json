@@ -5,8 +5,13 @@
   "Enter your city": "",
   "Enter your first name": "",
   "Enter your last name": "",
+  "First and last name are mandatory": "",
+  "Incorrect age": "",
+  "Incorrect region": "",
+  "No data filled in": "",
   "Profile": "",
   "Profile failed to load": "",
   "Save": "",
+  "Server error while saving data": "",
   "Try to refresh the page please": ""
 }

@@ -8,9 +8,13 @@ createAsyncThunk<Profile, void, ThunkConfig<string>>(
     async (_, thunkAPI) => {
         try {
             const response = await thunkAPI.extra.api.get<Profile>('/profile')
+            if (!response.data) {
+                throw new Error()
+            }
+
             return response.data
         } catch (err) {
-            console.log('err', err)
+            console.log('error', err)
             return thunkAPI.rejectWithValue('error')
         }
     }

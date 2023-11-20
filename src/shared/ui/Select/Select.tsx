@@ -18,6 +18,7 @@ interface SelectProps {
 }
 export const Select: React.FC<SelectProps> = memo((props) => {
     const { className, label, options, value, onChange, readonly } = props
+
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
         if (onChange != null) {
             onChange(e.target.value)
@@ -43,7 +44,8 @@ export const Select: React.FC<SelectProps> = memo((props) => {
                     {`${label}>`}
                 </span>
             )}
-            <select className={cls.select}
+            <select
+                className={cls.select}
                 value={value}
                 onChange= {onChangeHandler}
                 disabled={readonly}>

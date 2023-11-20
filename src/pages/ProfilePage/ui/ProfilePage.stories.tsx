@@ -1,8 +1,11 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import ProfilePage from './ProfilePage'
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
+import { Currency } from 'shared/const/common'
+import { Country } from 'entities/Country'
+import AvatarImg from 'shared/assets/tests/storybook.jpg'
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 import { Theme } from 'app/providers/ThemeProvider'
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
 
 const meta = {
     title: 'pages/ProfilePage',
@@ -13,16 +16,41 @@ const meta = {
 export default meta
 type Story = StoryObj<typeof meta>
 
-export const Light: Story = {
+export const Normal: Story = {
     args: {}
 }
-Light.decorators = [StoreDecorator({
-    profile: { data: { firstName: 'Lana' }, isLoading: false, readonly: true }
+Normal.decorators = [StoreDecorator({
+    profile: {
+        form: {
+            firstName: 'John',
+            lastName: 'Snow',
+            age: 22,
+            currency: Currency.USD,
+            country: Country.Canada,
+            city: 'Toronto',
+            username: 'admin',
+            avatar: AvatarImg
+        },
+        isLoading: false,
+        readonly: true
+    }
 })]
-
 export const Dark: Story = {
     args: {}
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: { data: { firstName: 'Lana' }, isLoading: false, readonly: true }
+    profile: {
+        form: {
+            firstName: 'John',
+            lastName: 'Snow',
+            age: 22,
+            currency: Currency.USD,
+            country: Country.Canada,
+            city: 'Toronto',
+            username: 'admin',
+            avatar: AvatarImg
+        },
+        isLoading: false,
+        readonly: true
+    }
 })]
