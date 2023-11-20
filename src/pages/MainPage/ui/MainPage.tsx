@@ -10,7 +10,7 @@ const MainPage = (): JSX.Element => {
         setValue(val)
     }
     return (
-        <div>
+        <div >
             {/* <BugButton/> */}
             {t('Main Page')}
             {/* <Counter/> */}

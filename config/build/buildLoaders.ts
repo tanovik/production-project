@@ -1,6 +1,7 @@
 import type webpack from 'webpack'
 import { type BuildOptions } from './types/config'
 import { buildCssLoader } from './loaders/buildCssLoader'
+import { buildBabelLoader } from './loaders/buildBabelLoader'
 
 export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
     const fileLoader = {
@@ -24,26 +25,27 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
         exclude: /node_modules/
     }
 
-    const babelLoader = {
-        test: /\.(js|jsx|tsx)$/,
-        exclude: /node_modules/,
-        use: {
-            loader: 'babel-loader',
-            options: {
-                presets: ['@babel/preset-env'],
-                plugins: [
-                    [
-                        'i18next-extract',
-                        {
-                            locales: ['ru', 'en'],
-                            keyAsDefaultValue: true
-                        }
-                    ]
-                ]
-            }
-
-        }
-    }
+    const babelLoader = buildBabelLoader(isDev)
+    // const babelLoader = {
+    //     test: /\.(js|jsx|tsx)$/,
+    //     exclude: /node_modules/,
+    //     use: {
+    //         loader: 'babel-loader',
+    //         options: {
+    //             presets: ['@babel/preset-env'],
+    //             plugins: [
+    //                 [
+    //                     'i18next-extract',
+    //                     {
+    //                         locales: ['ru', 'en'],
+    //                         keyAsDefaultValue: true
+    //                     }
+    //                 ],
+    //                 isDev && require.resolve('react-refresh/babel')
+    //             ].filter(Boolean)
+    //         }
+    //     }
+    // }
     return [
         fileLoader,
         svgLoader,
