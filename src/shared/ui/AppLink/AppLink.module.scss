@@ -1,7 +1,11 @@
 .appLink{
     margin-right: 15px;
     text-decoration: none;
-    color: var(--primary-color)
+    color: var(--primary-color);
+
+    &:hover{
+        opacity: 0.8;
+    }
 }
 
 .primary{

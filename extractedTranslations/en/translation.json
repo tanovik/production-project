@@ -1,6 +1,7 @@
 {
   "": "",
   "About Page": "About Page",
+  "An error occured while loading the article": "An error occured while loading the article",
   "Article Detailes": "Article Detailes",
   "Articles Page": "Articles Page",
   "Authorization form": "",
@@ -29,6 +30,7 @@
   "Profile failed to load": "Profile failed to load",
   "Save": "Save",
   "Server error while saving data": "Server error while saving data",
+  "This article is not found": "This article is not found",
   "Try to refresh the page please": "Try to refresh the page please",
   "You entered an incorrect login or password": "",
   "decrement": "decrement",
