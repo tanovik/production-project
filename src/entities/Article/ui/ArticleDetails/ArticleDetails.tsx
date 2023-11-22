@@ -4,7 +4,7 @@ import { useTranslation } from 'react-i18next'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from '../../model/slice/articleDetailsSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { memo, useCallback, useEffect } from 'react'
+import { memo, useCallback } from 'react'
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById'
 import { useSelector } from 'react-redux'
 import {
@@ -22,6 +22,7 @@ import { type ArticleBlock, ArticleBlockType } from 'entities/Article/model/type
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 
 interface ArticleDetailsProps {
     className?: string
@@ -53,11 +54,15 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo(({ className, 
         }
     }, [])
 
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchArticleById(id))
-        }
-    }, [dispatch, id])
+    // useEffect(() => {
+    //     if (__PROJECT__ !== 'storybook') {
+    //         dispatch(fetchArticleById(id))
+    //     }
+    // }, [dispatch, id])
+
+    useInitialEffect(() => {
+        dispatch(fetchArticleById(id))
+    })
 
     let content
 
