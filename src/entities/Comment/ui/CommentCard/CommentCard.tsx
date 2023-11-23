@@ -6,7 +6,7 @@ import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Text } from 'shared/ui/Text/Text'
 import { Skeleton } from 'shared/ui/Skeleton/Skeleton'
 import { AppLink } from 'shared/ui/AppLink/AppLink'
-import { RouterPath } from 'shared/config/routeConfig/routeConfig'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface CommentCardProps {
     className?: string
@@ -36,7 +36,7 @@ export const CommentCard: React.FC<CommentCardProps> = memo(({
     return (
         <div className={classNames(cls.commentCard, {}, [className ?? ''])}>
             <AppLink
-                to={`${RouterPath.profile}${comment.user.id}`}
+                to={`${RoutePath.profile}${comment.user.id}`}
                 className={cls.header}>
                 {comment.user.avatar ? <Avatar size={30} src={comment.user.avatar}/> : null}
                 <Text className={cls.username} title={comment.user.username}/>
