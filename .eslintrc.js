@@ -80,7 +80,8 @@ module.exports = {
 	"@typescript-eslint/prefer-ts-expect-error": "warn",
 	"@typescript-eslint/no-misused-promises": "warn",
 	"no-undef": "warn",
-	"@typescript-eslint/no-invalid-void-type": "warn"
+	"@typescript-eslint/no-invalid-void-type": "warn",
+	"@typescript-eslint/restrict-plus-operands": "warn"
   },
   globals: {
     "__IS_DEV__": true,

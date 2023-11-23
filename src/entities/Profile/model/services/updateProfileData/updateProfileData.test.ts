@@ -11,7 +11,8 @@ const data = {
     currency: Currency.USD,
     country: Country.Canada,
     city: 'Toronto',
-    username: 'admin'
+    username: 'admin',
+    id: '1'
 }
 describe('updateProfileData', () => {
     test('succes', async () => {

@@ -4,6 +4,7 @@ import { type ArticleDetailsSchema } from 'entities/Article'
 import { type CounterSchema } from 'entities/Counter'
 import { type ProfileSchema } from 'entities/Profile'
 import { type UserSchema } from 'entities/User'
+import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type ArticleCommentsSchema } from 'pages/ArticleDetailsPage'
 import { type Reducer } from 'react'
@@ -18,6 +19,7 @@ export interface StateSchema {
     profile?: ProfileSchema
     articleDetails?: ArticleDetailsSchema
     articleComments?: ArticleCommentsSchema
+    addCommentForm?: AddCommentFormSchema
 
 }
 

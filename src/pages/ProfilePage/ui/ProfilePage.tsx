@@ -6,12 +6,14 @@ import {
     getProfileReadonly, getProfileValidateErrors, profileActions, profileReducer
 } from 'entities/Profile'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import React, { useCallback, useEffect } from 'react'
+import React, { useCallback } from 'react'
 import { useSelector } from 'react-redux'
 import { ProfilePageHeader } from '../ProfilePageHeader/ProfilePageHeader'
 import { type Country } from 'entities/Country'
 import { Text, TextTheme } from 'shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
+import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { useParams } from 'react-router-dom'
 
 const reducers: ReducersList = {
     profile: profileReducer
@@ -28,6 +30,14 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ className }) => {
     const isLoading = useSelector(getProfileIsLoading)
     const readonly = useSelector(getProfileReadonly)
     const validateErrors = useSelector(getProfileValidateErrors)
+    const { id } = useParams<{ id: string }>()
+
+    useInitialEffect(() => {
+        if (id) {
+            dispatch(fetchProfileData(id))
+        }
+    })
+
     const validateErrorTranslates = {
         [ValidateProfileError.SERVER_ERROR]: t('Server error while saving data'),
         [ValidateProfileError.INCORRECT_AGE]: t('Incorrect age'),
@@ -35,12 +45,6 @@ const ProfilePage: React.FC<ProfilePageProps> = ({ className }) => {
         [ValidateProfileError.INCORRECT_USER_DATA]: t('First and last name are mandatory'),
         [ValidateProfileError.NO_DATA]: t('No data filled in')
     }
-
-    useEffect(() => {
-        if (__PROJECT__ !== 'storybook') {
-            dispatch(fetchProfileData())
-        }
-    }, [dispatch])
 
     const onChangeFirstname = useCallback((value?: string): void => {
         dispatch(profileActions.updateProfile({ firstName: value || '' }))
