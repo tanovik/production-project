@@ -3,7 +3,7 @@ import cls from './ArticleDetailsPage.module.scss'
 import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import { ArticleDetails } from 'entities/Article'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import { Text } from 'shared/ui/Text/Text'
 import { CommentList } from 'entities/Comment'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
@@ -14,7 +14,9 @@ import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEf
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 import { AddCommentForm } from 'features/AddCommentForm'
-import { addCommentForArticle } from 'pages/ArticleDetailsPage/model/services/addCommentForArticle/addCommentForArticle'
+import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
+import { Button, ButtonTheme } from 'shared/ui/Button/Button'
+import { RoutePath } from 'shared/config/routeConfig/routeConfig'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -29,10 +31,14 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({ className }) =>
     const dispatch = useAppDispatch()
     const comments = useSelector(getArticleComments.selectAll)
     const commentIsLoading = useSelector(getArticleCommentsIsLoading)
-
+    const navigate = useNavigate()
     const onSendComment = useCallback((text: string): void => {
         dispatch(addCommentForArticle(text))
     }, [dispatch])
+
+    const onBackToList = useCallback((): void => {
+        navigate(RoutePath.articles)
+    }, [navigate])
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id))
@@ -47,6 +53,9 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({ className }) =>
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 
             <div className={classNames(cls.ArticleDetailsPage, {}, [className ?? ''])}>
+                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
+                    {t('Back to the list')}
+                </Button>
                 <ArticleDetails id={id} />
                 <Text className={cls.commentTitle} title={t('Comments')}/>
                 <AddCommentForm onSendComment={onSendComment}/>

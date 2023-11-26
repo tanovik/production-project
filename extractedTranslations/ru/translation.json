@@ -5,6 +5,7 @@
   "Article Detailes": "Article Detailes",
   "Articles Page": "Articles Page",
   "Authorization form": "Authorization form",
+  "Back to the list": "Back to the list",
   "Cancel": "Cancel",
   "Choose your country": "Choose your country",
   "Comments": "Comments",
@@ -32,6 +33,13 @@
   "Profile": "Profile",
   "Profile Page": "Profile Page",
   "Profile failed to load": "Profile failed to load",
+  "Read more": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Save": "Save",
   "Server error while saving data": "Server error while saving data",
   "This article is not found": "This article is not found",
@@ -47,6 +55,13 @@
   "Обновить страницу": "Обновить страницу",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
+  "Читать далее": {
+    "": {
+      "": {
+        "": ""
+      }
+    }
+  },
   "Язык": "Язык",
   "переключить": "переключить"
 }
