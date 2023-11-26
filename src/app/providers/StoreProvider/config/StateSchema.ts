@@ -7,6 +7,7 @@ import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type ArticleCommentsSchema } from 'pages/ArticleDetailsPage'
+import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type Reducer } from 'react'
 import { type NavigateOptions, type To } from 'react-router-dom'
 
@@ -20,6 +21,7 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema
     articleComments?: ArticleCommentsSchema
     addCommentForm?: AddCommentFormSchema
+    articlesPage?: ArticlesPageSchema
 
 }
 

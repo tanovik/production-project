@@ -1,5 +1,5 @@
+export { ArticleViewToggle } from './ui/AtricleViewToggle/AtricleViewToggle'
 export { ArticleList } from './ui/ArticleList/ArticleList'
-
 export { ArticleView } from './model/types/article'
 export { getArticleDetailsData } from './model/selectors/getArticleDetails'
 export type { ArticleDetailsSchema } from './model/types/articlesDetailsSchema'
