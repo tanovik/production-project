@@ -12,6 +12,7 @@ import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
+import { ScrollSaveReducer } from 'features/ScrollSave'
 
 export type AppStore = ReturnType<typeof configureStore>
 type createReduxStoreReturnType = ToolkitStore<EmptyObject & StateSchema, AnyAction, MiddlewareArray<
@@ -25,7 +26,8 @@ export function createReduxStore (
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
-        user: userReducer
+        user: userReducer,
+        scrollSave: ScrollSaveReducer
 
         // async reducers:
         // loginForm?: loginReducer

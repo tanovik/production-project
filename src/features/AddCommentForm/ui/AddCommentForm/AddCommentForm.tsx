@@ -20,7 +20,6 @@ const reducers: ReducersList = {
 const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendComment }) => {
     const { t } = useTranslation()
     const text = useSelector(getAddCommentFormText)
-    // const error = useSelector(getAddCommentFormError)
     const dispatch = useAppDispatch()
 
     const onCommentTextChange = useCallback((val: string): void => {

@@ -82,7 +82,8 @@ module.exports = {
 	"no-undef": "warn",
 	"@typescript-eslint/no-invalid-void-type": "warn",
 	"@typescript-eslint/restrict-plus-operands": "warn",
-	"@typescript-eslint/consistent-type-assertions": "warn"
+	"@typescript-eslint/consistent-type-assertions": "warn",
+	"n/no-callback-literal": "warn"
   },
   globals: {
     "__IS_DEV__": true,
