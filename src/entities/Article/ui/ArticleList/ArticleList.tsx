@@ -22,14 +22,6 @@ const getSkeletons = (view: ArticleView): React.ReactNode[] => {
 
 export const ArticleList: React.FC<ArticleListProps> =
 memo(({ className, articles, isLoading, view = ArticleView.PLATE }) => {
-    if (isLoading) {
-        return (
-            <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
-                {getSkeletons(view)}
-            </div>
-        )
-    }
-
     const renderArticle = (article: Article): React.ReactNode => {
         return <ArticleListItem
             article={article}
@@ -43,6 +35,8 @@ memo(({ className, articles, isLoading, view = ArticleView.PLATE }) => {
             {articles.length > 0
                 ? articles.map(renderArticle)
                 : null}
+            {isLoading && getSkeletons(view)}
+
         </div>
     )
 })
