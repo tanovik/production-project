@@ -11,7 +11,6 @@ import { counterReducer } from 'entities/Counter'
 import { userReducer } from 'entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
-import { type NavigateOptions, type To } from 'react-router-dom'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 
 export type AppStore = ReturnType<typeof configureStore>
@@ -20,8 +19,8 @@ type createReduxStoreReturnType = ToolkitStore<EmptyObject & StateSchema, AnyAct
 
 export function createReduxStore (
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>,
-    navigate?: (to: To, options?: NavigateOptions) => void
+    asyncReducers?: ReducersMapObject<StateSchema>
+
 ): createReduxStoreReturnType {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
@@ -35,8 +34,7 @@ export function createReduxStore (
     const reducerManager = createReducerManager(rootReducers)
 
     const extraArg: ThunkExtraArg = {
-        api: $api,
-        navigate
+        api: $api
     }
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>, AnyAction>,

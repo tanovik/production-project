@@ -8,3 +8,4 @@ export const getArticlesPageView = (state: StateSchema): ArticleView => state.ar
 export const getArticlesPageNum = (state: StateSchema): number => state.articlesPage?.page || 1
 export const getArticlesPageLimit = (state: StateSchema): number => state.articlesPage?.limit || 9
 export const getArticlesPageHasMore = (state: StateSchema): boolean => state.articlesPage?.hasMore ?? false
+export const getArticlesPageInited = (state: StateSchema): boolean => state.articlesPage?._inited ?? false
