@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import { getProfileData, getProfileReadonly, profileActions, updateProfileData } from 'entities/Profile'
 import { useCallback } from 'react'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
-import { getUserAuhtData } from 'entities/User'
+import { getUserAuthData } from 'entities/User'
 
 interface ProfilePageHeaderProps {
     className?: string
@@ -17,7 +17,7 @@ export const ProfilePageHeader: React.FC<ProfilePageHeaderProps> = ({ className,
     const { t } = useTranslation('profile')
 
     const readonly = useSelector(getProfileReadonly)
-    const authData = useSelector(getUserAuhtData)
+    const authData = useSelector(getUserAuthData)
     const profileData = useSelector(getProfileData)
     const canEdit = authData?.id === profileData?.id
 

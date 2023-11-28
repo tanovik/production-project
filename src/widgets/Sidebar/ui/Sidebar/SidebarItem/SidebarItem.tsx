@@ -5,7 +5,7 @@ import { type SidebarItemType } from 'widgets/Sidebar/model/types/sidebar'
 import { memo } from 'react'
 import { classNames } from 'shared/lib/classNames/classNames'
 import { useSelector } from 'react-redux'
-import { getUserAuhtData } from 'entities/User'
+import { getUserAuthData } from 'entities/User'
 
 interface SidebarItemProps {
     item: SidebarItemType
@@ -15,7 +15,7 @@ interface SidebarItemProps {
 export const SidebarItem: React.FC<SidebarItemProps> = memo(({ item, collapsed }) => {
     const { t } = useTranslation()
 
-    const isAuth = useSelector(getUserAuhtData)
+    const isAuth = useSelector(getUserAuthData)
 
     if (item.authOnly && !isAuth) {
         return null

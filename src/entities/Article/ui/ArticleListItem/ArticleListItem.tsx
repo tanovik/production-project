@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleListItem.module.scss'
-import { type HTMLAttributeAnchorTarget, memo, useCallback } from 'react'
+import { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { ArticleView, type Article, ArticleBlockType, type ArticleTextBlock } from '../../model/types/article'
 import { Text } from 'shared/ui/Text/Text'
 import EyeIcon from '../../../../shared/assets/icons/EyeIcon.svg'

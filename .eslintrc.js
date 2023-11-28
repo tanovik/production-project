@@ -61,9 +61,11 @@ module.exports = {
 	"@typescript-eslint/indent": [2, 4],
 	"@typescript-eslint/no-non-null-assertion": "warn",
 	"@typescript-eslint/naming-convention": "warn",
-	"i18next/no-literal-string": ['warn', {markupOnly: true,
-	"ignoreAttribute":['data-testid', 'to']
-	}],
+	"i18next/no-literal-string": [
+		'warn', 
+		{markupOnly: true,
+		"ignoreAttribute":['data-testid', 'to', 'target']
+		}],
 	"import/no-webpack-loader-syntax": "off",
 	"max-len": ["error", {"ignoreComments": true, "code": 120}],
 	"react/display-name": "off",
