@@ -7,7 +7,9 @@ import { type UserSchema } from 'entities/User'
 import { type AddCommentFormSchema } from 'features/AddCommentForm'
 import { type LoginSchema } from 'features/AuthByUsername'
 import { type ScrollSaveSchema } from 'features/ScrollSave'
-import { type ArticleCommentsSchema } from 'pages/ArticleDetailsPage'
+import {
+    type ArticleDetailsPageSchema
+} from 'pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from 'pages/ArticlesPage'
 import { type Reducer } from 'react'
 
@@ -19,10 +21,10 @@ export interface StateSchema {
     // async reducers
     loginForm?: LoginSchema
     profile?: ProfileSchema
-    articleDetails?: ArticleDetailsSchema
-    articleComments?: ArticleCommentsSchema
     addCommentForm?: AddCommentFormSchema
+    articleDetails?: ArticleDetailsSchema
     articlesPage?: ArticlesPageSchema
+    articleDetailsPage?: ArticleDetailsPageSchema
 
 }
 

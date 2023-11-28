@@ -5,14 +5,14 @@ import { profileReducer } from 'entities/Profile'
 import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { AddCommentFormReducer } from 'features/AddCommentForm/model/slices/AddCommentFormSlice'
-import { articleCommentsReducer } from 'pages/ArticleDetailsPage/model/slices/ArticleCommentsSlice'
+import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
 
 const defaultAsyncReducer: ReducersList = {
 // const defaultAsyncReducer: DeepPartial<ReducersMapObject<StateSchema>> = {
     loginForm: loginReducer,
     profile: profileReducer,
     articleDetails: articleDetailsReducer,
-    articleComments: articleCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
     addCommentForm: AddCommentFormReducer
 }
 

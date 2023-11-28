@@ -1,6 +1,6 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import cls from './ArticleList.module.scss'
-import React, { memo } from 'react'
+import React, { type HTMLAttributeAnchorTarget, memo } from 'react'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { type Article, ArticleView } from '../../model/types/article'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
@@ -12,6 +12,7 @@ interface ArticleListProps {
     articles: Article[]
     isLoading: boolean
     view?: ArticleView
+    target?: HTMLAttributeAnchorTarget
 
 }
 const getSkeletons = (view: ArticleView): React.ReactNode[] => {
@@ -23,12 +24,13 @@ const getSkeletons = (view: ArticleView): React.ReactNode[] => {
 }
 
 export const ArticleList: React.FC<ArticleListProps> =
-memo(({ className, articles, isLoading, view = ArticleView.PLATE }) => {
+memo(({ className, articles, isLoading, view = ArticleView.PLATE, target }) => {
     const { t } = useTranslation()
     const renderArticle = (article: Article): React.ReactNode => {
         return <ArticleListItem
             article={article}
             view={view}
+            target={target}
             className={cls.card}
             key={article.id}
         />

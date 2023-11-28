@@ -3,14 +3,15 @@
   "Articles Page": "Страница статей",
   "This article is not found": "Эта статья не найдена",
   "An error occured while loading the article": "Произошла ошибка во время загрузки статьи",
-  "article.Comments": "Комментарии",
+  "Comments": "Комментарии",
   "Read more...": "Читать далее...",
-  "article.Back to the list": "Назад к списку",
+  "Back to the list": "Назад к списку",
   "by": "по",
   "Sort by": "Сортировать по",
   "views": "просмотрам",
   "name": "названию",
   "creation date": "дате создания",
   "descend": "убыванию",
-  "ascend": "возрастанию"
+  "ascend": "возрастанию",
+  "Recommended": "Рекомендуем"
 }

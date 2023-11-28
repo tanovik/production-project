@@ -7,6 +7,10 @@ import { useDispatch, useStore } from 'react-redux'
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer;
 }
+// export type ReducersList = {
+//     [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;
+// }
+
 interface DynamicModuleLoaderProps {
     children?: React.ReactNode
     reducers: ReducersList
