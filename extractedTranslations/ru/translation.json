@@ -42,17 +42,28 @@
   },
   "Save": "Save",
   "Server error while saving data": "Server error while saving data",
+  "Sort by": "Sort by",
   "This article is not found": "This article is not found",
   "Try to refresh the page please": "Try to refresh the page please",
   "You entered an incorrect login or password": "You entered an incorrect login or password",
+  "ascend": "ascend",
+  "by": "by",
+  "creation date": "creation date",
   "decrement": "decrement",
+  "descend": "descend",
   "increment": "increment",
+  "name": "name",
   "throw an error": "throw an error",
+  "views": "views",
+  "Айти": "Айти",
   "Войти": "Войти",
+  "Все статьи": "Все статьи",
   "Главная": "Главная",
   "Данные не указаны": "Данные не указаны",
+  "Наука": "Наука",
   "О сайте": "О сайте",
   "Обновить страницу": "Обновить страницу",
+  "Поиск": "Поиск",
   "Произошла непредвиденная ошибка": "Произошла непредвиденная ошибка",
   "Страница не найдена": "Страница не найдена",
   "Читать далее": {
@@ -62,6 +73,7 @@
       }
     }
   },
+  "Экономика": "Экономика",
   "Язык": "Язык",
   "переключить": "переключить"
 }

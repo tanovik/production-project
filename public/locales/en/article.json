@@ -5,5 +5,12 @@
   "An error occured while loading the article": "An error occured while loading the article",
   "Comments": "Comments",
   "Read more...": "Read more",
-  "article.Back to the list": "Back to the list"
+  "article.Back to the list": "Back to the list",
+  "by": "by",
+  "Sort by": "Sort by",
+  "views": "views",
+  "name": "name",
+  "creation date": "creation date",
+  "descend": "descend",
+  "ascend": "ascend"
 }

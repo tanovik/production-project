@@ -4,6 +4,8 @@ import React, { memo } from 'react'
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { type Article, ArticleView } from '../../model/types/article'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
+import { Text, TextSize } from 'shared/ui/Text/Text'
+import { useTranslation } from 'react-i18next'
 
 interface ArticleListProps {
     className?: string
@@ -22,6 +24,7 @@ const getSkeletons = (view: ArticleView): React.ReactNode[] => {
 
 export const ArticleList: React.FC<ArticleListProps> =
 memo(({ className, articles, isLoading, view = ArticleView.PLATE }) => {
+    const { t } = useTranslation()
     const renderArticle = (article: Article): React.ReactNode => {
         return <ArticleListItem
             article={article}
@@ -29,6 +32,13 @@ memo(({ className, articles, isLoading, view = ArticleView.PLATE }) => {
             className={cls.card}
             key={article.id}
         />
+    }
+    if (!isLoading && (articles.length === 0)) {
+        return (
+            <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
+                <Text title={t('This article is not found')} size={TextSize.L}/>
+            </div>
+        )
     }
     return (
         <div className={classNames(cls.articleList, {}, [className, cls[view]])}>
