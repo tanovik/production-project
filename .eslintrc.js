@@ -35,7 +35,8 @@ module.exports = {
 	"react", 
 	"@typescript-eslint",
 	"i18next",  
-	"react-hooks"
+	"react-hooks",
+	"tanovik-plugin"
 ],
   rules: {
 	"import/no-extraneous-dependencies":"warn",
@@ -85,7 +86,8 @@ module.exports = {
 	"@typescript-eslint/no-invalid-void-type": "warn",
 	"@typescript-eslint/restrict-plus-operands": "warn",
 	"@typescript-eslint/consistent-type-assertions": "warn",
-	"n/no-callback-literal": "warn"
+	"n/no-callback-literal": "warn",
+	"tanovik-plugin/path-checker":"error"
   },
   globals: {
     "__IS_DEV__": true,
