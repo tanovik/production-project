@@ -7,8 +7,8 @@ import {
     type ThunkMiddleware
 } from '@reduxjs/toolkit'
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
-import { counterReducer } from 'entities/Counter'
-import { userReducer } from 'entities/User'
+import { counterReducer } from '../../../../entities/Counter'
+import { userReducer } from '../../../../entities/User'
 import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'

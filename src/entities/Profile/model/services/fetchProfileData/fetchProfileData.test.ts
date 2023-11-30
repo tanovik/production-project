@@ -1,4 +1,4 @@
-import { Country } from 'entities/Country'
+import { Country } from '../../../../Country'
 import { fetchProfileData } from './fetchProfileData'
 import { Currency } from 'shared/const/common'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'

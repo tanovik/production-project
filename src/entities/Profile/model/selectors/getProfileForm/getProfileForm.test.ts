@@ -1,7 +1,7 @@
 import { type StateSchema } from 'app/providers/StoreProvider'
 import { getProfileForm } from './getProfileForm'
 import { Currency } from 'shared/const/common'
-import { Country } from 'entities/Country'
+import { Country } from '../../../../Country'
 
 describe('getProfileForm', () => {
     test('should return profile form', () => {

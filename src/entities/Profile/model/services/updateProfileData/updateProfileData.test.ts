@@ -1,4 +1,4 @@
-import { Country } from 'entities/Country'
+import { Country } from '../../../../Country'
 import { updateProfileData } from './updateProfileData'
 import { Currency } from 'shared/const/common'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'

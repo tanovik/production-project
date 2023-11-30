@@ -1,4 +1,4 @@
-import { Country } from 'entities/Country'
+import { Country } from '../../../../Country'
 import { validateProfileData } from './validateProfileData'
 import { Currency } from 'shared/const/common'
 import { ValidateProfileError } from '../../types/profile'

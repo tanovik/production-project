@@ -58,7 +58,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({ className }) =>
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
 
-            <Page className={classNames(cls.ArticleDetailsPage, {}, [className ?? ''])}>
+            <Page className={classNames(cls.articleDetailsPage, {}, [className ?? ''])}>
                 <ArticleDetailsPageHeader/>
                 <ArticleDetails id={id} />
                 <Text

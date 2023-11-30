@@ -18,11 +18,11 @@ import EyeIcon from 'shared/assets/icons/EyeIcon.svg'
 import DateIcon from 'shared/assets/icons/DateIcon.svg'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { Icon } from 'shared/ui/Icon/Icon'
-import { type ArticleBlock, ArticleBlockType } from 'entities/Article/model/types/article'
 import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
+import { ArticleBlockType, type ArticleBlock } from '../../model/types/article'
 
 interface ArticleDetailsProps {
     className?: string
