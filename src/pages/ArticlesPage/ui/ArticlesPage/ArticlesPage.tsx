@@ -26,6 +26,7 @@ const reducers: ReducersList = {
 }
 const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
     const dispatch = useAppDispatch()
+
     const articles = useSelector(getArticles.selectAll)
     const isLoading = useSelector(getArticlesPageIsLoading)
     const view = useSelector(getArticlesPageView)
@@ -40,7 +41,10 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
     })
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={false}>
-            <Page onScrollEnd={onLoadNextPart} className={classNames(cls.articlesPage, {}, [className])}>
+            <Page
+                onScrollEnd={onLoadNextPart}
+                className={classNames(cls.articlesPage, {}, [className])}
+            >
                 <ArticlesPageFilters/>
                 <ArticleList
                     articles={articles}

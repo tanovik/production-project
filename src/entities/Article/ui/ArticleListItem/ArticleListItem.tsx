@@ -20,6 +20,8 @@ interface ArticleListItemProps {
     target?: HTMLAttributeAnchorTarget
 
 }
+export const PLATE_VIEW_ITEM_WIDTH = 230
+
 export const ArticleListItem: React.FC<ArticleListItemProps> =
 memo(({ className, view = ArticleView.PLATE, article, target }) => {
     const { t } = useTranslation()
