@@ -9,6 +9,7 @@ import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelec
 import { AddCommentFormActions, AddCommentFormReducer } from '../../model/slices/AddCommentFormSlice'
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader, type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import { HStack } from 'shared/ui/Stack'
 
 export interface AddCommentFormProps {
     className?: string
@@ -32,7 +33,10 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendC
     }, [text, onSendComment, onCommentTextChange])
     return (
         <DynamicModuleLoader reducers={reducers} >
-            <div className={classNames(cls.addCommentForm, {}, [className])}>
+            <HStack
+                justify={'between'}
+                max
+                className={classNames(cls.addCommentForm, {}, [className])}>
                 <Input
                     placeholder={t('Enter comment')}
                     onChange={onCommentTextChange}
@@ -45,7 +49,7 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendC
                 >
                     {t('Leave a comment')}
                 </Button>
-            </div>
+            </HStack>
         </DynamicModuleLoader>
     )
 })

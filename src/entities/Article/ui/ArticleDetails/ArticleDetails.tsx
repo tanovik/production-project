@@ -23,6 +23,7 @@ import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/Articl
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { ArticleBlockType, type ArticleBlock } from '../../model/types/article'
+import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ArticleDetailsProps {
     className?: string
@@ -54,12 +55,6 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo(({ className, 
         }
     }, [])
 
-    // useEffect(() => {
-    //     if (__PROJECT__ !== 'storybook') {
-    //         dispatch(fetchArticleById(id))
-    //     }
-    // }, [dispatch, id])
-
     useInitialEffect(() => {
         dispatch(fetchArticleById(id))
     })
@@ -86,36 +81,41 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo(({ className, 
     } else {
         content = (
             <>
-                <div className={cls.avatarWrapper}>
+                <HStack
+                    justify="center"
+                    max
+                    className={cls.avatarWrapper}>
                     <Avatar
                         size={200}
                         src={article?.img}
                         className={cls.avatar}
                     />
-                </div>
-                <Text
-                    className={cls.title}
-                    title={article?.title}
-                    text={article?.subtitle}
-                    size={TextSize.L}
-                />
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={EyeIcon} />
-                    <Text text={String(article?.views)} />
-                </div>
-                <div className={cls.articleInfo}>
-                    <Icon className={cls.icon} Svg={DateIcon} />
-                    <Text text={article?.createdAt} />
-                </div>
+                </HStack>
+                <VStack gap="4" max>
+                    <Text
+                        className={cls.title}
+                        title={article?.title}
+                        text={article?.subtitle}
+                        size={TextSize.L}
+                    />
+                    <HStack gap="8" className={cls.articleInfo}>
+                        <Icon className={cls.icon} Svg={EyeIcon} />
+                        <Text text={String(article?.views)} />
+                    </HStack>
+                    <HStack gap="8" className={cls.articleInfo}>
+                        <Icon className={cls.icon} Svg={DateIcon} />
+                        <Text text={article?.createdAt} />
+                    </HStack>
+                </VStack>
                 {article?.blocks.map(renderBlock)}
             </>
         )
     }
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <div className={classNames(cls.articleDetails, {}, [className ?? ''])}>
+            <VStack gap="16" className={classNames(cls.articleDetails, {}, [className ?? ''])}>
                 {content}
-            </div>
+            </VStack>
         </DynamicModuleLoader>
 
     )
