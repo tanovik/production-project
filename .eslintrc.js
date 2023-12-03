@@ -66,7 +66,7 @@ module.exports = {
 		'warn', 
 		{markupOnly: true,
 		"ignoreAttribute":['data-testid', 'to', 'target',
-	'justify', 'align', 'direction', 'gap']
+	'justify', 'align', 'direction', 'gap', 'role']
 		}],
 	"import/no-webpack-loader-syntax": "off",
 	"max-len": ["error", {"ignoreComments": true, "code": 120}],
