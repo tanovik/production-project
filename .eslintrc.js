@@ -65,7 +65,7 @@ module.exports = {
 	"i18next/no-literal-string": [
 		'warn', 
 		{markupOnly: true,
-		"ignoreAttribute":['data-testid', 'to', 'target',
+		"ignoreAttribute":['as', 'data-testid', 'to', 'target',
 	'justify', 'align', 'direction', 'gap', 'role']
 		}],
 	"import/no-webpack-loader-syntax": "off",
