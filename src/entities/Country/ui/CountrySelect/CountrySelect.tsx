@@ -32,7 +32,7 @@ export const CountrySelect: React.FC<CountrySelectProps> = memo(({ className, va
             label= {t('Choose your country')}
             items={options}
             readonly={readonly}
-            direction="bottom"
+            direction="bottom right"
         />
     )
 }
