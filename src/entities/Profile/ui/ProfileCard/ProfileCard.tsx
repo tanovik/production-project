@@ -7,7 +7,7 @@ import { type Profile } from '../../model/types/profile'
 import { Loader } from 'shared/ui/Loader/Loader'
 import { Avatar } from 'shared/ui/Avatar/Avatar'
 import { type Country } from 'entities/Country/model/types/country'
-import { CountrySelect } from 'entities/Country'
+import { CountrySelect } from '../../../Country'
 import { HStack, VStack } from 'shared/ui/Stack'
 
 interface ProfileCardProps {
@@ -81,6 +81,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                 className={cls.input}
                 onChange={onChangeFirstname}
                 readonly= {readonly}
+                data-testid = {'ProfileCard.firstname'}
             />
             <Input
                 value={data?.lastName}
@@ -88,6 +89,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                 className={cls.input}
                 onChange={onChangeLastname}
                 readonly= {readonly}
+                data-testid = {'ProfileCard.lastname'}
 
             />
             <Input

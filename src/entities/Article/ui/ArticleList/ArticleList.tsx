@@ -20,6 +20,7 @@ interface ArticleListProps {
     isLoading: boolean
     view?: ArticleView
     target?: HTMLAttributeAnchorTarget
+    virtualized?: boolean
 
 }
 const getSkeletons = (view: ArticleView): React.ReactNode[] => {
@@ -31,7 +32,11 @@ const getSkeletons = (view: ArticleView): React.ReactNode[] => {
 }
 
 export const ArticleList: React.FC<ArticleListProps> =
-memo(({ className, articles, isLoading, view = ArticleView.PLATE, target }) => {
+memo(({
+    className, articles, isLoading,
+    view = ArticleView.PLATE, target,
+    virtualized = true
+}) => {
     const { t } = useTranslation()
     const isListView = view === ArticleView.LIST
     const pageRef = useRef() as MutableRefObject<HTMLDivElement>
@@ -91,26 +96,36 @@ memo(({ className, articles, isLoading, view = ArticleView.PLATE, target }) => {
                 scrollTop
             }) => (
                 <div
-
                     // @ts-expect-error
                     ref={registerChild}
-                    // ref={(el) => { registerChild(el); pageRef(el) }}
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 >
-                    <div ref={pageRef}>
-                        <List
-                            height={height ?? 700}
-                            rowCount={rowCount}
-                            rowHeight={isListView ? 700 : 330}
-                            rowRenderer={rowRender}
-                            width={width ? width - 80 : 700}
-                            autoHeight
-                            onScroll={onChildScroll}
-                            isScrolling={isScrolling}
-                            scrollTop={scrollTop}
+                    {virtualized
+                        ? (<List
+                                height={height ?? 700}
+                                rowCount={rowCount}
+                                rowHeight={isListView ? 700 : 330}
+                                rowRenderer={rowRender}
+                                width={width ? width - 80 : 700}
+                                autoHeight
+                                onScroll={onChildScroll}
+                                isScrolling={isScrolling}
+                                scrollTop={scrollTop}
                         />
-                        {isLoading && getSkeletons(view)}
-                    </div>
+                        )
+                        : (
+                            articles.map((item) => (
+                                <ArticleListItem
+                                    article={item}
+                                    view={view}
+                                    target={target}
+                                    key={item.id}
+                                    className={cls.card}
+                                />
+                            ))
+                        )}
+                    {isLoading && getSkeletons(view)}
+
                 </div>
             )}
         </WindowScroller>

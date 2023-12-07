@@ -15,7 +15,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
 
     const { isLoading, data: articles, error } = useArticleRecommendationsList(3)
 
-    if (isLoading || (error != null)) {
+    if (isLoading || (error != null) || (articles == null)) {
         return null
     }
     return (
@@ -28,6 +28,7 @@ export const ArticleRecommendationsList = memo((props: ArticleRecommendationsLis
                 articles={articles}
                 target="_blank"
                 isLoading = {isLoading}
+                virtualized= {false}
             />
         </VStack>
     )
