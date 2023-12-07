@@ -14,5 +14,6 @@
   "descend": "descend",
   "ascend": "ascend",
   "Recommended": "Recommended",
-  "Create a new article": "Create a new article"
+  "Create a new article": "Create a new article",
+  "Error while loading articles": "Error while loading articles"
 }

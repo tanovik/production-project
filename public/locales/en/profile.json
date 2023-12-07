@@ -11,5 +11,6 @@
   "Incorrect age": "Incorrect age",
   "Incorrect region": "Incorrect region",
   "First and last name are mandatory": "First and last name are mandatory",
-  "No data filled in": "No data filled in"
+  "No data filled in": "No data filled in",
+  "No profile found": "No profile found"
 }

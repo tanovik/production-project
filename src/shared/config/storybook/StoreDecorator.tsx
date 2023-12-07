@@ -1,13 +1,12 @@
 import { type Decorator } from '@storybook/react'
 import { StoreProvider, type StateSchema } from 'app/providers/StoreProvider'
 import { loginReducer } from 'features/AuthByUsername/model/slice/loginSlice'
-import { profileReducer } from '../../../entities/Profile/'
-// import { profileReducer } from 'entities/Profile'
 import { type ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articleDetailsReducer } from 'entities/Article/model/slice/articleDetailsSlice'
 import { AddCommentFormReducer } from 'features/AddCommentForm/model/slices/AddCommentFormSlice'
 import { articleDetailsPageReducer } from 'pages/ArticleDetailsPage/model/slices'
 import { articlesPageReducer } from 'pages/ArticlesPage/model/slice/articlesPageSlice'
+import { profileReducer } from 'features/editableProfileCard/model/slice/profileSlice'
 
 const defaultAsyncReducer: ReducersList = {
 // const defaultAsyncReducer: DeepPartial<ReducersMapObject<StateSchema>> = {

@@ -4,7 +4,8 @@ import {
     type Reducer,
     type EmptyObject,
     type MiddlewareArray,
-    type ThunkMiddleware
+    type ThunkMiddleware,
+    type Middleware
 } from '@reduxjs/toolkit'
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { counterReducer } from '../../../../entities/Counter'
@@ -13,10 +14,13 @@ import { createReducerManager } from './reducerManager'
 import { $api } from 'shared/api/api'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
 import { ScrollSaveReducer } from 'features/ScrollSave'
+import { rtkApi } from 'shared/api/rtkApi'
 
 export type AppStore = ReturnType<typeof configureStore>
-type createReduxStoreReturnType = ToolkitStore<EmptyObject & StateSchema, AnyAction, MiddlewareArray<
-[ThunkMiddleware<CombinedState<StateSchema>, AnyAction, ThunkExtraArg>]>>
+
+type createReduxStoreReturnType = ToolkitStore<EmptyObject
+& StateSchema, AnyAction,
+MiddlewareArray<[ThunkMiddleware<CombinedState<StateSchema>, AnyAction, ThunkExtraArg>, Middleware<unknown>]>>
 
 export function createReduxStore (
     initialState?: StateSchema,
@@ -27,10 +31,8 @@ export function createReduxStore (
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
-        scrollSave: ScrollSaveReducer
-
-        // async reducers:
-        // loginForm?: loginReducer
+        scrollSave: ScrollSaveReducer,
+        [rtkApi.reducerPath]: rtkApi.reducer
 
     }
     const reducerManager = createReducerManager(rootReducers)
@@ -48,7 +50,7 @@ export function createReduxStore (
                 extraArgument: extraArg
 
             }
-        })
+        }).concat(rtkApi.middleware)
     })
 
     // @ts-expect-error
