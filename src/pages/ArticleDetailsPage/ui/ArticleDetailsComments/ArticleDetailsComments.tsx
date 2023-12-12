@@ -31,7 +31,7 @@ export const ArticleDetailsComments: React.FC<ArticleDetailsCommentsProps> = mem
         dispatch(fetchCommentsByArticleId(id))
     })
     return (
-        <VStack gap="16" className={classNames('', {}, [className])}>
+        <VStack gap="16" max className={classNames('', {}, [className])}>
             <Text title={t('Comments')}/>
             <AddCommentForm onSendComment={onSendComment}/>
             <CommentList comments={comments} isLoading={commentsIsLoading}/>

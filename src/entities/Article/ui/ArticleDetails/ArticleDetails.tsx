@@ -113,7 +113,7 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo(({ className, 
     }
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount={true}>
-            <VStack gap="16" className={classNames(cls.articleDetails, {}, [className ?? ''])}>
+            <VStack gap="16" max className={classNames(cls.articleDetails, {}, [className ?? ''])}>
                 {content}
             </VStack>
         </DynamicModuleLoader>
