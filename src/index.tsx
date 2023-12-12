@@ -7,7 +7,12 @@ import { ErrorBoundary } from 'app/providers/ErrorBoundary'
 import 'app/styles/index.scss'
 import { StoreProvider } from 'app/providers/StoreProvider'
 
-const root = createRoot(document.getElementById('root') as Element)
+const container = document.getElementById('root')
+if (container == null) {
+    throw new Error('Container root was not found. Failed to mount the react application')
+}
+const root = createRoot(container)
+
 root.render(
     <BrowserRouter>
         <StoreProvider>

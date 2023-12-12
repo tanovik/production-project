@@ -1,22 +1,15 @@
 import { classNames } from 'shared/lib/classNames/classNames'
 import React from 'react'
-import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 import { Page } from 'widgets/Page/Page'
 import { VStack } from 'shared/ui/Stack/VStack/VStack'
 import { EditableProfileCard } from 'features/editableProfileCard'
-import { Text } from 'shared/ui/Text/Text'
 
 interface ProfilePageProps {
     className?: string
 }
 const ProfilePage: React.FC<ProfilePageProps> = ({ className }) => {
-    const { t } = useTranslation('profile')
     const { id } = useParams<{ id: string }>()
-
-    if (!id) {
-        return <Text text={t('No profile found')} />
-    }
     return (
         <Page className={classNames('', {}, [className])}>
             <VStack gap="16" max>
