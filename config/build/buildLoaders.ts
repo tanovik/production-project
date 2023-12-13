@@ -19,38 +19,21 @@ export function buildLoaders ({ isDev }: BuildOptions): webpack.RuleSetRule[] {
 
     const cssLoaders = buildCssLoader(isDev)
 
-    const typescriptLoader = {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
-        exclude: /node_modules/
-    }
-
-    const babelLoader = buildBabelLoader(isDev)
-    // const babelLoader = {
-    //     test: /\.(js|jsx|tsx)$/,
-    //     exclude: /node_modules/,
-    //     use: {
-    //         loader: 'babel-loader',
-    //         options: {
-    //             presets: ['@babel/preset-env'],
-    //             plugins: [
-    //                 [
-    //                     'i18next-extract',
-    //                     {
-    //                         locales: ['ru', 'en'],
-    //                         keyAsDefaultValue: true
-    //                     }
-    //                 ],
-    //                 isDev && require.resolve('react-refresh/babel')
-    //             ].filter(Boolean)
-    //         }
-    //     }
+    // Если не используем тайпскрипт - нужен babel-loader
+    // const typescriptLoader = {
+    //     test: /\.tsx?$/,
+    //     use: 'ts-loader',
+    //     exclude: /node_modules/
     // }
+    const codeBabelLoader = buildBabelLoader({ isDev, isTsx: false })
+    const tsxCodeBabelLoader = buildBabelLoader({ isDev, isTsx: true })
+
     return [
         fileLoader,
         svgLoader,
-        babelLoader,
-        typescriptLoader,
+        codeBabelLoader,
+        tsxCodeBabelLoader,
+        // typescriptLoader,
         cssLoaders
     ]
 }
