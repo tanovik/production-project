@@ -17,6 +17,7 @@ const config: Config = {
     moduleDirectories: [
         'node_modules'
     ],
+
     modulePaths: [
         '<rootDir>src'
     ],

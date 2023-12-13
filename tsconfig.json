@@ -17,6 +17,7 @@
 		// "allowUmdGlobalAccess": true,
 		"strictNullChecks": true,//
 		"strict": true,
+		"isolatedModules": true,
     },
     "ts-node": {
       "compilerOptions": {

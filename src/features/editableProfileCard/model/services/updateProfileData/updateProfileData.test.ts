@@ -1,8 +1,8 @@
 import { Country } from '../../../../../entities/Country'
+import { ValidateProfileError } from '../../consts/consts'
 import { updateProfileData } from './updateProfileData'
 import { Currency } from 'shared/const/common'
 import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
-import { ValidateProfileError } from '../../types/editableProfileCardSchema'
 
 const data = {
     firstName: 'John',
