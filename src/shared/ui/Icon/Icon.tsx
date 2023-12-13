@@ -5,9 +5,10 @@ import { memo } from 'react'
 interface IconProps {
     className?: string
     Svg: React.FunctionComponent<React.SVGAttributes<SVGElement>>
+    inverted?: boolean
 }
-export const Icon: React.FC<IconProps> = memo(({ className, Svg }) => {
+export const Icon: React.FC<IconProps> = memo(({ className, Svg, inverted }) => {
     return (
-        <Svg className={classNames(cls.icon, {}, [className])} />
+        <Svg className={ classNames(inverted ? cls.inverted : cls.icon, {}, [className])} />
     )
 })
