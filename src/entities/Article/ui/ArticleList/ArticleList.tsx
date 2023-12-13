@@ -60,7 +60,6 @@ memo(({
                     view={view}
                     target={target}
                     key={articles[i].id}
-                    // key={`str${i}`}
                     className={cls.card}
                 />
             )
@@ -102,17 +101,18 @@ memo(({
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
                 >
                     {virtualized
-                        ? (<List
-                            height={height ?? 700}
-                            rowCount={rowCount}
-                            rowHeight={isListView ? 700 : 330}
-                            rowRenderer={rowRender}
-                            width={width ? width - 80 : 700}
-                            autoHeight
-                            onScroll={onChildScroll}
-                            isScrolling={isScrolling}
-                            scrollTop={scrollTop}
-                        />
+                        ? (
+                            <List
+                                height={height ?? 700}
+                                rowCount={rowCount}
+                                rowHeight={isListView ? 700 : 330}
+                                rowRenderer={rowRender}
+                                width={width ? width - 80 : 700}
+                                autoHeight
+                                onScroll={onChildScroll}
+                                isScrolling={isScrolling}
+                                scrollTop={scrollTop}
+                            />
                         )
                         : (
                             articles.map((item) => (
