@@ -1,7 +1,7 @@
 import { Country } from '../../../../../entities/Country'
 import { ValidateProfileError } from '../../consts/consts'
 import { validateProfileData } from './validateProfileData'
-import { Currency } from 'shared/const/common'
+import { Currency } from '@/shared/const/common'
 
 const data = {
     firstName: 'John',

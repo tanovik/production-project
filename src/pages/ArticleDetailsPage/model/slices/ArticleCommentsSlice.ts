@@ -4,8 +4,8 @@ import {
     createSlice,
     type PayloadAction
 } from '@reduxjs/toolkit'
-import { type StateSchema } from 'app/providers/StoreProvider'
-import { type CommentType } from 'entities/Comment'
+import { type StateSchema } from '@/app/providers/StoreProvider'
+import { type CommentType } from '@/entities/Comment'
 import { type ArticleCommentsSchema } from '../types/ArticleCommentsSchema'
 import { fetchCommentsByArticleId } from '../services/fetchCommentsByArticleId/fetchCommentsByArticleId'
 

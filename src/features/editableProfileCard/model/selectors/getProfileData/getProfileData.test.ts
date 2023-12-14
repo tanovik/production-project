@@ -1,6 +1,6 @@
-import { type StateSchema } from 'app/providers/StoreProvider'
+import { type StateSchema } from '@/app/providers/StoreProvider'
 import { getProfileData } from './getProfileData'
-import { Currency } from 'shared/const/common'
+import { Currency } from '@/shared/const/common'
 import { Country } from '../../../../../entities/Country'
 
 describe('getProfileData', () => {

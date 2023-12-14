@@ -11,10 +11,10 @@ import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { counterReducer } from '../../../../entities/Counter'
 import { userReducer } from '../../../../entities/User'
 import { createReducerManager } from './reducerManager'
-import { $api } from 'shared/api/api'
+import { $api } from '@/shared/api/api'
 import { type ToolkitStore } from '@reduxjs/toolkit/dist/configureStore'
-import { ScrollSaveReducer } from 'features/ScrollSave'
-import { rtkApi } from 'shared/api/rtkApi'
+import { ScrollSaveReducer } from '@/features/ScrollSave'
+import { rtkApi } from '@/shared/api/rtkApi'
 
 export type AppStore = ReturnType<typeof configureStore>
 
