@@ -2,7 +2,7 @@ import { Currency } from 'shared/const/common'
 import { profileActions, profileReducer } from './profileSlice'
 import { updateProfileData } from '../services/updateProfileData/updateProfileData'
 import { type ProfileSchema } from '../types/editableProfileCardSchema'
-import { Country } from 'entities/Country'
+import { Country } from '../../../../entities/Country'
 import { ValidateProfileError } from '../consts/consts'
 
 const data = {
