@@ -33,9 +33,8 @@ export function Dropdown (props: DropdownProps): ReactNode {
             <Menu.Button className={popupCls.trigger}>
                 {trigger}
             </Menu.Button>
-            {/* <Menu.Items > */}
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     const content = ({ active }: { active: boolean }): ReactElement => (
                         <button
                             type="button"
@@ -52,7 +51,7 @@ export function Dropdown (props: DropdownProps): ReactNode {
                             <Menu.Item
                                 as={AppLink}
                                 to={item.href}
-                                key={item.href}
+                                key={'dropdown-key-' + index}
                                 disabled={item.disabled}>
                                 {content}
                             </Menu.Item>
@@ -62,7 +61,7 @@ export function Dropdown (props: DropdownProps): ReactNode {
                     return (
                         <Menu.Item
                             as={Fragment}
-                            key={item.href}
+                            key={'dropdown-key-' + index}
                             disabled={item.disabled}>
                             {content}
                         </Menu.Item>
