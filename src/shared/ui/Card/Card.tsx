@@ -11,14 +11,15 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string
     children: React.ReactNode
     theme?: CardTheme
+    max?: boolean
 }
 
 export const Card: React.FC<CardProps> = memo(({
     className,
-    theme = CardTheme.NORMAL, children, ...otherProps
+    theme = CardTheme.NORMAL, children, max, ...otherProps
 }) => {
     return (
-        <div className={classNames(cls.card, {}, [className, cls[theme]])}
+        <div className={classNames(cls.card, { [cls.max]: max }, [className, cls[theme]])}
             {...otherProps}>
             {children}
         </div>

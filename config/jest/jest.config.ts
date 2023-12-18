@@ -36,7 +36,8 @@ const config: Config = {
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
-        '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx'
+        '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
+        '^@/(.*)$': '<rootDir>/src/$1'
         // '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
     },
     // The root directory that Jest should scan for tests and modules within
