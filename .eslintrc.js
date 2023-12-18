@@ -89,6 +89,7 @@ module.exports = {
 	"@typescript-eslint/consistent-type-assertions": "warn",
 	"n/no-callback-literal": "warn",
 	"tanovik-plugin/path-checker":["error",{alias: '@'}],
+	"tanovik-plugin/public-api-imports":["error",{alias: '@'}],
 	"@typescript-eslint/restrict-template-expressions": "warn",
 	"@typescript-eslint/consistent-type-imports": "warn"
   },

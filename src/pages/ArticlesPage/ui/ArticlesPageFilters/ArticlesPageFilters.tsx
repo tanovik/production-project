@@ -20,7 +20,7 @@ import {
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
-import { ArticleSortSelector } from '@/entities/Article/ui/ArticleSortSelector/ArticleSortSelector'
+import { ArticleSortSelector } from '@/entities/Article'
 
 interface ArticlesPageFiltersProps {
     className?: string

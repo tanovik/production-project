@@ -1,3 +1,4 @@
+export { ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector'
 export { ArticleType, ArticleBlockType, ArticleSortField, ArticleView } from './model/consts/articleConsts'
 export { ArticleTypeTabs } from './ui/ArticleTypeTabs/ArticleTypeTabs'
 export { ArticleViewToggle } from './ui/AtricleViewToggle/AtricleViewToggle'
