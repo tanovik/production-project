@@ -5,7 +5,7 @@ import { type Article } from '@/entities/Article'
 // import withMock from 'storybook-addon-mock'
 
 const meta = {
-    title: 'pages/ArticleRecommendationsList',
+    title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
     tags: ['autodocs']
     // decorators: [withMock]

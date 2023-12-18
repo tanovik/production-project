@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import { EditableProfileCard } from './EditableProfileCard'
+import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 // import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator'
 // import { Theme } from 'app/providers/ThemeProvider'
 // import { StoreDecorator } from 'shared/config/storybook/StoreDecorator'
@@ -16,8 +17,8 @@ type Story = StoryObj<typeof meta>
 export const Light: Story = {
     args: { id: '1' }
 }
+Light.decorators = [StoreDecorator({})]
 
 // export const Dark: Story = {
 //     args: {}
 // }
-// Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
