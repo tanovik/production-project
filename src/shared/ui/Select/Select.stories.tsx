@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
+// eslint-disable-next-line tanovik-plugin/layer-imports
 import '@/app/styles/index.scss'
-
 import { Select } from './Select'
 
 const meta = {

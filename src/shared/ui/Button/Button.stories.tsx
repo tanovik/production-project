@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
-
 import { Button, ButtonSize, ButtonTheme } from './Button'
+// eslint-disable-next-line tanovik-plugin/layer-imports
 import '@/app/styles/index.scss'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 
 const meta = {
     title: 'shared/Button',

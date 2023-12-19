@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import AvatarImg from '@/shared/assets/tests/storybook.jpg'
+// eslint-disable-next-line tanovik-plugin/layer-imports
 import '@/app/styles/index.scss'
 
 import { Avatar } from './Avatar'

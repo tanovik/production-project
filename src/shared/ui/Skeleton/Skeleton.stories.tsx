@@ -1,9 +1,9 @@
 import type { Meta, StoryObj } from '@storybook/react'
+// eslint-disable-next-line tanovik-plugin/layer-imports
 import '@/app/styles/index.scss'
-
 import { Skeleton } from './Skeleton'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 
 const meta = {
     title: 'shared/Skeleton',

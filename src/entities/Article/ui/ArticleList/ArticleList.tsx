@@ -12,6 +12,7 @@ import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkele
 import { Text, TextSize } from '@/shared/ui/Text/Text'
 import { useTranslation } from 'react-i18next'
 import { List, type ListRowProps, WindowScroller } from 'react-virtualized'
+// eslint-disable-next-line tanovik-plugin/layer-imports
 import { PAGE_ID } from '@/widgets/Page'
 import { ArticleView } from '../../model/consts/articleConsts'
 

@@ -1,5 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react'
 import LoginForm from './LoginForm'
+// eslint-disable-next-line tanovik-plugin/layer-imports
 import '@/app/styles/index.scss'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 

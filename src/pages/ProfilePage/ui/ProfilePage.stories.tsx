@@ -5,7 +5,7 @@ import { Currency } from '@/shared/const/common'
 import { Country } from '@/entities/Country'
 import AvatarImg from '@/shared/assets/tests/storybook.jpg'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
-import { Theme } from '@/app/providers/ThemeProvider'
+import { Theme } from '@/shared/const/theme'
 
 const meta = {
     title: 'pages/ProfilePage',
