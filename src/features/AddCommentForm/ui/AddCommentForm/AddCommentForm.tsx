@@ -6,7 +6,7 @@ import { Input } from '@/shared/ui/Input/Input'
 import { Button, ButtonTheme } from '@/shared/ui/Button/Button'
 import { useSelector } from 'react-redux'
 import { getAddCommentFormText } from '../../model/selectors/addCommentFormSelectors'
-import { AddCommentFormActions, AddCommentFormReducer } from '../../model/slices/AddCommentFormSlice'
+import { addCommentFormActions, addCommentFormReducer } from '../../model/slices/AddCommentFormSlice'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { HStack } from '@/shared/ui/Stack'
@@ -16,7 +16,7 @@ export interface AddCommentFormProps {
     onSendComment: (text: string) => void
 }
 const reducers: ReducersList = {
-    addCommentForm: AddCommentFormReducer
+    addCommentForm: addCommentFormReducer
 }
 const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendComment }) => {
     const { t } = useTranslation()
@@ -24,7 +24,7 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendC
     const dispatch = useAppDispatch()
 
     const onCommentTextChange = useCallback((val: string): void => {
-        dispatch(AddCommentFormActions.setText(val))
+        dispatch(addCommentFormActions.setText(val))
     }, [dispatch])
 
     const onSendHandler = useCallback((): void => {

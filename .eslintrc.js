@@ -88,8 +88,11 @@ module.exports = {
 	"@typescript-eslint/restrict-plus-operands": "warn",
 	"@typescript-eslint/consistent-type-assertions": "warn",
 	"n/no-callback-literal": "warn",
-	"tanovik-plugin/path-checker":["error",{alias: '@'}],
-	"tanovik-plugin/public-api-imports":["error",{alias: '@'}],
+	"tanovik-plugin/path-checker":["error", {
+		alias: '@'
+	}],
+	"tanovik-plugin/public-api-imports":["error",{alias: '@',
+	testFilesPatterns: ['**/*.test.*', '**/*.stories.*', '**/StoreDecorator.tsx']}],
 	"@typescript-eslint/restrict-template-expressions": "warn",
 	"@typescript-eslint/consistent-type-imports": "warn"
   },
