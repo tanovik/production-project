@@ -18,7 +18,8 @@
 		"strictNullChecks": true,//
 		"strict": true,
 		"isolatedModules": true,
-		"types": ["vite-plugin-svgr/client"]
+		"types": ["vite-plugin-svgr/client", "node"]
+		// "types": ["node"]
     },
     "ts-node": {
       "compilerOptions": {

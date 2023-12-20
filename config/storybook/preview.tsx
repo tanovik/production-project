@@ -3,7 +3,7 @@ import { RouteDecorator } from '../../src/shared/config/storybook/RouterDecorato
 import { StyleDecorator } from '../../src/shared/config/storybook/StyleDecorator'
 import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator'
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenceDecorator'
-import { Theme } from '@/shared/const/theme'
+import { Theme } from '../../src/shared/const/theme'
 
 const preview: Preview = {
     decorators: [StyleDecorator, ThemeDecorator(Theme.LIGHT),
