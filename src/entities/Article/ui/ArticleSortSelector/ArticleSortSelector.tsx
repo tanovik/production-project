@@ -1,6 +1,6 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
-import { memo, useCallback, useMemo } from 'react'
+import { memo, useMemo } from 'react'
 import { Select, type SelectOption } from '@/shared/ui/Select'
 import { type SortOrder } from '@/shared/types'
 import cls from './ArticleSortSelector.module.scss'
@@ -20,7 +20,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
     } = props
     const { t } = useTranslation()
 
-    const orderOptions = useMemo<SelectOption[]>(() => [
+    const orderOptions = useMemo<Array<SelectOption<SortOrder>>>(() => [
         {
             value: 'asc',
             content: t('ascend')
@@ -31,7 +31,7 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         }
     ], [t])
 
-    const sortFieldOptions = useMemo<SelectOption[]>(() => [
+    const sortFieldOptions = useMemo<Array<SelectOption<ArticleSortField>>>(() => [
         {
             value: ArticleSortField.CREATED,
             content: t('creation date')
@@ -46,27 +46,19 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
         }
     ], [t])
 
-    const changeSortHandler = useCallback((newSort: string) => {
-        onChangeSort(newSort as ArticleSortField)
-    }, [onChangeSort])
-
-    const changeOrderHandler = useCallback((newOrder: string) => {
-        onChangeOrder(newOrder as SortOrder)
-    }, [onChangeOrder])
-
     return (
         <div className={classNames(cls.articleSortSelector, {}, [className])}>
-            <Select
+            <Select<ArticleSortField>
                 options={sortFieldOptions}
                 label={t('Sort by')}
                 value={sort}
-                onChange={changeSortHandler}
+                onChange={onChangeSort}
             />
             <Select
                 options={orderOptions}
                 label={t('by')}
                 value={order}
-                onChange={changeOrderHandler}
+                onChange={onChangeOrder}
                 className={cls.order}
             />
         </div>
