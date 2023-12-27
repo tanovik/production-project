@@ -90,6 +90,7 @@ module.exports = {
 	"n/no-callback-literal": "warn",
 	"@typescript-eslint/restrict-template-expressions": "warn",
 	"@typescript-eslint/consistent-type-imports": "warn",
+	"@typescript-eslint/explicit-function-return-type": "warn",
 	"tanovik-plugin/path-checker":["error", {
 		alias: '@'
 	}],
