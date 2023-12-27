@@ -1,10 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { useTranslation } from 'react-i18next'
-import { memo, useMemo } from 'react'
-import { Select, type SelectOption } from '@/shared/ui/Select'
 import { type SortOrder } from '@/shared/types'
+import { Select, type SelectOption } from '@/shared/ui/Select'
+import { memo, useMemo } from 'react'
+import { useTranslation } from 'react-i18next'
 import cls from './ArticleSortSelector.module.scss'
-import { ArticleSortField } from '../../model/consts/articleConsts'
+import { ArticleSortField } from '@/entities/Article'
 
 interface ArticleSortSelectorProps {
     className?: string
@@ -52,15 +52,13 @@ export const ArticleSortSelector = memo((props: ArticleSortSelectorProps) => {
                 options={sortFieldOptions}
                 label={t('Sort by')}
                 value={sort}
-                onChange={onChangeSort}
-            />
+                onChange={onChangeSort} />
             <Select
                 options={orderOptions}
                 label={t('by')}
                 value={order}
                 onChange={onChangeOrder}
-                className={cls.order}
-            />
+                className={cls.order} />
         </div>
     )
 })

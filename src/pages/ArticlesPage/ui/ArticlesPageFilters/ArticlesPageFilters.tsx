@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next'
 import { memo, useCallback } from 'react'
 import {
     type ArticleSortField,
-    type ArticleView, ArticleViewToggle, type ArticleType, ArticleTypeTabs
+    type ArticleView, type ArticleType
 } from '@/entities/Article'
 import { useSelector } from 'react-redux'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -20,7 +20,9 @@ import {
     getArticlesPageView
 } from '../../model/selectors/articlesPageSelectors'
 import { articlesPageActions } from '../../model/slice/articlesPageSlice'
-import { ArticleSortSelector } from '@/entities/Article'
+import { ArticleSortSelector } from '@/features/ArticleSortSelector'
+import { ArticleTypeTabs } from '@/features/ArticleTypeTabs'
+import { ArticleViewToggle } from '@/features/ArticleViewToggle'
 
 interface ArticlesPageFiltersProps {
     className?: string

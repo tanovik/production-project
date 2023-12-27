@@ -1,6 +1,6 @@
+import { ArticleType } from '@/entities/Article'
 import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleTypeTabs } from './ArticleTypeTabs'
-import { ArticleType } from '../../model/consts/articleConsts'
 
 const meta = {
     title: 'entities/ArticleTypeTabs',
@@ -16,8 +16,3 @@ export const Normal: Story = {
         value: ArticleType.ECONOMICS
     }
 }
-
-// export const Dark: Story = {
-//     args: {}
-// }
-// Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

@@ -1,18 +1,17 @@
-import { classNames } from '@/shared/lib/classNames/classNames'
-import { memo } from 'react'
 import ListIcon from '@/shared/assets/icons/list-24-24.svg'
 import TiledIcon from '@/shared/assets/icons/tiled-24-24.svg'
-import { Icon } from '@/shared/ui/Icon'
+import { classNames } from '@/shared/lib/classNames/classNames'
 import { Button, ButtonTheme } from '@/shared/ui/Button'
+import { Icon } from '@/shared/ui/Icon'
+import { memo } from 'react'
 import cls from './ArticleViewToggle.module.scss'
-import { ArticleView } from '../../model/consts/articleConsts'
+import { ArticleView } from '@/entities/Article'
 
 interface ArticleViewSelectorProps {
     className?: string
     view: ArticleView
     onViewClick?: (view: ArticleView) => void
 }
-
 const viewTypes = [
     {
         view: ArticleView.PLATE,
@@ -41,8 +40,7 @@ export const ArticleViewToggle = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.notSelected]: viewType.view !== view })}
-                    />
+                        className={classNames('', { [cls.notSelected]: viewType.view !== view })} />
                 </Button>
             ))}
         </div>
