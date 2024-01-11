@@ -7,9 +7,10 @@ import { routeConfig } from '../config/routeConfig'
 
 const AppRouter = (): JSX.Element => {
     const renderWithWrapper = useCallback((route: AppRoutesProps) => {
-        const element = (<Suspense fallback={<PageLoader/>}>
-            {route.element}
-        </Suspense>)
+        const element = (
+            <Suspense fallback={<PageLoader/>}>
+                {route.element}
+            </Suspense>)
         return (<Route
             key={route.path}
             path={route.path}

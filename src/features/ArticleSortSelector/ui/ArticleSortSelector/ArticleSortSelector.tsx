@@ -1,5 +1,5 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
-import { type SortOrder } from '@/shared/types'
+import { type SortOrder } from '@/shared/types/sort'
 import { Select, type SelectOption } from '@/shared/ui/Select'
 import { memo, useMemo } from 'react'
 import { useTranslation } from 'react-i18next'
