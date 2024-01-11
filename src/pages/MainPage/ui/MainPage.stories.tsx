@@ -17,6 +17,8 @@ export const Light: Story = {
     args: {}
 }
 
+Light.decorators = [StoreDecorator({})]
+
 export const Dark: Story = {
     args: {}
 }
