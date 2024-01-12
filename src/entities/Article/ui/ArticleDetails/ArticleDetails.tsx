@@ -18,13 +18,14 @@ import EyeIcon from '@/shared/assets/icons/EyeIcon.svg'
 import DateIcon from '@/shared/assets/icons/DateIcon.svg'
 import { Avatar } from '@/shared/ui/Avatar'
 import { Icon } from '@/shared/ui/Icon'
-import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
+// import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 import { ArticleImageBlockComponent } from '../ArticleImageBlockComponent/ArticleImageBlockComponent'
 import { ArticleTextBlockComponent } from '../ArticleTextBlockComponent/ArticleTextBlockComponent'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { type ArticleBlock } from '../../model/types/article'
 import { HStack, VStack } from '@/shared/ui/Stack'
 import { ArticleBlockType } from '../../model/consts/articleConsts'
+import { ArticleCodeBlockComponent } from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent'
 
 interface ArticleDetailsProps {
     className?: string
