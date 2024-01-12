@@ -2,13 +2,11 @@ import type { Meta, StoryObj } from '@storybook/react'
 import { ArticleRecommendationsList } from './ArticleRecommendationsList'
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 import { type Article } from '@/entities/Article'
-// import withMock from 'storybook-addon-mock'
 
 const meta = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
     tags: ['autodocs']
-    // decorators: [withMock]
 } satisfies Meta<typeof ArticleRecommendationsList>
 
 export default meta

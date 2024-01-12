@@ -8,7 +8,6 @@ const meta = {
     title: 'features/ArticleRating',
     component: ArticleRating,
     tags: ['autodocs']
-    // decorators: [withMock]
 } satisfies Meta<typeof ArticleRating>
 
 export default meta

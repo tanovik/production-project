@@ -46,6 +46,7 @@
     "@storybook/builder-webpack5": "^8.0.0-alpha.0",
     "@storybook/manager-webpack5": "^6.5.0-rc.1",
     "@storybook/react-webpack5": "^7.6.3",
+    "@storybook/testing-library": "^0.2.2",
     "@svgr/webpack": "^8.0.1",
     "@testing-library/jest-dom": "^6.1.2",
     "@testing-library/react": "^14.0.0",
