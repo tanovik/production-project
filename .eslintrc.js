@@ -12,6 +12,15 @@ module.exports = {
     "plugin:storybook/recommended"
   ],
   parser: "@typescript-eslint/parser",
+  parserOptions: {
+    ecmaFeatures: {
+      jsx: true,
+    },
+    ecmaVersion: "latest",
+    sourceType: "module",
+    project: ["tsconfig.json"],
+	warnOnUnsupportedTypeScriptVersion: false
+  },
   overrides: [
     {
       env: {
@@ -22,15 +31,20 @@ module.exports = {
         sourceType: "script",
       },
     },
+	// {
+	// 	files: ["**/*.{ts,tsx}"],
+	// 	parserOptions: {
+	// 	  project: "tsconfig.json"
+	// 	}
+	//   },
+	  {
+		files: ["**/*.test.ts"],
+		parserOptions: {
+		  project: "config/jest/jest.config.ts"
+		}
+	  }
   ],
-  parserOptions: {
-    ecmaFeatures: {
-      jsx: true,
-    },
-    ecmaVersion: "latest",
-    sourceType: "module",
-    project: ["tsconfig.json"],
-  },
+ 
   plugins: [
 	"react", 
 	"@typescript-eslint",
@@ -91,6 +105,7 @@ module.exports = {
 	"@typescript-eslint/restrict-template-expressions": "warn",
 	"@typescript-eslint/consistent-type-imports": "warn",
 	"@typescript-eslint/explicit-function-return-type": "warn",
+	"@typescript-eslint/no-namespace": "warn",
 	"tanovik-plugin/path-checker":["error", {
 		alias: '@'
 	}],
