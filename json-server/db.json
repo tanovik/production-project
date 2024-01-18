@@ -684,26 +684,35 @@
   "profile": [
     {
       "id": "1",
-      "first": "jgh",
-      "lastname": "asf",
+      "firstname": "Harry",
+      "lastname": "Lotter",
       "age": 15,
       "currency": "RUB",
       "country": "Australia",
       "city": "Montreal",
       "username": "admin213",
-      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200",
-      "firstName": "Harry",
-      "lastName": "Lotter"
+      "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {
       "id": "2",
-      "first": "ulbi tv",
-      "lastname": "asf",
+      "firstname": "Mary",
+      "lastname": "Yotter",
       "age": 465,
       "currency": "RUB",
       "country": "Russia",
       "city": "Moscow",
       "username": "ulbi tv",
+      "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
+    },
+    {
+      "id": "4",
+      "firstname": "test",
+      "lastname": "user",
+      "age": 465,
+      "currency": "EUR",
+      "country": "Israel",
+      "city": "Moscow",
+      "username": "testuser",
       "avatar": "https://xakep.ru/wp-content/uploads/2018/05/171485/KuroiSH-hacker.jpg"
     }
   ],

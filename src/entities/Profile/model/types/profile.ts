@@ -3,8 +3,8 @@ import { type Country } from '@/entities/Country'
 
 export interface Profile {
     id?: string
-    firstName?: string
-    lastName?: string
+    firstname?: string
+    lastname?: string
     age?: number
     currency?: Currency
     country?: Country

@@ -5,8 +5,8 @@ import { Currency } from '@/shared/const/common'
 import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk'
 
 const data = {
-    firstName: 'John',
-    lastName: 'Snow',
+    firstname: 'John',
+    lastname: 'Snow',
     age: 22,
     currency: Currency.USD,
     country: Country.Canada,
@@ -34,7 +34,7 @@ describe('updateProfileData', () => {
     test('validate error', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, {
             profile: {
-                form: { ...data, lastName: '' }
+                form: { ...data, lastname: '' }
             }
         })
         const result = await thunk.callThunk()

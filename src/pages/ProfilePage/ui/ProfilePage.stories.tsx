@@ -22,8 +22,8 @@ export const Normal: Story = {
 Normal.decorators = [StoreDecorator({
     profile: {
         form: {
-            firstName: 'John',
-            lastName: 'Snow',
+            firstname: 'John',
+            lastname: 'Snow',
             age: 22,
             currency: Currency.USD,
             country: Country.Canada,
@@ -41,8 +41,8 @@ export const Dark: Story = {
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
     profile: {
         form: {
-            firstName: 'John',
-            lastName: 'Snow',
+            firstname: 'John',
+            lastname: 'Snow',
             age: 22,
             currency: Currency.USD,
             country: Country.Canada,

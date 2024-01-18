@@ -34,6 +34,7 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendC
     return (
         <DynamicModuleLoader reducers={reducers} >
             <HStack
+                data-testid={'AddCommentForm'}
                 justify={'between'}
                 max
                 className={classNames(cls.addCommentForm, {}, [className])}>
@@ -42,10 +43,12 @@ const AddCommentForm: React.FC<AddCommentFormProps> = memo(({ className, onSendC
                     onChange={onCommentTextChange}
                     value={text}
                     className={cls.input}
+                    data-testid={'AddCommentForm.Input'}
                 />
                 <Button
                     theme={ButtonTheme.OUTLINE}
                     onClick={onSendHandler}
+                    data-testid={'AddCommentForm.Button'}
                 >
                     {t('Leave a comment')}
                 </Button>

@@ -5,10 +5,10 @@ export const validateProfileData = (profile?: Profile): ValidateProfileError[] =
     if (profile == null) {
         return [ValidateProfileError.NO_DATA]
     }
-    const { firstName, lastName, age, country } = profile
+    const { firstname, lastname, age, country } = profile
     const errors: ValidateProfileError[] = []
 
-    if (!firstName || !lastName) {
+    if (!firstname || !lastname) {
         errors.push(ValidateProfileError.INCORRECT_USER_DATA)
     }
     if (!age || !Number.isInteger(age)) {

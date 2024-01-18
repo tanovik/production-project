@@ -93,7 +93,7 @@ export const ArticleDetails: React.FC<ArticleDetailsProps> = memo(({ className, 
                         className={cls.avatar}
                     />
                 </HStack>
-                <VStack gap="4" max>
+                <VStack gap="4" max data-testid='ArticleDetails.Info'>
                     <Text
                         className={cls.title}
                         title={article?.title}

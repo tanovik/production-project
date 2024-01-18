@@ -53,11 +53,11 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
     })
 
     const onChangeFirstname = useCallback((value?: string): void => {
-        dispatch(profileActions.updateProfile({ firstName: value || '' }))
+        dispatch(profileActions.updateProfile({ firstname: value || '' }))
     }, [dispatch])
 
     const onChangeLastname = useCallback((value?: string): void => {
-        dispatch(profileActions.updateProfile({ lastName: value || '' }))
+        dispatch(profileActions.updateProfile({ lastname: value || '' }))
     }, [dispatch])
 
     const onChangeCity = useCallback((value?: string) => {

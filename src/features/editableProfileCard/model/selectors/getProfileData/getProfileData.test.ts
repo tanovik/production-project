@@ -6,8 +6,8 @@ import { Country } from '../../../../../entities/Country'
 describe('getProfileData', () => {
     test('should return profile data', () => {
         const data = {
-            firstName: 'John',
-            lastName: 'Snow',
+            firstname: 'John',
+            lastname: 'Snow',
             age: 22,
             currency: Currency.USD,
             country: Country.Canada,

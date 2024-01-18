@@ -16,8 +16,8 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
     args: {
         data: {
-            firstName: 'John',
-            lastName: 'Snow',
+            firstname: 'John',
+            lastname: 'Snow',
             age: 22,
             currency: Currency.USD,
             country: Country.Canada,

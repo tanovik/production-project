@@ -76,7 +76,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
             )}
 
             <Input
-                value={data?.firstName}
+                value={data?.firstname}
                 placeholder={t('Enter your first name')}
                 className={cls.input}
                 onChange={onChangeFirstname}
@@ -84,7 +84,7 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                 data-testid = {'ProfileCard.firstname'}
             />
             <Input
-                value={data?.lastName}
+                value={data?.lastname}
                 placeholder={t('Enter your last name')}
                 className={cls.input}
                 onChange={onChangeLastname}

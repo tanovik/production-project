@@ -4,8 +4,8 @@ import { validateProfileData } from './validateProfileData'
 import { Currency } from '@/shared/const/common'
 
 const data = {
-    firstName: 'John',
-    lastName: 'Snow',
+    firstname: 'John',
+    lastname: 'Snow',
     age: 22,
     currency: Currency.USD,
     country: Country.Canada,
@@ -21,8 +21,8 @@ describe('validateProfileData', () => {
     test('without first and last name', async () => {
         const result = validateProfileData({
             ...data,
-            firstName: '',
-            lastName: ''
+            firstname: '',
+            lastname: ''
         })
         expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA])
     })

@@ -10,8 +10,8 @@ import { Currency } from '@/shared/const/common'
 
 const profile: Profile = {
     id: '1',
-    firstName: 'admin',
-    lastName: 'admin',
+    firstname: 'admin',
+    lastname: 'admin',
     age: 465,
     currency: Currency.USD,
     country: Country.Australia,

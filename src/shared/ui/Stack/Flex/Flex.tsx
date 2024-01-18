@@ -52,7 +52,8 @@ export const Flex = (props: FlexProps): ReactNode => {
         align = 'center',
         direction = 'row',
         gap,
-        max
+        max,
+        ...otherProps
     } = props
 
     const classes = [
@@ -68,7 +69,7 @@ export const Flex = (props: FlexProps): ReactNode => {
     }
 
     return (
-        <div className={classNames(cls.flex, mods, classes)}>
+        <div className={classNames(cls.flex, mods, classes)} {...otherProps}>
             {children}
         </div>
     )

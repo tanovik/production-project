@@ -100,6 +100,7 @@ memo(({
                     // @ts-expect-error
                     ref={registerChild}
                     className={classNames(cls.ArticleList, {}, [className, cls[view]])}
+                    data-testid={'ArticleList'}
                 >
                     {virtualized
                         ? (
