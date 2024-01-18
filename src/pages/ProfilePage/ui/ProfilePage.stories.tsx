@@ -10,47 +10,52 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'pages/ProfilePage',
     component: ProfilePage,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof ProfilePage>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Normal: Story = {
-    args: {}
+    args: {},
 }
-Normal.decorators = [StoreDecorator({
-    profile: {
-        form: {
-            firstname: 'John',
-            lastname: 'Snow',
-            age: 22,
-            currency: Currency.USD,
-            country: Country.Canada,
-            city: 'Toronto',
-            username: 'admin',
-            avatar: AvatarImg
+Normal.decorators = [
+    StoreDecorator({
+        profile: {
+            form: {
+                firstname: 'John',
+                lastname: 'Snow',
+                age: 22,
+                currency: Currency.USD,
+                country: Country.Canada,
+                city: 'Toronto',
+                username: 'admin',
+                avatar: AvatarImg,
+            },
+            isLoading: false,
+            readonly: true,
         },
-        isLoading: false,
-        readonly: true
-    }
-})]
+    }),
+]
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    profile: {
-        form: {
-            firstname: 'John',
-            lastname: 'Snow',
-            age: 22,
-            currency: Currency.USD,
-            country: Country.Canada,
-            city: 'Toronto',
-            username: 'admin',
-            avatar: AvatarImg
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        profile: {
+            form: {
+                firstname: 'John',
+                lastname: 'Snow',
+                age: 22,
+                currency: Currency.USD,
+                country: Country.Canada,
+                city: 'Toronto',
+                username: 'admin',
+                avatar: AvatarImg,
+            },
+            isLoading: false,
+            readonly: true,
         },
-        isLoading: false,
-        readonly: true
-    }
-})]
+    }),
+]

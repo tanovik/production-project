@@ -1,4 +1,10 @@
-import { memo, type MutableRefObject, type ReactNode, useRef, type UIEvent } from 'react'
+import {
+    memo,
+    type MutableRefObject,
+    type ReactNode,
+    useRef,
+    type UIEvent,
+} from 'react'
 import { classNames } from '@/shared/lib/classNames/classNames'
 import { useInfiniteScroll } from '@/shared/lib/hooks/useInfiniteScroll/useInfiniteScroll'
 import cls from './Page.module.scss'
@@ -24,24 +30,26 @@ export const Page = memo((props: PageProps) => {
     const triggerRef = useRef() as MutableRefObject<HTMLDivElement>
     const dispatch = useAppDispatch()
     const location = useLocation()
-    const scrollPosition = useSelector(
-        (state: StateSchema) => getScrollByPath(state, location.pathname)
+    const scrollPosition = useSelector((state: StateSchema) =>
+        getScrollByPath(state, location.pathname),
     )
 
     useInfiniteScroll({
         triggerRef,
         wrapperRef,
-        callback: onScrollEnd
+        callback: onScrollEnd,
     })
     useInitialEffect(() => {
         wrapperRef.current.scrollTop = scrollPosition
     })
 
     const onScroll = useThrottle((e: UIEvent<HTMLDivElement>) => {
-        dispatch(ScrollSaveActions.setScrollPosition({
-            position: e.currentTarget.scrollTop,
-            path: location.pathname
-        }))
+        dispatch(
+            ScrollSaveActions.setScrollPosition({
+                position: e.currentTarget.scrollTop,
+                path: location.pathname,
+            }),
+        )
     }, 500)
 
     return (
@@ -53,7 +61,9 @@ export const Page = memo((props: PageProps) => {
             data-testid={props['data-testid'] ?? 'Page'}
         >
             {children}
-            {(onScrollEnd != null) ? <div className={cls.trigger} ref={triggerRef} /> : null}
+            {onScrollEnd != null ? (
+                <div className={cls.trigger} ref={triggerRef} />
+            ) : null}
         </main>
     )
 })

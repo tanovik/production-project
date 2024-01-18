@@ -5,7 +5,7 @@ import { action } from '@storybook/addon-actions'
 const meta = {
     title: 'shared/Tabs',
     component: Tabs,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Tabs>
 
 export default meta
@@ -16,20 +16,20 @@ export const Normal: Story = {
         tabs: [
             {
                 value: 'tab 1',
-                content: 'tab 1'
+                content: 'tab 1',
             },
             {
                 value: 'tab 2',
-                content: 'tab 2'
+                content: 'tab 2',
             },
             {
                 value: 'tab 3',
-                content: 'tab 3'
-            }
+                content: 'tab 3',
+            },
         ],
         value: 'tab 2',
-        onTabClick: action('onTabClick')
-    }
+        onTabClick: action('onTabClick'),
+    },
 }
 
 // export const Dark: Story = {

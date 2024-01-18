@@ -13,25 +13,24 @@ interface SidebarItemProps {
     collapsed: boolean
     key: string
 }
-export const SidebarItem: React.FC<SidebarItemProps> = memo(({ item, collapsed }) => {
-    const { t } = useTranslation()
+export const SidebarItem: React.FC<SidebarItemProps> = memo(
+    ({ item, collapsed }) => {
+        const { t } = useTranslation()
 
-    const isAuth = useSelector(getUserAuthData)
+        const isAuth = useSelector(getUserAuthData)
 
-    if (item.authOnly && !isAuth) {
-        return null
-    }
-    return (
-        <AppLink
-            to={item.path}
-            theme={AppLinkTheme.SECONDARY}
-            className={classNames(cls.item, { [cls.collapsed]: collapsed })}
-        >
-            <item.Icon className={cls.icon}/>
-            <span className={cls.link}>
-                {t(item.text)}
-            </span>
-        </AppLink>
-    )
-}
+        if (item.authOnly && !isAuth) {
+            return null
+        }
+        return (
+            <AppLink
+                to={item.path}
+                theme={AppLinkTheme.SECONDARY}
+                className={classNames(cls.item, { [cls.collapsed]: collapsed })}
+            >
+                <item.Icon className={cls.icon} />
+                <span className={cls.link}>{t(item.text)}</span>
+            </AppLink>
+        )
+    },
 )

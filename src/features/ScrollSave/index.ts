@@ -1,4 +1,7 @@
-export { ScrollSaveActions, ScrollSaveReducer } from './model/slice/ScrollSaveSlice'
+export {
+    ScrollSaveActions,
+    ScrollSaveReducer,
+} from './model/slice/ScrollSaveSlice'
 
 export { getScrollByPath } from './model/selectors/getScroll'
 

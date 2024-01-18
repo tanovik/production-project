@@ -1,11 +1,13 @@
 import {
-    type ReducersMapObject, configureStore,
-    type AnyAction, type CombinedState,
+    type ReducersMapObject,
+    configureStore,
+    type AnyAction,
+    type CombinedState,
     type Reducer,
     type EmptyObject,
     type MiddlewareArray,
     type ThunkMiddleware,
-    type Middleware
+    type Middleware,
 } from '@reduxjs/toolkit'
 import { type ThunkExtraArg, type StateSchema } from './StateSchema'
 import { counterReducer } from '../../../../entities/Counter'
@@ -18,39 +20,51 @@ import { rtkApi } from '@/shared/api/rtkApi'
 
 export type AppStore = ReturnType<typeof configureStore>
 
-type createReduxStoreReturnType = ToolkitStore<EmptyObject
-& StateSchema, AnyAction,
-MiddlewareArray<[ThunkMiddleware<CombinedState<StateSchema>, AnyAction, ThunkExtraArg>, Middleware<unknown>]>>
+type createReduxStoreReturnType = ToolkitStore<
+    EmptyObject & StateSchema,
+    AnyAction,
+    MiddlewareArray<
+        [
+            ThunkMiddleware<
+                CombinedState<StateSchema>,
+                AnyAction,
+                ThunkExtraArg
+            >,
+            Middleware<unknown>,
+        ]
+    >
+>
 
-export function createReduxStore (
+export function createReduxStore(
     initialState?: StateSchema,
-    asyncReducers?: ReducersMapObject<StateSchema>
-
+    asyncReducers?: ReducersMapObject<StateSchema>,
 ): createReduxStoreReturnType {
     const rootReducers: ReducersMapObject<StateSchema> = {
         ...asyncReducers,
         counter: counterReducer,
         user: userReducer,
         scrollSave: ScrollSaveReducer,
-        [rtkApi.reducerPath]: rtkApi.reducer
-
+        [rtkApi.reducerPath]: rtkApi.reducer,
     }
     const reducerManager = createReducerManager(rootReducers)
 
     const extraArg: ThunkExtraArg = {
-        api: $api
+        api: $api,
     }
     const store = configureStore({
-        reducer: reducerManager.reduce as Reducer<CombinedState<StateSchema>, AnyAction>,
+        reducer: reducerManager.reduce as Reducer<
+            CombinedState<StateSchema>,
+            AnyAction
+        >,
         // reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
         devTools: __IS_DEV__,
         preloadedState: initialState,
-        middleware: getDefaultMiddleware => getDefaultMiddleware({
-            thunk: {
-                extraArgument: extraArg
-
-            }
-        }).concat(rtkApi.middleware)
+        middleware: (getDefaultMiddleware) =>
+            getDefaultMiddleware({
+                thunk: {
+                    extraArgument: extraArg,
+                },
+            }).concat(rtkApi.middleware),
     })
 
     // @ts-expect-error

@@ -11,7 +11,7 @@ const uiPath = path.resolve(__dirname, '..', '..', 'src', 'shared', 'ui')
 const sharedUiDirectory = project.getDirectory(uiPath)
 const componentsDirs = sharedUiDirectory?.getDirectories()
 
-function isAbsolute (value: string): boolean {
+function isAbsolute(value: string): boolean {
     const layers = ['app', 'shared', 'entities', 'features', 'widgets', 'pages']
     return layers.some((layer) => value.startsWith(layer))
 }
@@ -22,7 +22,9 @@ componentsDirs?.forEach((directory) => {
 
     if (indexFile == null) {
         const sourceCode = `export * from './${directory.getBaseName()}'`
-        const file = directory.createSourceFile(indexFilePath, sourceCode, { overwrite: true })
+        const file = directory.createSourceFile(indexFilePath, sourceCode, {
+            overwrite: true,
+        })
 
         file.save()
     }

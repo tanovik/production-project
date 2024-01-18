@@ -6,7 +6,7 @@ import { type Article } from '../types/article'
 const initialState: ArticleDetailsSchema = {
     isLoading: false,
     error: undefined,
-    data: undefined
+    data: undefined,
 }
 
 export const articleDetailsSlice = createSlice({
@@ -19,20 +19,20 @@ export const articleDetailsSlice = createSlice({
                 state.error = undefined
                 state.isLoading = true
             })
-            .addCase(fetchArticleById.fulfilled, (
-                state,
-                action: PayloadAction<Article>
-            ) => {
-                state.isLoading = false
-                state.data = action.payload
-            })
+            .addCase(
+                fetchArticleById.fulfilled,
+                (state, action: PayloadAction<Article>) => {
+                    state.isLoading = false
+                    state.data = action.payload
+                },
+            )
             .addCase(fetchArticleById.rejected, (state, action) => {
                 console.log('action.payload', action.payload)
                 state.isLoading = false
                 state.error = action.payload
                 console.log('state.error', state.error)
             })
-    }
+    },
 })
 
 export const { actions: articleDetailsActions } = articleDetailsSlice

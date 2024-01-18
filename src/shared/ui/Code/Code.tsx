@@ -14,13 +14,14 @@ export const Code: React.FC<CodeProps> = memo(({ className, text }) => {
     }, [text])
     return (
         <pre className={classNames(cls.code, {}, [className])}>
-            <Button onClick={onCopyCode} className={cls.copyBtn} theme={ButtonTheme.CLEAR}>
-
-                <CopyIcon className={cls.copyIcon}/>
+            <Button
+                onClick={onCopyCode}
+                className={cls.copyBtn}
+                theme={ButtonTheme.CLEAR}
+            >
+                <CopyIcon className={cls.copyIcon} />
             </Button>
-            <code >
-                {text}
-            </code>
+            <code>{text}</code>
         </pre>
     )
 })

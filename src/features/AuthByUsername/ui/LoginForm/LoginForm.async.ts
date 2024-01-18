@@ -2,7 +2,9 @@ import { type FC, lazy } from 'react'
 import { type LoginFormProps } from './LoginForm'
 
 // работающий код
-export const LoginFormAsync = lazy<FC<LoginFormProps>>(async () => await import('./LoginForm'))
+export const LoginFormAsync = lazy<FC<LoginFormProps>>(
+    async () => await import('./LoginForm'),
+)
 
 // делаем задержку для того чтобы увидеть Лоадер при загрузке чанка
 // работающий код сверху

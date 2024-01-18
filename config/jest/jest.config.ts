@@ -9,18 +9,12 @@ const config: Config = {
     // Automatically clear mock calls, instances, contexts and results before every test
     clearMocks: true,
     // An array of regexp pattern strings used to skip coverage collection
-    coveragePathIgnorePatterns: [
-        '\\\\node_modules\\\\'
-    ],
+    coveragePathIgnorePatterns: ['\\\\node_modules\\\\'],
 
     // An array of directory names to be searched recursively up from the requiring module's location
-    moduleDirectories: [
-        'node_modules'
-    ],
+    moduleDirectories: ['node_modules'],
 
-    modulePaths: [
-        '<rootDir>src'
-    ],
+    modulePaths: ['<rootDir>src'],
     // An array of file extensions your modules use
     moduleFileExtensions: [
         'js',
@@ -30,14 +24,14 @@ const config: Config = {
         'ts',
         'tsx',
         'json',
-        'node'
+        'node',
     ],
 
     // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg': '<rootDir>/config/jest/jestEmptyComponent.tsx',
-        '^@/(.*)$': '<rootDir>/src/$1'
+        '^@/(.*)$': '<rootDir>/src/$1',
         // '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx')
     },
     // The root directory that Jest should scan for tests and modules within
@@ -48,25 +42,26 @@ const config: Config = {
     testEnvironment: 'jsdom',
     // All imported modules in your tests should be mocked automatically
     // automock: false,
-    testMatch: [
-        '<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'
-    ],
+    testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
 
     // A set of global variables that need to be available in all test environments
     globals: {
         __IS_DEV__: true,
         __API__: '',
-        __PROJECT__: 'jest'
+        __PROJECT__: 'jest',
     },
     reporters: [
         'default',
-        ['jest-html-reporters', {
-            publicPath: '<rootDir>/reports/unit',
-            filename: 'report.html',
-            openReport: true,
-            inlineSource: true
-        }]
-    ]
+        [
+            'jest-html-reporters',
+            {
+                publicPath: '<rootDir>/reports/unit',
+                filename: 'report.html',
+                openReport: true,
+                inlineSource: true,
+            },
+        ],
+    ],
 
     // Stop running tests after `n` failures
     // bail: 0,

@@ -8,13 +8,13 @@ describe('getLoginIsLoading', () => {
                 error: 'error',
                 isLoading: true,
                 password: '',
-                username: ''
-            }
+                username: '',
+            },
         }
         expect(getLoginIsLoading(state as StateSchema)).toEqual(true)
     })
     test('should work with empty state', () => {
-        const state: DeepPartialType<StateSchema> = { }
+        const state: DeepPartialType<StateSchema> = {}
         expect(getLoginIsLoading(state as StateSchema)).toEqual(false)
     })
 })

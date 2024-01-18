@@ -8,7 +8,7 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'shared/Button',
     component: Button,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Button>
 
 export default meta
@@ -16,68 +16,68 @@ type Story = StoryObj<typeof meta>
 
 export const Primary: Story = {
     args: {
-        children: 'Text'
-    }
+        children: 'Text',
+    },
 }
 
 export const Clear: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.CLEAR
-    }
+        theme: ButtonTheme.CLEAR,
+    },
 }
 export const ClearThemeInverted: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.CLEAR_INVERTED
-    }
+        theme: ButtonTheme.CLEAR_INVERTED,
+    },
 }
 export const Outline: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.OUTLINE
-    }
+        theme: ButtonTheme.OUTLINE,
+    },
 }
 export const OutlineSizeL: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.L
-    }
+        size: ButtonSize.L,
+    },
 }
 export const OutlineSizeXL: Story = {
     args: {
         children: 'Text',
         theme: ButtonTheme.OUTLINE,
-        size: ButtonSize.XL
-    }
+        size: ButtonSize.XL,
+    },
 }
 export const OutlineDark: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.OUTLINE
-    }
+        theme: ButtonTheme.OUTLINE,
+    },
 }
 OutlineDark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const BackgroundTheme: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.BACKGROUND
-    }
+        theme: ButtonTheme.BACKGROUND,
+    },
 }
 export const BackgroundThemeInverted: Story = {
     args: {
         children: 'Text',
-        theme: ButtonTheme.BACKGROUND_INVERTED
-    }
+        theme: ButtonTheme.BACKGROUND_INVERTED,
+    },
 }
 export const Square: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
-        square: true
-    }
+        square: true,
+    },
 }
 
 export const SquareSizeL: Story = {
@@ -85,21 +85,21 @@ export const SquareSizeL: Story = {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
-        size: ButtonSize.L
-    }
+        size: ButtonSize.L,
+    },
 }
 export const SquareSizeXL: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.BACKGROUND_INVERTED,
         square: true,
-        size: ButtonSize.XL
-    }
+        size: ButtonSize.XL,
+    },
 }
 export const Disabled: Story = {
     args: {
         children: '>',
         theme: ButtonTheme.OUTLINE,
-        disabled: true
-    }
+        disabled: true,
+    },
 }

@@ -8,19 +8,19 @@ interface SkeletonProps {
     width?: string | number
     border?: string
 }
-export const Skeleton: React.FC<SkeletonProps> = memo(({
-    className, height,
-    width, border
-}) => {
-    const styles: CSSProperties = {
-        width,
-        height,
-        borderRadius: border
-    }
+export const Skeleton: React.FC<SkeletonProps> = memo(
+    ({ className, height, width, border }) => {
+        const styles: CSSProperties = {
+            width,
+            height,
+            borderRadius: border,
+        }
 
-    return (
-        <div className={classNames(cls.skeleton, {}, [className ?? ''])}
-            style={styles}/>
-
-    )
-})
+        return (
+            <div
+                className={classNames(cls.skeleton, {}, [className ?? ''])}
+                style={styles}
+            />
+        )
+    },
+)

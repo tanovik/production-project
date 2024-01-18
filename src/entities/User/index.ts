@@ -1,6 +1,10 @@
 export { UserRole } from './model/consts/userConsts'
 
-export { isUserAdmin, isUserManager, getUserRoles } from './model/selectors/roleSelectors'
+export {
+    isUserAdmin,
+    isUserManager,
+    getUserRoles,
+} from './model/selectors/roleSelectors'
 
 export { userActions, userReducer } from './model/slice/userSlice'
 

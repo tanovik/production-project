@@ -17,20 +17,22 @@ const App = (): JSX.Element => {
     }, [dispatch])
 
     return (
-        <div className={classNames('app',
-            { hovered: true, selected: false },
-            [theme, 'cls11', 'class32'])}>
+        <div
+            className={classNames('app', { hovered: true, selected: false }, [
+                theme,
+                'cls11',
+                'class32',
+            ])}
+        >
             {/* <div className={`app ${theme}`}> */}
-            <Suspense fallback=''>
-
+            <Suspense fallback="">
                 <Navbar />
 
-                <div className='content-page'>
+                <div className="content-page">
                     <Sidebar />
                     {inited && <AppRouter />}
                 </div>
             </Suspense>
-
         </div>
     )
 }

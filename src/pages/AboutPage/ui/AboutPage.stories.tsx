@@ -7,18 +7,18 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 const meta = {
     title: 'pages/AboutPage',
     component: AboutPage,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof AboutPage>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: {}
+    args: {},
 }
 Light.decorators = [StoreDecorator({})]
 
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

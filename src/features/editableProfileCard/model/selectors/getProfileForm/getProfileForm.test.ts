@@ -12,17 +12,17 @@ describe('getProfileForm', () => {
             currency: Currency.USD,
             country: Country.Canada,
             city: 'Toronto',
-            username: 'admin'
+            username: 'admin',
         }
         const state: DeepPartialType<StateSchema> = {
             profile: {
-                form: data
-            }
+                form: data,
+            },
         }
         expect(getProfileForm(state as StateSchema)).toEqual(data)
     })
     test('should work with empty state', () => {
-        const state: DeepPartialType<StateSchema> = { }
+        const state: DeepPartialType<StateSchema> = {}
         expect(getProfileForm(state as StateSchema)).toEqual(undefined)
     })
 })

@@ -12,37 +12,40 @@ interface CommentListProps {
     comments?: CommentType[]
     isLoading?: boolean
 }
-export const CommentList: React.FC<CommentListProps> = memo(({
-    className,
-    comments, isLoading
-}) => {
-    const { t } = useTranslation()
-    if (isLoading) {
+export const CommentList: React.FC<CommentListProps> = memo(
+    ({ className, comments, isLoading }) => {
+        const { t } = useTranslation()
+        if (isLoading) {
+            return (
+                <VStack
+                    gap="16"
+                    max
+                    className={classNames('', {}, [className])}
+                >
+                    <CommentCard isLoading />
+                    <CommentCard isLoading />
+                    <CommentCard isLoading />
+                </VStack>
+            )
+        }
         return (
             <VStack
                 gap="16"
                 max
-                className={classNames('', {}, [className])}>
-                <CommentCard isLoading />
-                <CommentCard isLoading />
-                <CommentCard isLoading />
+                className={classNames('', {}, [className ?? ''])}
+            >
+                {comments?.length ? (
+                    comments.map((comment) => (
+                        <CommentCard
+                            isLoading={isLoading}
+                            comment={comment}
+                            key={comment.id}
+                        />
+                    ))
+                ) : (
+                    <Text text={t('No comments left')} />
+                )}
             </VStack>
         )
-    }
-    return (
-        <VStack
-            gap="16"
-            max
-            className={classNames('', {}, [className ?? ''])}>
-            {comments?.length
-                ? comments.map(comment => (
-                    <CommentCard
-                        isLoading={isLoading}
-                        comment={comment}
-                        key={comment.id}/>
-                ))
-                : <Text text={t('No comments left')}/>
-            }
-        </VStack>
-    )
-})
+    },
+)

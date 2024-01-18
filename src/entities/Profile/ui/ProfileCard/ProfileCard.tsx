@@ -23,8 +23,16 @@ interface ProfileCardProps {
     onChangeCountry?: (country: Country) => void
 }
 export const ProfileCard: React.FC<ProfileCardProps> = ({
-    className, data, error, isLoading, readonly, onChangeAge, onChangeCity, onChangeCountry,
-    onChangeFirstname, onChangeLastname
+    className,
+    data,
+    error,
+    isLoading,
+    readonly,
+    onChangeAge,
+    onChangeCity,
+    onChangeCountry,
+    onChangeFirstname,
+    onChangeLastname,
 }) => {
     const { t } = useTranslation('profile')
 
@@ -33,10 +41,14 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
             <HStack
                 justify={'center'}
                 max
-                className={classNames(cls.profileCard, { [cls.loading]: true }, [className])}>
-                <Loader/>
+                className={classNames(
+                    cls.profileCard,
+                    { [cls.loading]: true },
+                    [className],
+                )}
+            >
+                <Loader />
             </HStack>
-
         )
     }
     if (error) {
@@ -44,7 +56,11 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
             <HStack
                 justify={'center'}
                 max
-                className={classNames(cls.profileCard, {}, [className, cls.error])}>
+                className={classNames(cls.profileCard, {}, [
+                    className,
+                    cls.error,
+                ])}
+            >
                 <Text
                     theme={TextTheme.ERROR}
                     title={t('Profile failed to load')}
@@ -52,26 +68,21 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                     align={TextAlign.CENTER}
                 />
             </HStack>
-
         )
     }
 
     const mods: Mods = {
-        [cls.editing]: !readonly
+        [cls.editing]: !readonly,
     }
     return (
-
         <VStack
             max
             gap={'16'}
-            className={classNames(cls.profileCard, mods, [className])}>
-
+            className={classNames(cls.profileCard, mods, [className])}
+        >
             {data?.avatar && (
-                <HStack
-                    justify={'center'}
-                    max
-                    className={cls.avatarWrapper}>
-                    <Avatar src={data?.avatar}/>
+                <HStack justify={'center'} max className={cls.avatarWrapper}>
+                    <Avatar src={data?.avatar} />
                 </HStack>
             )}
 
@@ -80,37 +91,36 @@ export const ProfileCard: React.FC<ProfileCardProps> = ({
                 placeholder={t('Enter your first name')}
                 className={cls.input}
                 onChange={onChangeFirstname}
-                readonly= {readonly}
-                data-testid = {'ProfileCard.firstname'}
+                readonly={readonly}
+                data-testid={'ProfileCard.firstname'}
             />
             <Input
                 value={data?.lastname}
                 placeholder={t('Enter your last name')}
                 className={cls.input}
                 onChange={onChangeLastname}
-                readonly= {readonly}
-                data-testid = {'ProfileCard.lastname'}
-
+                readonly={readonly}
+                data-testid={'ProfileCard.lastname'}
             />
             <Input
                 value={data?.age}
                 placeholder={t('Enter your age')}
                 className={cls.input}
                 onChange={onChangeAge}
-                readonly= {readonly}
+                readonly={readonly}
             />
             <Input
                 value={data?.city}
                 placeholder={t('Enter your city')}
                 className={cls.input}
                 onChange={onChangeCity}
-                readonly= {readonly}
+                readonly={readonly}
             />
             <CountrySelect
                 className={cls.input}
                 value={data?.country}
                 onChange={onChangeCountry}
-                readonly ={readonly}
+                readonly={readonly}
             />
         </VStack>
     )

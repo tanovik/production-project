@@ -8,17 +8,17 @@ interface StoreProviderProps {
     initialState?: DeepPartialType<StateSchema>
     asyncReducers?: DeepPartialType<ReducersMapObject<StateSchema>>
 }
-export const StoreProvider: React.FC<StoreProviderProps> = ({ children, initialState, asyncReducers }) => {
+export const StoreProvider: React.FC<StoreProviderProps> = ({
+    children,
+    initialState,
+    asyncReducers,
+}) => {
     const store = createReduxStore(
         initialState as StateSchema,
-        asyncReducers as ReducersMapObject<StateSchema>
+        asyncReducers as ReducersMapObject<StateSchema>,
     )
 
-    return (
-        <Provider store={store}>
-            {children}
-        </Provider>
-    )
+    return <Provider store={store}>{children}</Provider>
 }
 // Infer the `RootState` and `AppDispatch` types from the store itself
 // export type RootState = ReturnType<typeof store.getState>

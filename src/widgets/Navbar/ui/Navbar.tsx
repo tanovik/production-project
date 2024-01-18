@@ -53,7 +53,6 @@ export const Navbar: React.FC<NavbarProps> = memo(({ className }) => {
     }
     return (
         <header className={classNames(cls.navbar, {}, [className])}>
-
             <Button
                 theme={ButtonTheme.CLEAR_INVERTED}
                 className={cls.links}
@@ -62,9 +61,9 @@ export const Navbar: React.FC<NavbarProps> = memo(({ className }) => {
                 {t('Log in')}
             </Button>
 
-            {isAuthModal && <LoginModal isOpen={isAuthModal}
-                onClose={onCloseModal}/>}
+            {isAuthModal && (
+                <LoginModal isOpen={isAuthModal} onClose={onCloseModal} />
+            )}
         </header>
     )
-}
-)
+})

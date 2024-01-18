@@ -5,7 +5,7 @@ const MainPage = (): JSX.Element => {
     const { t } = useTranslation()
 
     return (
-        <Page data-testid={ 'MainPage'}>
+        <Page data-testid={'MainPage'}>
             {/* <BugButton/> */}
             {t('Main Page')}
             {/* <Counter/> */}

@@ -12,14 +12,14 @@ const data = {
     country: Country.Canada,
     city: 'Toronto',
     username: 'admin',
-    id: '1'
+    id: '1',
 }
 describe('updateProfileData', () => {
     test('succes', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, {
             profile: {
-                form: data
-            }
+                form: data,
+            },
         })
 
         thunk.api.put.mockReturnValue(Promise.resolve({ data }))
@@ -34,13 +34,13 @@ describe('updateProfileData', () => {
     test('validate error', async () => {
         const thunk = new TestAsyncThunk(updateProfileData, {
             profile: {
-                form: { ...data, lastname: '' }
-            }
+                form: { ...data, lastname: '' },
+            },
         })
         const result = await thunk.callThunk()
         expect(result.meta.requestStatus).toBe('rejected')
         expect(result.payload).toEqual([
-            ValidateProfileError.INCORRECT_USER_DATA
+            ValidateProfileError.INCORRECT_USER_DATA,
         ])
     })
 })

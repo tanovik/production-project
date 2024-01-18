@@ -7,18 +7,18 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'features/AvatarDropdown',
     component: AvatarDropdown,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof AvatarDropdown>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: {}
+    args: {},
 }
 Light.decorators = [StoreDecorator({})]
 
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

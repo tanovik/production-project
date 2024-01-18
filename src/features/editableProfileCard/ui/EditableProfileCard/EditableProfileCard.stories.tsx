@@ -8,14 +8,14 @@ import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator'
 const meta = {
     title: 'features/EditableProfileCard',
     component: EditableProfileCard,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof EditableProfileCard>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: { id: '1' }
+    args: { id: '1' },
 }
 Light.decorators = [StoreDecorator({})]
 

@@ -16,7 +16,9 @@ interface SelectProps<T extends string> {
     readonly?: boolean
 }
 
-export const Select = <T extends string>(props: SelectProps<T>): ReactElement => {
+export const Select = <T extends string>(
+    props: SelectProps<T>,
+): ReactElement => {
     const { className, label, options, value, onChange, readonly } = props
 
     const onChangeHandler = (e: ChangeEvent<HTMLSelectElement>): void => {
@@ -27,11 +29,7 @@ export const Select = <T extends string>(props: SelectProps<T>): ReactElement =>
 
     const optionList = useMemo(() => {
         return options?.map((opt) => (
-            <option
-                className={cls.option}
-                value={opt.value}
-                key={opt.value}
-            >
+            <option className={cls.option} value={opt.value} key={opt.value}>
                 {opt.content}
             </option>
         ))
@@ -39,16 +37,13 @@ export const Select = <T extends string>(props: SelectProps<T>): ReactElement =>
 
     return (
         <div className={classNames(cls.selectWrapper, {}, [className ?? ''])}>
-            {label && (
-                <span className={cls.label} >
-                    {`${label}>`}
-                </span>
-            )}
+            {label && <span className={cls.label}>{`${label}>`}</span>}
             <select
                 className={cls.select}
                 value={value}
-                onChange= {onChangeHandler}
-                disabled={readonly}>
+                onChange={onChangeHandler}
+                disabled={readonly}
+            >
                 {optionList}
             </select>
         </div>

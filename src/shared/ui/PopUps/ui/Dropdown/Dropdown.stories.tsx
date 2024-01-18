@@ -5,7 +5,7 @@ import { Button } from '../../../Button/Button'
 const meta = {
     title: 'shared/Dropdown',
     component: Dropdown,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Dropdown>
 
 export default meta
@@ -16,14 +16,14 @@ export const Normal: Story = {
         trigger: <Button>Open</Button>,
         items: [
             {
-                content: 'first'
+                content: 'first',
             },
             {
-                content: 'second'
+                content: 'second',
             },
             {
-                content: 'third'
-            }
-        ]
-    }
+                content: 'third',
+            },
+        ],
+    },
 }

@@ -9,7 +9,8 @@ module.exports = {
     "standard-with-typescript",
     "plugin:react/recommended",
     "plugin:i18next/recommended",
-    "plugin:storybook/recommended"
+    "plugin:storybook/recommended",
+	"plugin:prettier/recommended"
   ],
   parser: "@typescript-eslint/parser",
   parserOptions: {
@@ -53,6 +54,7 @@ module.exports = {
 	"tanovik-plugin"
 ],
   rules: {
+	'prettier/prettier': 0,
 	"import/no-extraneous-dependencies":"warn",
 	  "indent": "off",
     "react/jsx-indent": [2, 4],
@@ -106,6 +108,7 @@ module.exports = {
 	"@typescript-eslint/consistent-type-imports": "warn",
 	"@typescript-eslint/explicit-function-return-type": "warn",
 	"@typescript-eslint/no-namespace": "warn",
+	'react/jsx-max-props-per-line': ['warn', { maximum: 4 }],
 	"tanovik-plugin/path-checker":["error", {
 		alias: '@'
 	}],

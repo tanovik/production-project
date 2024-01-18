@@ -15,13 +15,16 @@ interface AvatarProps {
 }
 
 export const Avatar: React.FC<AvatarProps> = ({
-    className, src, alt, size = 100,
-    fallbackInverted
+    className,
+    src,
+    alt,
+    size = 100,
+    fallbackInverted,
 }) => {
     const styles = useMemo<CSSProperties>(() => {
         return {
             width: size,
-            height: size
+            height: size,
         }
     }, [size])
 
@@ -29,16 +32,22 @@ export const Avatar: React.FC<AvatarProps> = ({
 
     const fallback = <Skeleton width={size} height={size} border="50%" />
 
-    const errorFallback = <Icon inverted={fallbackInverted}
-        width={size} height={size} Svg={UserIcon} />
+    const errorFallback = (
+        <Icon
+            inverted={fallbackInverted}
+            width={size}
+            height={size}
+            Svg={UserIcon}
+        />
+    )
 
     return (
         <AppImage
             fallback={fallback}
             errorFallback={errorFallback}
             src={src}
-            style= {styles}
-            alt = {alt}
+            style={styles}
+            alt={alt}
             className={classNames(cls.avatar, mods, [className])}
         />
     )

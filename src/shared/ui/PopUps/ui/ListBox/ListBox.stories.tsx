@@ -6,8 +6,12 @@ const meta = {
     component: ListBox,
     tags: ['autodocs'],
     decorators: [
-        Story => <div style={{ padding: 100 }}><Story/></div>
-    ]
+        (Story) => (
+            <div style={{ padding: 100 }}>
+                <Story />
+            </div>
+        ),
+    ],
 } satisfies Meta<typeof ListBox>
 
 export default meta
@@ -18,9 +22,9 @@ export const Normal: Story = {
         value: '123',
         items: [
             { content: '1asfasfasf23', value: '123' },
-            { content: '1asfasfasf21233', value: '1232' }
-        ]
-    }
+            { content: '1asfasfasf21233', value: '1232' },
+        ],
+    },
 }
 
 export const TopLeft: Story = {
@@ -29,9 +33,9 @@ export const TopLeft: Story = {
         value: '123',
         items: [
             { content: '1asfasfasf23', value: '123' },
-            { content: '1asfasfasf21233', value: '1232' }
-        ]
-    }
+            { content: '1asfasfasf21233', value: '1232' },
+        ],
+    },
 }
 
 export const TopRight: Story = {
@@ -40,9 +44,9 @@ export const TopRight: Story = {
         value: '123',
         items: [
             { content: '1asfasfasf23', value: '123' },
-            { content: '1asfasfasf21233', value: '1232' }
-        ]
-    }
+            { content: '1asfasfasf21233', value: '1232' },
+        ],
+    },
 }
 
 export const BottomLeft: Story = {
@@ -51,9 +55,9 @@ export const BottomLeft: Story = {
         value: '123',
         items: [
             { content: '1asfasfasf23', value: '123' },
-            { content: '1asfasfasf21233', value: '1232' }
-        ]
-    }
+            { content: '1asfasfasf21233', value: '1232' },
+        ],
+    },
 }
 
 export const BottomRight: Story = {
@@ -62,7 +66,7 @@ export const BottomRight: Story = {
         value: '123',
         items: [
             { content: '1asfasfasf23', value: '123' },
-            { content: '1asfasfasf21233', value: '1232' }
-        ]
-    }
+            { content: '1asfasfasf21233', value: '1232' },
+        ],
+    },
 }

@@ -3,7 +3,10 @@ import cls from './ArticleDetailsPage.module.scss'
 import { memo } from 'react'
 import { ArticleDetails } from '@/entities/Article'
 import { useParams } from 'react-router-dom'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { Page } from '@/widgets/Page'
 import { articleDetailsPageReducer } from '../../model/slices'
 import { ArticleDetailsPageHeader } from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader'
@@ -17,9 +20,11 @@ interface ArticleDetailsPageProps {
 }
 
 const reducers: ReducersList = {
-    articleDetailsPage: articleDetailsPageReducer
+    articleDetailsPage: articleDetailsPageReducer,
 }
-const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({ className }) => {
+const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({
+    className,
+}) => {
     const { id } = useParams<{ id: string }>()
 
     if (!id) {
@@ -28,13 +33,17 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({ className }) =>
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page className={classNames(cls.articleDetailsPage, {}, [className ?? ''])}>
+            <Page
+                className={classNames(cls.articleDetailsPage, {}, [
+                    className ?? '',
+                ])}
+            >
                 <VStack gap={'16'} max>
-                    <ArticleDetailsPageHeader/>
+                    <ArticleDetailsPageHeader />
                     <ArticleDetails id={id} />
                     <ArticleRating articleId={id} />
                     <ArticleRecommendationsList />
-                    <ArticleDetailsComments id={id}/>
+                    <ArticleDetailsComments id={id} />
                 </VStack>
             </Page>
         </DynamicModuleLoader>

@@ -6,7 +6,7 @@ import { Text } from '@/shared/ui/Text'
 import {
     getArticlesPageError,
     getArticlesPageIsLoading,
-    getArticlesPageView
+    getArticlesPageView,
 } from '../../model/selectors/articlesPageSelectors'
 import { getArticles } from '../../model/slice/articlesPageSlice'
 

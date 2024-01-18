@@ -7,12 +7,13 @@ interface BugButtonProps {
 }
 
 // component for ErrorBoundry testing
-export const BugButton: React.FC<BugButtonProps> =
-() => {
+export const BugButton: React.FC<BugButtonProps> = () => {
     const { t } = useTranslation()
     const [error, setError] = useState(false)
 
-    const onThrow = (): void => { setError(true) }
+    const onThrow = (): void => {
+        setError(true)
+    }
 
     useEffect(() => {
         if (error) {
@@ -20,11 +21,5 @@ export const BugButton: React.FC<BugButtonProps> =
         }
     }, [error])
 
-    return (
-        <Button
-            onClick={onThrow}
-        >
-            {t('throw an error')}
-        </Button>
-    )
+    return <Button onClick={onThrow}>{t('throw an error')}</Button>
 }

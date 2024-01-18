@@ -4,7 +4,7 @@ import { Flex } from './Flex'
 const meta = {
     title: 'shared/Flex',
     component: Flex,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Flex>
 
 export default meta
@@ -20,8 +20,8 @@ export const Row: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }
 export const RowGap4: Story = {
     args: {
@@ -34,8 +34,8 @@ export const RowGap4: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }
 export const RowGap8: Story = {
     args: {
@@ -48,8 +48,8 @@ export const RowGap8: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }
 export const RowGap16: Story = {
     args: {
@@ -62,8 +62,8 @@ export const RowGap16: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }
 export const Column: Story = {
     args: {
@@ -75,8 +75,8 @@ export const Column: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }
 export const ColumnGap16: Story = {
     args: {
@@ -89,8 +89,8 @@ export const ColumnGap16: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }
 export const ColumnAlignEnd: Story = {
     args: {
@@ -103,6 +103,6 @@ export const ColumnAlignEnd: Story = {
                 <div>first</div>
                 <div>first</div>
             </>
-        )
-    }
+        ),
+    },
 }

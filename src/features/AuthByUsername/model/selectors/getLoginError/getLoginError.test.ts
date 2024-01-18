@@ -8,13 +8,13 @@ describe('getLoginError', () => {
                 error: 'error',
                 isLoading: false,
                 password: '',
-                username: ''
-            }
+                username: '',
+            },
         }
         expect(getLoginError(state as StateSchema)).toEqual('error')
     })
     test('should work with empty state', () => {
-        const state: DeepPartialType<StateSchema> = { }
+        const state: DeepPartialType<StateSchema> = {}
         expect(getLoginError(state as StateSchema)).toEqual('')
     })
 })

@@ -7,17 +7,17 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'shared/AppImage',
     component: AppImage,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof AppImage>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: {}
+    args: {},
 }
 
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

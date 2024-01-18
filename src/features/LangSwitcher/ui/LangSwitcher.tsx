@@ -7,24 +7,27 @@ interface LangSwitcherProps {
     className?: string
     short?: boolean
 }
-export const LangSwitcher: React.FC<LangSwitcherProps> = memo(({ className, short }) => {
-    const { t, i18n } = useTranslation()
+export const LangSwitcher: React.FC<LangSwitcherProps> = memo(
+    ({ className, short }) => {
+        const { t, i18n } = useTranslation()
 
-    // const toggle = (): any => {
-    //     void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-    // }
-    const toggle = async (): Promise<any> => {
-        await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
-    }
-    return (
-        <Button
-            className={classNames('', {}, [className])}
-            theme={ButtonTheme.CLEAR}
-            onClick={() => {
-                void toggle()
-            }}>
-            {/* onClick={toggle}> */}
-            {t(short ? 'Short language' : 'Language')}
-        </Button>
-    )
-})
+        // const toggle = (): any => {
+        //     void i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+        // }
+        const toggle = async (): Promise<any> => {
+            await i18n.changeLanguage(i18n.language === 'ru' ? 'en' : 'ru')
+        }
+        return (
+            <Button
+                className={classNames('', {}, [className])}
+                theme={ButtonTheme.CLEAR}
+                onClick={() => {
+                    void toggle()
+                }}
+            >
+                {/* onClick={toggle}> */}
+                {t(short ? 'Short language' : 'Language')}
+            </Button>
+        )
+    },
+)

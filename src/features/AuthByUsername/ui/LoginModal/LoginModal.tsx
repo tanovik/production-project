@@ -8,14 +8,14 @@ interface LoginModalProps {
     isOpen: boolean
     onClose: () => void
 }
-export const LoginModal: React.FC<LoginModalProps> = ({ className, isOpen, onClose }) => {
+export const LoginModal: React.FC<LoginModalProps> = ({
+    className,
+    isOpen,
+    onClose,
+}) => {
     return (
-        <Modal
-            isOpen={isOpen}
-            onClose={onClose}
-            lazy
-        >
-            <Suspense fallback={<Loader/>}>
+        <Modal isOpen={isOpen} onClose={onClose} lazy>
+            <Suspense fallback={<Loader />}>
                 <LoginFormAsync onSuccess={onClose} />
             </Suspense>
         </Modal>

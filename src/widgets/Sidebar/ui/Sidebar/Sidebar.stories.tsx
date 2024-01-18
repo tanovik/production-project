@@ -7,29 +7,36 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'widgets/Sidebar',
     component: Sidebar,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Sidebar>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: {}
+    args: {},
 }
-Light.decorators = [StoreDecorator({
-    user: { authData: {} }
-})]
+Light.decorators = [
+    StoreDecorator({
+        user: { authData: {} },
+    }),
+]
 
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
-Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({
-    user: { authData: {} }
-})]
+Dark.decorators = [
+    ThemeDecorator(Theme.DARK),
+    StoreDecorator({
+        user: { authData: {} },
+    }),
+]
 
 export const NoAuth: Story = {
-    args: {}
+    args: {},
 }
-NoAuth.decorators = [StoreDecorator({
-    user: { }
-})]
+NoAuth.decorators = [
+    StoreDecorator({
+        user: {},
+    }),
+]

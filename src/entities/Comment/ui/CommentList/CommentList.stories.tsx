@@ -6,7 +6,7 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'entities/CommentList',
     component: CommentList,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof CommentList>
 
 export default meta
@@ -18,15 +18,15 @@ export const Normal: Story = {
             {
                 id: '1',
                 text: 'hello world',
-                user: { id: '1', username: 'Vasya' }
+                user: { id: '1', username: 'Vasya' },
             },
             {
                 id: '2',
                 text: 'Comment 2',
-                user: { id: '1', username: 'Petya' }
-            }
-        ]
-    }
+                user: { id: '1', username: 'Petya' },
+            },
+        ],
+    },
 }
 export const Dark: Story = {
     args: {
@@ -34,21 +34,21 @@ export const Dark: Story = {
             {
                 id: '1',
                 text: 'hello world',
-                user: { id: '1', username: 'Vasya' }
+                user: { id: '1', username: 'Vasya' },
             },
             {
                 id: '2',
                 text: 'Comment 2',
-                user: { id: '1', username: 'Petya' }
-            }
-        ]
-    }
+                user: { id: '1', username: 'Petya' },
+            },
+        ],
+    },
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK)]
 
 export const Loading: Story = {
     args: {
         comments: [],
-        isLoading: true
-    }
+        isLoading: true,
+    },
 }

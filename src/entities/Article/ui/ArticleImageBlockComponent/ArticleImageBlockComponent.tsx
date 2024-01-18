@@ -9,14 +9,19 @@ interface ArticleImageBlockComponentProps {
     className?: string
     block: ArticleImageBlock
 }
-export const ArticleImageBlockComponent: React.FC<ArticleImageBlockComponentProps> = memo(({ className, block }) => {
-    // const { t } = useTranslation()
-    return (
-        <div className={classNames(cls.articleImageBlockComponent, {}, [className ?? ''])}>
-            <img src={block.src} className={cls.img} alt={block.title}/>
-            {block.title && (
-                <Text text={block.title} align={TextAlign.CENTER}/>
-            )}
-        </div>
-    )
-})
+export const ArticleImageBlockComponent: React.FC<ArticleImageBlockComponentProps> =
+    memo(({ className, block }) => {
+        // const { t } = useTranslation()
+        return (
+            <div
+                className={classNames(cls.articleImageBlockComponent, {}, [
+                    className ?? '',
+                ])}
+            >
+                <img src={block.src} className={cls.img} alt={block.title} />
+                {block.title && (
+                    <Text text={block.title} align={TextAlign.CENTER} />
+                )}
+            </div>
+        )
+    })

@@ -17,39 +17,44 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ className }) => {
     const sidebarItemsList = useSelector(getSidebarItems)
 
     const onToggle = (): void => {
-        setCollapsed(prev => !prev)
+        setCollapsed((prev) => !prev)
     }
 
-    const itemsList = useMemo(() => sidebarItemsList.map((item) => (
-        <SidebarItem
-            item={item}
-            collapsed={collapsed}
-            key={item.path}
-        />
-    )), [collapsed, sidebarItemsList])
+    const itemsList = useMemo(
+        () =>
+            sidebarItemsList.map((item) => (
+                <SidebarItem
+                    item={item}
+                    collapsed={collapsed}
+                    key={item.path}
+                />
+            )),
+        [collapsed, sidebarItemsList],
+    )
     return (
         <aside
-            data-testid = "sidebar"
-            className={classNames(cls.sidebar,
-                { [cls.collapsed]: collapsed },
-                [className])}>
+            data-testid="sidebar"
+            className={classNames(cls.sidebar, { [cls.collapsed]: collapsed }, [
+                className,
+            ])}
+        >
             <Button
                 data-testid="sidebar-toggle"
                 onClick={onToggle}
                 className={cls.collapseBtn}
                 theme={ButtonTheme.BACKGROUND_INVERTED}
                 square
-                size={ButtonSize.XL}>
-                {collapsed ? '>' : '<' }
+                size={ButtonSize.XL}
+            >
+                {collapsed ? '>' : '<'}
             </Button>
             <VStack role={'navigation'} gap={'8'} className={cls.items}>
                 {itemsList}
             </VStack>
             <div className={cls.switchers}>
                 <ThemeSwitcher />
-                <LangSwitcher className= {cls.lang} short={collapsed}/>
+                <LangSwitcher className={cls.lang} short={collapsed} />
             </div>
-
         </aside>
     )
 })

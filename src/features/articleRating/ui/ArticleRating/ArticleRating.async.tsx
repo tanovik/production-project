@@ -2,9 +2,7 @@ import { lazy, type ReactNode, Suspense } from 'react'
 import { Skeleton } from '@/shared/ui/Skeleton'
 import { type ArticleRatingProps } from './ArticleRating'
 
-const ArticleRatingLazy = lazy(
-    async () => await import('./ArticleRating')
-)
+const ArticleRatingLazy = lazy(async () => await import('./ArticleRating'))
 
 export const ArticleRatingAsync = (props: ArticleRatingProps): ReactNode => {
     return (

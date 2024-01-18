@@ -7,7 +7,7 @@ import AvatarImg from '@/shared/assets/tests/storybook.jpg'
 const meta = {
     title: 'entities/ProfileCard',
     component: ProfileCard,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof ProfileCard>
 
 export default meta
@@ -23,20 +23,19 @@ export const Primary: Story = {
             country: Country.Canada,
             city: 'Toronto',
             username: 'admin',
-            avatar: AvatarImg
-
-        }
-    }
+            avatar: AvatarImg,
+        },
+    },
 }
 
 export const WithError: Story = {
     args: {
-        error: 'error'
-    }
+        error: 'error',
+    },
 }
 
 export const Loading: Story = {
     args: {
-        isLoading: true
-    }
+        isLoading: true,
+    },
 }

@@ -21,26 +21,34 @@ interface DropdownProps {
     trigger: ReactNode
 }
 
-export function Dropdown (props: DropdownProps): ReactNode {
-    const {
-        className, trigger, items, direction = 'bottom left'
-    } = props
+export function Dropdown(props: DropdownProps): ReactNode {
+    const { className, trigger, items, direction = 'bottom left' } = props
 
     const menuClasses = [mapDirectionClass[direction]]
 
     return (
-        <Menu as="div" className={classNames(cls.Dropdown, {}, [className, popupCls.popup])}>
-            <Menu.Button className={popupCls.trigger}>
-                {trigger}
-            </Menu.Button>
+        <Menu
+            as="div"
+            className={classNames(cls.Dropdown, {}, [
+                className,
+                popupCls.popup,
+            ])}
+        >
+            <Menu.Button className={popupCls.trigger}>{trigger}</Menu.Button>
             <Menu.Items className={classNames(cls.menu, {}, menuClasses)}>
                 {items.map((item, index) => {
-                    const content = ({ active }: { active: boolean }): ReactElement => (
+                    const content = ({
+                        active,
+                    }: {
+                        active: boolean
+                    }): ReactElement => (
                         <button
                             type="button"
                             disabled={item.disabled}
                             onClick={item.onClick}
-                            className={classNames(cls.item, { [popupCls.active]: active })}
+                            className={classNames(cls.item, {
+                                [popupCls.active]: active,
+                            })}
                         >
                             {item.content}
                         </button>
@@ -52,7 +60,8 @@ export function Dropdown (props: DropdownProps): ReactNode {
                                 as={AppLink}
                                 to={item.href}
                                 key={'dropdown-key-' + index}
-                                disabled={item.disabled}>
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         )
@@ -62,7 +71,8 @@ export function Dropdown (props: DropdownProps): ReactNode {
                         <Menu.Item
                             as={Fragment}
                             key={'dropdown-key-' + index}
-                            disabled={item.disabled}>
+                            disabled={item.disabled}
+                        >
                             {content}
                         </Menu.Item>
                     )

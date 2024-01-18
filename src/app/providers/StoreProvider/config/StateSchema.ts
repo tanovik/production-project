@@ -1,4 +1,9 @@
-import { type ReducersMapObject, type EnhancedStore, type AnyAction, type CombinedState } from '@reduxjs/toolkit'
+import {
+    type ReducersMapObject,
+    type EnhancedStore,
+    type AnyAction,
+    type CombinedState,
+} from '@reduxjs/toolkit'
 import { type AxiosInstance } from 'axios'
 import { type ArticleDetailsSchema } from '@/entities/Article'
 import { type CounterSchema } from '@/entities/Counter'
@@ -7,9 +12,7 @@ import { type AddCommentFormSchema } from '@/features/AddCommentForm'
 import { type LoginSchema } from '@/features/AuthByUsername'
 import { type ScrollSaveSchema } from '@/features/ScrollSave'
 import { type ProfileSchema } from '@/features/editableProfileCard'
-import {
-    type ArticleDetailsPageSchema
-} from '@/pages/ArticleDetailsPage'
+import { type ArticleDetailsPageSchema } from '@/pages/ArticleDetailsPage'
 import { type ArticlesPageSchema } from '@/pages/ArticlesPage'
 import { type Reducer } from 'react'
 import { type rtkApi } from '@/shared/api/rtkApi'
@@ -27,7 +30,6 @@ export interface StateSchema {
     articleDetails?: ArticleDetailsSchema
     articlesPage?: ArticlesPageSchema
     articleDetailsPage?: ArticleDetailsPageSchema
-
 }
 
 export type StateSchemaKey = keyof StateSchema
@@ -35,8 +37,14 @@ export type MountedReducers = OptionalRecordType<StateSchemaKey, boolean>
 
 export interface ReducerManagerType {
     getReducerMap: () => ReducersMapObject<StateSchema>
-    reduce: (state: StateSchema, action: AnyAction) => CombinedState<StateSchema>
-    add: (key: StateSchemaKey, reducer: Reducer<StateSchema[StateSchemaKey], AnyAction>) => void
+    reduce: (
+        state: StateSchema,
+        action: AnyAction,
+    ) => CombinedState<StateSchema>
+    add: (
+        key: StateSchemaKey,
+        reducer: Reducer<StateSchema[StateSchemaKey], AnyAction>,
+    ) => void
     remove: (key: StateSchemaKey) => void
 
     // true - isMounted, false - notMounted/unMounted

@@ -6,7 +6,7 @@ import '@/app/styles/index.scss'
 const meta = {
     title: 'shared/Input',
     component: Input,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Input>
 
 export default meta
@@ -15,6 +15,6 @@ type Story = StoryObj<typeof meta>
 export const Primary: Story = {
     args: {
         placeholder: 'Type text',
-        value: '123123'
-    }
+        value: '123123',
+    },
 }

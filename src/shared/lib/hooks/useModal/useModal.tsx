@@ -1,5 +1,9 @@
 import {
-    type MutableRefObject, useCallback, useEffect, useRef, useState
+    type MutableRefObject,
+    useCallback,
+    useEffect,
+    useRef,
+    useState,
 } from 'react'
 
 interface UseModalProps {
@@ -13,8 +17,11 @@ interface useModalReturnType {
     close: () => void
 }
 
-export function useModal ({ animationDelay, isOpen, onClose }: UseModalProps):
-useModalReturnType {
+export function useModal({
+    animationDelay,
+    isOpen,
+    onClose,
+}: UseModalProps): useModalReturnType {
     const [isClosing, setIsClosing] = useState(false)
     const [isMounted, setIsMounted] = useState(false)
     const timerRef = useRef() as MutableRefObject<ReturnType<typeof setTimeout>>
@@ -36,11 +43,14 @@ useModalReturnType {
     }, [animationDelay, onClose])
 
     // each rerender creates a new func so its better to use useCallback
-    const onKeyDown = useCallback((e: KeyboardEvent) => {
-        if (e.key === 'Escape') {
-            close()
-        }
-    }, [close])
+    const onKeyDown = useCallback(
+        (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+                close()
+            }
+        },
+        [close],
+    )
 
     useEffect(() => {
         if (isOpen) {
@@ -56,6 +66,6 @@ useModalReturnType {
     return {
         isClosing,
         isMounted,
-        close
+        close,
     }
 }

@@ -5,22 +5,25 @@ import { type ArticleRecommendationsSchema } from '../types/ArticleRecommendatio
 import { fetchArticleRecommendations } from '../services/fetchArticleRecommendations/fetchArticleRecommendations'
 
 const recommendationsAdapter = createEntityAdapter<Article>({
-    selectId: (article) => article.id
+    selectId: (article) => article.id,
 })
 
-export const getArticleRecommendations = recommendationsAdapter.getSelectors<StateSchema>(
-    (state) =>
-        state.articleDetailsPage?.recommendations ?? recommendationsAdapter.getInitialState()
-)
+export const getArticleRecommendations =
+    recommendationsAdapter.getSelectors<StateSchema>(
+        (state) =>
+            state.articleDetailsPage?.recommendations ??
+            recommendationsAdapter.getInitialState(),
+    )
 
 export const ArticleRecommendationsSlice = createSlice({
     name: 'ArticleRecommendationsSlice',
-    initialState: recommendationsAdapter.getInitialState<ArticleRecommendationsSchema>({
-        isLoading: false,
-        error: undefined,
-        ids: [],
-        entities: {}
-    }),
+    initialState:
+        recommendationsAdapter.getInitialState<ArticleRecommendationsSchema>({
+            isLoading: false,
+            error: undefined,
+            ids: [],
+            entities: {},
+        }),
     reducers: {},
     extraReducers: (builder) => {
         builder
@@ -28,10 +31,7 @@ export const ArticleRecommendationsSlice = createSlice({
                 state.error = undefined
                 state.isLoading = true
             })
-            .addCase(fetchArticleRecommendations.fulfilled, (
-                state,
-                action
-            ) => {
+            .addCase(fetchArticleRecommendations.fulfilled, (state, action) => {
                 state.isLoading = false
                 recommendationsAdapter.setAll(state, action.payload)
             })
@@ -39,7 +39,9 @@ export const ArticleRecommendationsSlice = createSlice({
                 state.isLoading = false
                 state.error = action.payload
             })
-    }
+    },
 })
-export const { actions: ArticleRecommendationsActions } = ArticleRecommendationsSlice
-export const { reducer: ArticleRecommendationsReducer } = ArticleRecommendationsSlice
+export const { actions: ArticleRecommendationsActions } =
+    ArticleRecommendationsSlice
+export const { reducer: ArticleRecommendationsReducer } =
+    ArticleRecommendationsSlice

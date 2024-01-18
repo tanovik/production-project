@@ -6,7 +6,7 @@ import { type Article } from '@/entities/Article'
 const meta = {
     title: 'features/ArticleRecommendationsList',
     component: ArticleRecommendationsList,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof ArticleRecommendationsList>
 
 export default meta
@@ -21,11 +21,11 @@ const article: Article = {
     blocks: [],
     type: [],
     title: '123',
-    subtitle: 'asfsa'
+    subtitle: 'asfsa',
 }
 
 export const FetchCall: Story = {
-    args: {}
+    args: {},
 }
 FetchCall.parameters = {
     mockData: [
@@ -36,10 +36,10 @@ FetchCall.parameters = {
             response: [
                 { ...article, id: '1' },
                 { ...article, id: '2' },
-                { ...article, id: '3' }
-            ]
-        }
-    ]
+                { ...article, id: '3' },
+            ],
+        },
+    ],
 }
 
 FetchCall.decorators = [StoreDecorator({})]

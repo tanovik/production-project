@@ -6,7 +6,7 @@ import { Select } from './Select'
 const meta = {
     title: 'shared/Select',
     component: Select,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Select>
 
 export default meta
@@ -19,7 +19,7 @@ export const Primary: Story = {
         options: [
             { value: '1', content: 'First' },
             { value: '123', content: 'Second' },
-            { value: '1234', content: 'Third' }
-        ]
-    }
+            { value: '1234', content: 'Third' },
+        ],
+    },
 }

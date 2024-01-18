@@ -9,16 +9,25 @@ interface ArticleTextBlockComponentProps {
     className?: string
     block: ArticleTextBlock
 }
-export const ArticleTextBlockComponent: React.FC<ArticleTextBlockComponentProps> = memo(({ className, block }) => {
-    // const { t } = useTranslation()
-    return (
-        <div className={classNames(cls.articleTextBlockComponent, {}, [className ?? ''])}>
-            {block.title && (
-                <Text title={block.title} className={cls.title}/>
-            )}
-            {block.paragraphs.map((paragraph, index) => (
-                <Text key={index} text={paragraph} className={cls.paragraph}/>
-            ))}
-        </div>
-    )
-})
+export const ArticleTextBlockComponent: React.FC<ArticleTextBlockComponentProps> =
+    memo(({ className, block }) => {
+        // const { t } = useTranslation()
+        return (
+            <div
+                className={classNames(cls.articleTextBlockComponent, {}, [
+                    className ?? '',
+                ])}
+            >
+                {block.title && (
+                    <Text title={block.title} className={cls.title} />
+                )}
+                {block.paragraphs.map((paragraph, index) => (
+                    <Text
+                        key={index}
+                        text={paragraph}
+                        className={cls.paragraph}
+                    />
+                ))}
+            </div>
+        )
+    })

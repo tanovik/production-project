@@ -13,7 +13,7 @@ export enum ButtonTheme {
 export enum ButtonSize {
     M = 'size_m',
     L = 'size_l',
-    XL = 'size_xl'
+    XL = 'size_xl',
 }
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
@@ -23,12 +23,15 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     size?: ButtonSize
     disabled?: boolean
     fullWidth?: boolean
-
 }
 export const Button: React.FC<ButtonProps> = memo((props) => {
     const {
-        className, children, theme = ButtonTheme.OUTLINE
-        , square, size = ButtonSize.M, fullWidth,
+        className,
+        children,
+        theme = ButtonTheme.OUTLINE,
+        square,
+        size = ButtonSize.M,
+        fullWidth,
         disabled,
         ...otherProps
     } = props
@@ -38,11 +41,11 @@ export const Button: React.FC<ButtonProps> = memo((props) => {
         [cls[size]]: true,
         [cls.square]: square as boolean,
         [cls.disabled]: disabled as boolean,
-        [cls.fullWidth]: fullWidth as boolean
+        [cls.fullWidth]: fullWidth as boolean,
     }
     return (
         <button
-            type='button'
+            type="button"
             className={classNames(cls.button, mods, [className])}
             disabled={disabled}
             {...otherProps}
@@ -50,5 +53,4 @@ export const Button: React.FC<ButtonProps> = memo((props) => {
             {children}
         </button>
     )
-}
-)
+})

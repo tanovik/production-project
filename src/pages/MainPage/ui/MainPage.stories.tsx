@@ -7,19 +7,19 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'pages/MainPage',
     component: MainPage,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof MainPage>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: {}
+    args: {},
 }
 
 Light.decorators = [StoreDecorator({})]
 
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]

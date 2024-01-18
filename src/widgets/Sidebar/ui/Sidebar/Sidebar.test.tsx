@@ -4,11 +4,11 @@ import { componentRender } from '@/shared/lib/tests/componentRender/componentRen
 
 describe('Sidebar', () => {
     test('test render', () => {
-        componentRender(<Sidebar/>)
+        componentRender(<Sidebar />)
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
     })
     test('test toggle', () => {
-        componentRender(<Sidebar/>)
+        componentRender(<Sidebar />)
         const toggleBtn = screen.getByTestId('sidebar-toggle')
         expect(screen.getByTestId('sidebar')).toBeInTheDocument()
         fireEvent.click(toggleBtn)

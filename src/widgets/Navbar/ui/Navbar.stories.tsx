@@ -7,25 +7,27 @@ import { Theme } from '@/shared/const/theme'
 const meta = {
     title: 'widgets/Navbar',
     component: Navbar,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Navbar>
 
 export default meta
 type Story = StoryObj<typeof meta>
 
 export const Light: Story = {
-    args: {}
+    args: {},
 }
 Light.decorators = [StoreDecorator({})]
 
 export const Dark: Story = {
-    args: {}
+    args: {},
 }
 Dark.decorators = [ThemeDecorator(Theme.DARK), StoreDecorator({})]
 
 export const AuthNavbar: Story = {
-    args: {}
+    args: {},
 }
-AuthNavbar.decorators = [StoreDecorator({
-    user: { authData: { id: '', username: '' } }
-})]
+AuthNavbar.decorators = [
+    StoreDecorator({
+        user: { authData: { id: '', username: '' } },
+    }),
+]

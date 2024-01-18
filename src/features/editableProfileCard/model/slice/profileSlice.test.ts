@@ -12,66 +12,84 @@ const data = {
     currency: Currency.USD,
     country: Country.Canada,
     city: 'Toronto',
-    username: 'admin'
+    username: 'admin',
 }
 describe('profileSlice', () => {
     test('test setReadonly', () => {
         const state: DeepPartialType<ProfileSchema> = { readonly: false }
 
-        expect(profileReducer(state as ProfileSchema, profileActions.setReadonly(true)))
-            .toEqual({ readonly: true })
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.setReadonly(true),
+            ),
+        ).toEqual({ readonly: true })
     })
 
     test('test cancelEdit', () => {
-        const state: DeepPartialType<ProfileSchema> = { data, form: { username: '' } }
+        const state: DeepPartialType<ProfileSchema> = {
+            data,
+            form: { username: '' },
+        }
 
-        expect(profileReducer(state as ProfileSchema, profileActions.cancelEdit()))
-            .toEqual({ readonly: true, validateErrors: undefined, form: data, data })
+        expect(
+            profileReducer(state as ProfileSchema, profileActions.cancelEdit()),
+        ).toEqual({
+            readonly: true,
+            validateErrors: undefined,
+            form: data,
+            data,
+        })
     })
 
     test('test update profile', () => {
-        const state: DeepPartialType<ProfileSchema> = { form: { username: '123' } }
+        const state: DeepPartialType<ProfileSchema> = {
+            form: { username: '123' },
+        }
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            profileActions.updateProfile({
-                username: '123456'
-            })
-        )).toEqual({
-            form: { username: '123456' }
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                profileActions.updateProfile({
+                    username: '123456',
+                }),
+            ),
+        ).toEqual({
+            form: { username: '123456' },
         })
     })
 
     test('test update profile service pending', () => {
         const state: DeepPartialType<ProfileSchema> = {
             isLoading: false,
-            validateErrors: [ValidateProfileError.SERVER_ERROR]
+            validateErrors: [ValidateProfileError.SERVER_ERROR],
         }
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.pending
-        )).toEqual({
+        expect(
+            profileReducer(state as ProfileSchema, updateProfileData.pending),
+        ).toEqual({
             isLoading: true,
-            validateErrors: undefined
+            validateErrors: undefined,
         })
     })
 
     test('test update profile service fullfiled', () => {
         const state: DeepPartialType<ProfileSchema> = {
-            isLoading: true
+            isLoading: true,
         }
 
-        expect(profileReducer(
-            state as ProfileSchema,
-            updateProfileData.fulfilled(data, '')
-        )).toEqual({
+        expect(
+            profileReducer(
+                state as ProfileSchema,
+                updateProfileData.fulfilled(data, ''),
+            ),
+        ).toEqual({
             isLoading: false,
             validateErrors: undefined,
             readonly: true,
             validateError: undefined,
             form: data,
-            data
+            data,
         })
     })
 })

@@ -8,7 +8,7 @@ import { Avatar } from './Avatar'
 const meta = {
     title: 'shared/Avatar',
     component: Avatar,
-    tags: ['autodocs']
+    tags: ['autodocs'],
 } satisfies Meta<typeof Avatar>
 
 export default meta
@@ -18,13 +18,13 @@ export const Primary: Story = {
     args: {
         src: AvatarImg,
         alt: 'avatar',
-        size: 150
-    }
+        size: 150,
+    },
 }
 export const Small: Story = {
     args: {
         src: AvatarImg,
         alt: 'avatar',
-        size: 50
-    }
+        size: 50,
+    },
 }

@@ -10,7 +10,7 @@ const data = {
     currency: Currency.USD,
     country: Country.Canada,
     city: 'Toronto',
-    username: 'admin'
+    username: 'admin',
 }
 describe('validateProfileData', () => {
     test('succes', async () => {
@@ -22,21 +22,21 @@ describe('validateProfileData', () => {
         const result = validateProfileData({
             ...data,
             firstname: '',
-            lastname: ''
+            lastname: '',
         })
         expect(result).toEqual([ValidateProfileError.INCORRECT_USER_DATA])
     })
     test('incorrect age', async () => {
         const result = validateProfileData({
             ...data,
-            age: undefined
+            age: undefined,
         })
         expect(result).toEqual([ValidateProfileError.INCORRECT_AGE])
     })
     test('incorrect country', async () => {
         const result = validateProfileData({
             ...data,
-            country: undefined
+            country: undefined,
         })
         expect(result).toEqual([ValidateProfileError.INCORRECT_COUNTRY])
     })
@@ -45,7 +45,7 @@ describe('validateProfileData', () => {
         expect(result).toEqual([
             ValidateProfileError.INCORRECT_USER_DATA,
             ValidateProfileError.INCORRECT_AGE,
-            ValidateProfileError.INCORRECT_COUNTRY
+            ValidateProfileError.INCORRECT_COUNTRY,
         ])
     })
 })

@@ -12,7 +12,10 @@ import { getLoginUsername } from '../../model/selectors/getLoginUsername/getLogi
 import { getLoginIsLoading } from '../../model/selectors/getLoginIsLoading/getLoginIsLoading'
 import { getLoginError } from '../../model/selectors/getLoginError/getLoginError'
 import { getLoginPassword } from '../../model/selectors/getLoginPassword/getLoginPassword'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
 
 export interface LoginFormProps {
@@ -21,7 +24,7 @@ export interface LoginFormProps {
     onSuccess: () => void
 }
 const initialReducers: ReducersList = {
-    loginForm: loginReducer
+    loginForm: loginReducer,
 }
 const LoginForm: React.FC<LoginFormProps> = memo(({ className, onSuccess }) => {
     const { t } = useTranslation()
@@ -32,13 +35,19 @@ const LoginForm: React.FC<LoginFormProps> = memo(({ className, onSuccess }) => {
     const error = useSelector(getLoginError)
     const isLoading = useSelector(getLoginIsLoading)
 
-    const onChangeUsername = useCallback((val: string) => {
-        dispatch(loginActions.setUsername(val))
-    }, [dispatch])
+    const onChangeUsername = useCallback(
+        (val: string) => {
+            dispatch(loginActions.setUsername(val))
+        },
+        [dispatch],
+    )
 
-    const onChangePassword = useCallback((val: string) => {
-        dispatch(loginActions.setPassword(val))
-    }, [dispatch])
+    const onChangePassword = useCallback(
+        (val: string) => {
+            dispatch(loginActions.setPassword(val))
+        },
+        [dispatch],
+    )
 
     const onLoginClick = useCallback(async () => {
         const result = await dispatch(loginByUsername({ username, password }))
@@ -54,9 +63,12 @@ const LoginForm: React.FC<LoginFormProps> = memo(({ className, onSuccess }) => {
         >
             <div className={classNames(cls.loginForm, {}, [className])}>
                 <Text title={t('Authorization form')} />
-                {error && <Text
-                    text={t('You entered an incorrect login or password')}
-                    theme={TextTheme.ERROR}/>}
+                {error && (
+                    <Text
+                        text={t('You entered an incorrect login or password')}
+                        theme={TextTheme.ERROR}
+                    />
+                )}
                 <Input
                     type="text"
                     className={cls.input}

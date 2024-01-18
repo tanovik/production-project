@@ -1,7 +1,10 @@
 import { classNames } from '@/shared/lib/classNames/classNames'
 import cls from './ArticlesPage.module.scss'
 import { memo, useCallback } from 'react'
-import { DynamicModuleLoader, type ReducersList } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
+import {
+    DynamicModuleLoader,
+    type ReducersList,
+} from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader'
 import { articlesPageReducer } from '../../model/slice/articlesPageSlice'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch'
@@ -17,7 +20,7 @@ interface ArticlesPageProps {
 }
 
 const reducers: ReducersList = {
-    articlesPage: articlesPageReducer
+    articlesPage: articlesPageReducer,
 }
 const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
     const dispatch = useAppDispatch()
@@ -37,8 +40,8 @@ const ArticlesPage: React.FC<ArticlesPageProps> = ({ className }) => {
                 onScrollEnd={onLoadNextPart}
                 className={classNames(cls.articlesPage, {}, [className])}
             >
-                <ArticlesPageFilters/>
-                <ArticlesInfiniteList className={cls.list}/>
+                <ArticlesPageFilters />
+                <ArticlesInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
     )

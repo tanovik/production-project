@@ -1,11 +1,8 @@
-import {
-    createSlice,
-    type PayloadAction
-} from '@reduxjs/toolkit'
+import { createSlice, type PayloadAction } from '@reduxjs/toolkit'
 import { type AddCommentFormSchema } from '../types/AddCommentForm'
 
 const initialState: AddCommentFormSchema = {
-    text: ''
+    text: '',
 }
 
 const AddCommentFormSlice = createSlice({
@@ -14,8 +11,8 @@ const AddCommentFormSlice = createSlice({
     reducers: {
         setText: (state, action: PayloadAction<string>) => {
             state.text = action.payload
-        }
-    }
+        },
+    },
     // extraReducers: (builder) => {
     //     builder
     //         .addCase(fetchCommentsByArticleId.pending, (state) => {

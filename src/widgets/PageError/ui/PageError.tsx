@@ -6,8 +6,7 @@ import { useTranslation } from 'react-i18next'
 interface PageErrorProps {
     className?: string
 }
-export const PageError: React.FC<PageErrorProps> =
-({ className }) => {
+export const PageError: React.FC<PageErrorProps> = ({ className }) => {
     const { t } = useTranslation()
 
     const reloadPage = (): void => {

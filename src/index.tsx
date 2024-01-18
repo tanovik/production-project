@@ -9,7 +9,9 @@ import { StoreProvider } from '@/app/providers/StoreProvider'
 
 const container = document.getElementById('root')
 if (container == null) {
-    throw new Error('Container root was not found. Failed to mount the react application')
+    throw new Error(
+        'Container root was not found. Failed to mount the react application',
+    )
 }
 const root = createRoot(container)
 
@@ -22,7 +24,7 @@ root.render(
                 </ThemeProvider>
             </ErrorBoundary>
         </StoreProvider>
-    </BrowserRouter>
+    </BrowserRouter>,
 )
 
 // import { render } from "react-dom";

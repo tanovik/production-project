@@ -15,12 +15,12 @@ interface ArticleViewSelectorProps {
 const viewTypes = [
     {
         view: ArticleView.PLATE,
-        icon: TiledIcon
+        icon: TiledIcon,
     },
     {
         view: ArticleView.LIST,
-        icon: ListIcon
-    }
+        icon: ListIcon,
+    },
 ]
 
 export const ArticleViewToggle = memo((props: ArticleViewSelectorProps) => {
@@ -40,7 +40,10 @@ export const ArticleViewToggle = memo((props: ArticleViewSelectorProps) => {
                 >
                     <Icon
                         Svg={viewType.icon}
-                        className={classNames('', { [cls.notSelected]: viewType.view !== view })} />
+                        className={classNames('', {
+                            [cls.notSelected]: viewType.view !== view,
+                        })}
+                    />
                 </Button>
             ))}
         </div>

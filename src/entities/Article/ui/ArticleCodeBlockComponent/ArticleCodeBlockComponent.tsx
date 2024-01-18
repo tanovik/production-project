@@ -9,11 +9,16 @@ interface ArticleCodeBlockComponentProps {
     className?: string
     block: ArticleCodeBlock
 }
-export const ArticleCodeBlockComponent: React.FC<ArticleCodeBlockComponentProps> = memo(({ className, block }) => {
-    // const { t } = useTranslation()
-    return (
-        <div className={classNames(cls.articleCodeBlockComponent, {}, [className ?? ''])}>
-            <Code text={block.code}/>
-        </div>
-    )
-})
+export const ArticleCodeBlockComponent: React.FC<ArticleCodeBlockComponentProps> =
+    memo(({ className, block }) => {
+        // const { t } = useTranslation()
+        return (
+            <div
+                className={classNames(cls.articleCodeBlockComponent, {}, [
+                    className ?? '',
+                ])}
+            >
+                <Code text={block.code} />
+            </div>
+        )
+    })

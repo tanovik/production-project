@@ -10,7 +10,7 @@ const data = {
     currency: Currency.USD,
     country: Country.Canada,
     city: 'Toronto',
-    username: 'admin'
+    username: 'admin',
 }
 describe('fetchProfileData', () => {
     test('succes', async () => {

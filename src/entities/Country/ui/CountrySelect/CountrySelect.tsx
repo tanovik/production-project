@@ -14,26 +14,30 @@ const options = [
     { value: Country.Australia, content: Country.Australia },
     { value: Country.Canada, content: Country.Canada },
     { value: Country.Georgia, content: Country.Georgia },
-    { value: Country.Poland, content: Country.Poland }
+    { value: Country.Poland, content: Country.Poland },
 ]
 
-export const CountrySelect: React.FC<CountrySelectProps> = memo(({ className, value, onChange, readonly }) => {
-    const { t } = useTranslation()
+export const CountrySelect: React.FC<CountrySelectProps> = memo(
+    ({ className, value, onChange, readonly }) => {
+        const { t } = useTranslation()
 
-    const onChangeHandler = useCallback((value: string): void => {
-        onChange?.(value as Country)
-    }, [onChange])
+        const onChangeHandler = useCallback(
+            (value: string): void => {
+                onChange?.(value as Country)
+            },
+            [onChange],
+        )
 
-    return (
-        <ListBox
-            onChange={onChangeHandler}
-            value={value}
-            defaultValue={t('Choose your country')}
-            label= {t('Choose your country')}
-            items={options}
-            readonly={readonly}
-            direction="bottom right"
-        />
-    )
-}
+        return (
+            <ListBox
+                onChange={onChangeHandler}
+                value={value}
+                defaultValue={t('Choose your country')}
+                label={t('Choose your country')}
+                items={options}
+                readonly={readonly}
+                direction="bottom right"
+            />
+        )
+    },
 )

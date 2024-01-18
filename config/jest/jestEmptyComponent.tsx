@@ -1,7 +1,7 @@
 import { type ReactElement } from 'react'
 
 const jestEmptyComponent = function (): ReactElement {
-    return <div/>
+    return <div />
 }
 
 export default jestEmptyComponent

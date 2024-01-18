@@ -14,14 +14,18 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     max?: boolean
 }
 
-export const Card: React.FC<CardProps> = memo(({
-    className,
-    theme = CardTheme.NORMAL, children, max, ...otherProps
-}) => {
-    return (
-        <div className={classNames(cls.card, { [cls.max]: max }, [className, cls[theme]])}
-            {...otherProps}>
-            {children}
-        </div>
-    )
-})
+export const Card: React.FC<CardProps> = memo(
+    ({ className, theme = CardTheme.NORMAL, children, max, ...otherProps }) => {
+        return (
+            <div
+                className={classNames(cls.card, { [cls.max]: max }, [
+                    className,
+                    cls[theme],
+                ])}
+                {...otherProps}
+            >
+                {children}
+            </div>
+        )
+    },
+)

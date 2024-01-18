@@ -1,6 +1,8 @@
 import { type StateSchema } from '@/app/providers/StoreProvider'
 
-export const getArticleRecommendationsIsLoading = (state: StateSchema): boolean => {
+export const getArticleRecommendationsIsLoading = (
+    state: StateSchema,
+): boolean => {
     return state.articleDetailsPage?.recommendations?.isLoading ?? false
 }
 

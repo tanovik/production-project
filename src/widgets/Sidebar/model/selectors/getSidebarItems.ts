@@ -5,43 +5,43 @@ import MainIcon from '@/shared/assets/icons/MainIcon.svg'
 import { createSelector } from '@reduxjs/toolkit'
 import { type SidebarItemType } from '../types/sidebar'
 import { getUserAuthData } from '../../../../entities/User'
-import { getRouteAbout, getRouteArticles, getRouteMain, getRouteProfile } from '@/shared/const/router'
+import {
+    getRouteAbout,
+    getRouteArticles,
+    getRouteMain,
+    getRouteProfile,
+} from '@/shared/const/router'
 
-export const getSidebarItems = createSelector(
-    getUserAuthData,
-    (userData) => {
-        const sidebarItemsList: SidebarItemType[] = [
+export const getSidebarItems = createSelector(getUserAuthData, (userData) => {
+    const sidebarItemsList: SidebarItemType[] = [
+        {
+            path: getRouteMain(),
+            Icon: MainIcon,
+            text: 'Main',
+        },
+        {
+            path: getRouteAbout(),
+            Icon: AboutIcon,
+            text: 'About',
+        },
+    ]
+
+    if (userData) {
+        sidebarItemsList.push(
             {
-                path: getRouteMain(),
-                Icon: MainIcon,
-                text: 'Main'
+                path: getRouteProfile(userData.id),
+                Icon: ProfileIcon,
+                text: 'Profile',
+                authOnly: true,
             },
             {
-                path: getRouteAbout(),
-                Icon: AboutIcon,
-                text: 'About'
-            }
-        ]
-
-        if (userData) {
-            sidebarItemsList.push(
-                {
-                    path: getRouteProfile(userData.id),
-                    Icon: ProfileIcon,
-                    text: 'Profile',
-                    authOnly: true
-
-                },
-                {
-                    path: getRouteArticles(),
-                    Icon: ArticleIcon,
-                    text: 'Articles',
-                    authOnly: true
-
-                }
-            )
-        }
-
-        return sidebarItemsList
+                path: getRouteArticles(),
+                Icon: ArticleIcon,
+                text: 'Articles',
+                authOnly: true,
+            },
+        )
     }
-)
+
+    return sidebarItemsList
+})
