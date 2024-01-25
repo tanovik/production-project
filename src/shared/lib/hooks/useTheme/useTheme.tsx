@@ -27,7 +27,7 @@ export function useTheme(): useThemeResult {
         }
 
         setTheme?.(newTheme)
-        saveAction?.(newTheme);
+        saveAction?.(newTheme)
     }
 
     return { theme: theme || Theme.LIGHT, toggleTheme }

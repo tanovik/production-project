@@ -14,14 +14,14 @@ interface ThemeSwitcherProps {
 export const ThemeSwitcher: React.FC<ThemeSwitcherProps> = memo(
     ({ className }) => {
         const { theme, toggleTheme } = useTheme()
-        const dispatch = useAppDispatch();
+        const dispatch = useAppDispatch()
 
         const onToggleHandler = useCallback(() => {
             toggleTheme((newTheme) => {
-                dispatch(saveJsonSettings({ theme: newTheme }));
-            });
-        }, [dispatch, toggleTheme]);
-		
+                dispatch(saveJsonSettings({ theme: newTheme }))
+            })
+        }, [dispatch, toggleTheme])
+
         return (
             <Button
                 theme={ButtonTheme.CLEAR}

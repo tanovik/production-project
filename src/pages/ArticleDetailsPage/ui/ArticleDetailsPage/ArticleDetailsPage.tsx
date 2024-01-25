@@ -14,7 +14,7 @@ import { VStack } from '@/shared/ui/Stack'
 import { ArticleRecommendationsList } from '@/features/articleRecommendationsList'
 import { ArticleDetailsComments } from '../ArticleDetailsComments/ArticleDetailsComments'
 import { ArticleRating } from '@/features/articleRating'
-import {  toggleFeatures } from '@/shared/lib/features'
+import { toggleFeatures } from '@/shared/lib/features'
 import { Card } from '@/shared/ui/Card'
 import { useTranslation } from 'react-i18next'
 
@@ -29,7 +29,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({
     className,
 }) => {
     const { id } = useParams<{ id: string }>()
-    const { t } = useTranslation('article');
+    const { t } = useTranslation('article')
 
     if (!id) {
         return null
@@ -38,7 +38,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({
         name: 'isArticleRatingEnabled',
         on: () => <ArticleRating articleId={id} />,
         off: () => <Card>{t('Article evaluation coming soon!')}</Card>,
-    });
+    })
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>

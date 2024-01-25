@@ -1,21 +1,21 @@
-import { createAsyncThunk } from '@reduxjs/toolkit';
-import { type ThunkConfig } from '@/app/providers/StoreProvider';
-import { type JsonSettings } from '../types/jsonSettings';
-import { getJsonSettings } from '../selectors/jsonSettings';
-import { setJsonSettingsMutation } from '../../api/userApi';
-import { getUserAuthData } from '../selectors/getUserAuthData';
+import { createAsyncThunk } from '@reduxjs/toolkit'
+import { type ThunkConfig } from '@/app/providers/StoreProvider'
+import { type JsonSettings } from '../types/jsonSettings'
+import { getJsonSettings } from '../selectors/jsonSettings'
+import { setJsonSettingsMutation } from '../../api/userApi'
+import { getUserAuthData } from '../selectors/getUserAuthData'
 
 export const saveJsonSettings = createAsyncThunk<
 JsonSettings,
 JsonSettings,
 ThunkConfig<string>
 >('user/saveJsonSettings', async (newJsonSettings, thunkApi) => {
-    const { rejectWithValue, getState, dispatch } = thunkApi;
-    const userData = getUserAuthData(getState());
-    const currentSettings = getJsonSettings(getState());
+    const { rejectWithValue, getState, dispatch } = thunkApi
+    const userData = getUserAuthData(getState())
+    const currentSettings = getJsonSettings(getState())
 
     if (!userData) {
-        return rejectWithValue('');
+        return rejectWithValue('')
     }
 
     try {
@@ -27,15 +27,15 @@ ThunkConfig<string>
                     ...newJsonSettings,
                 },
             }),
-        ).unwrap();
+        ).unwrap()
 
         if (response.jsonSettings == null) {
-            return rejectWithValue('');
+            return rejectWithValue('')
         }
 
-        return response.jsonSettings;
+        return response.jsonSettings
     } catch (e) {
-        console.log(e);
-        return rejectWithValue('');
+        console.log(e)
+        return rejectWithValue('')
     }
-});
+})

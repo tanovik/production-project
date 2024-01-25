@@ -1,10 +1,10 @@
-import { type FeatureFlags } from '@/shared/types/featureFlags';
-import { getFeatureFlag } from './setGetFeatures';
+import { type FeatureFlags } from '@/shared/types/featureFlags'
+import { getFeatureFlag } from './setGetFeatures'
 
 interface ToggleFeaturesOptions<T> {
-    name: keyof FeatureFlags;
-    on: () => T;
-    off: () => T;
+    name: keyof FeatureFlags
+    on: () => T
+    off: () => T
 }
 
 export function toggleFeatures<T>({
@@ -13,8 +13,8 @@ export function toggleFeatures<T>({
     name,
 }: ToggleFeaturesOptions<T>): T {
     if (getFeatureFlag(name)) {
-        return on();
+        return on()
     }
 
-    return off();
+    return off()
 }
