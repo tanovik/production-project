@@ -16,12 +16,12 @@ export const userSlice = createSlice({
     reducers: {
         setAuthData: (state, action: PayloadAction<User>) => {
             state.authData = action.payload
-            console.log(action.payload.features)
+            
             setFeatureFlags(action.payload.features)
             // лучше localStorage в редьюсере не юзать, тк теряется чистота
             localStorage.setItem(
                 USER_LOCALSTORAGE_KEY,
-                JSON.stringify(action.payload.id),
+                action.payload.id,
             )
         },
         logout: (state) => {
