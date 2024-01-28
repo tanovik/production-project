@@ -10,7 +10,7 @@ import React, {
 import { ArticleListItem } from '../ArticleListItem/ArticleListItem'
 import { type Article } from '../../model/types/article'
 import { ArticleListItemSkeleton } from '../ArticleListItem/ArticleListItemSkeleton'
-import { Text, TextSize } from '@/shared/ui/Text'
+import { Text, TextSize } from '@/shared/ui/deprecated/Text'
 import { useTranslation } from 'react-i18next'
 import { List, type ListRowProps, WindowScroller } from 'react-virtualized'
 // eslint-disable-next-line tanovik-plugin/layer-imports

@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { Page } from '@/widgets/Page'
-import { VStack } from '@/shared/ui/Stack'
+import { VStack } from '@/shared/ui/deprecated/Stack'
 import { EditableProfileCard } from '@/features/editableProfileCard'
 
 interface ProfilePageProps {

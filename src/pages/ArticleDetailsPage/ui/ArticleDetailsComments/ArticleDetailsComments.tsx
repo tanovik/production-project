@@ -8,11 +8,11 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { Text } from '@/shared/ui/Text'
+import { Text } from '@/shared/ui/deprecated/Text'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
-import { VStack } from '@/shared/ui/Stack'
-import { Loader } from '@/shared/ui/Loader'
+import { VStack } from '@/shared/ui/deprecated/Stack'
+import { Loader } from '@/shared/ui/deprecated/Loader'
 
 interface ArticleDetailsCommentsProps {
     className?: string
