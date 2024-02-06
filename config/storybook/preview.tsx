@@ -5,6 +5,7 @@ import { ThemeDecorator } from '../../src/shared/config/storybook/ThemeDecorator
 import { SuspenseDecorator } from '../../src/shared/config/storybook/SuspenceDecorator'
 import { Theme } from '../../src/shared/const/theme'
 
+
 const preview: Preview = {
     decorators: [
         StyleDecorator,

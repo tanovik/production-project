@@ -61,28 +61,28 @@ Normal.decorators = [
     StoreDecorator({
         articleDetails: {
             data: article,
-        },
-    }),
+        }
+    })
 ]
 export const Loading: Story = {
-    args: { id: '1' },
+    args: { id: '1' }
 }
 
 Loading.decorators = [
     StoreDecorator({
         articleDetails: {
             isLoading: true,
-        },
-    }),
+        }
+    })
 ]
 export const Error: Story = {
-    args: { id: '1' },
+    args: { id: '1' }
 }
 
 Error.decorators = [
     StoreDecorator({
         articleDetails: {
-            error: 'error',
-        },
-    }),
+            error: 'error'
+        }
+    })
 ]
