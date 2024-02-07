@@ -50,10 +50,7 @@ export interface FlexProps extends DivProps {
     gap?: FlexGap
     max?: boolean
 }
-/**
- * устарел, используем новые компоненты из папки redesigned 
- * @deprecated
- */
+
 export const Flex = (props: FlexProps): ReactNode => {
     const {
         className,
