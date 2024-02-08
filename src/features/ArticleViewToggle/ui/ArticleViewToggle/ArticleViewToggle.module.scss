@@ -1,3 +1,13 @@
-.notSelected{
-    fill: var(--secondary-color)
+.articleViewToggle {
+    .notSelected {
+        fill: var(--secondary-color);
+    }
+}
+
+
+
+.articleViewToggleRedesigned {
+    .notSelected {
+        color: var(--light-bg-redesigned);
+    }
 }

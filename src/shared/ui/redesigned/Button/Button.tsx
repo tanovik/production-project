@@ -2,9 +2,9 @@ import { type Mods, classNames } from '@/shared/lib/classNames/classNames'
 import cls from './Button.module.scss'
 import { memo, type ButtonHTMLAttributes, type ReactNode } from 'react'
 
-export type ButtonVariant = 'clear' | 'outline';
+export type ButtonVariant = 'clear' | 'outline' | 'filled'
 
-export type ButtonSize = 'm' | 'l' | 'xl';
+export type ButtonSize = 'm' | 'l' | 'xl'
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     className?: string;
@@ -34,35 +34,11 @@ interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     fullWidth?: boolean;
 }
 
-// export enum ButtonTheme {
-//     CLEAR = 'clear',
-//     CLEAR_INVERTED = 'clearInverted',
-//     OUTLINE = 'outline',
-//     OUTLINE_RED = 'outline_red',
-//     BACKGROUND = 'background',
-//     BACKGROUND_INVERTED = 'backgroundInverted',
-// }
-// export enum ButtonSize {
-//     M = 'size_m',
-//     L = 'size_l',
-//     XL = 'size_xl',
-// }
-
-// interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
-//     className?: string
-//     theme?: ButtonTheme
-//     square?: boolean
-//     size?: ButtonSize
-//     disabled?: boolean
-//     fullWidth?: boolean
-// }
-
 export const Button: React.FC<ButtonProps> = memo((props) => {
     const {
         className,
         children,
         variant = 'outline',
-        // theme = ButtonTheme.OUTLINE,
         square,
         size = 'm',
         fullWidth,
