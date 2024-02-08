@@ -21,6 +21,7 @@ import { getProfileValidateErrors } from '../../model/selectors/getProfileValida
 import { fetchProfileData } from '../../model/services/fetchProfileData/fetchProfileData'
 import { ProfileCard } from '../../../../entities/Profile'
 import { ValidateProfileError } from '../../model/consts/consts'
+import { type Currency } from '@/entities/Currency'
 
 interface EditableProfileCardProps {
     className?: string
@@ -87,12 +88,34 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         [dispatch],
     )
 
+    const onChangeUsername = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ username: value || '' }));
+        },
+        [dispatch],
+    );
+
+    const onChangeAvatar = useCallback(
+        (value?: string) => {
+            dispatch(profileActions.updateProfile({ avatar: value || '' }));
+        },
+        [dispatch],
+    );
+	
     const onChangeCountry = useCallback(
         (country: Country) => {
             dispatch(profileActions.updateProfile({ country }))
         },
         [dispatch],
     )
+	
+    const onChangeCurrency = useCallback(
+        (currency: Currency) => {
+            dispatch(profileActions.updateProfile({ currency }));
+        },
+        [dispatch],
+    );
+
 
     return (
         <DynamicModuleLoader reducers={reducers}>
@@ -116,6 +139,9 @@ export const EditableProfileCard = memo((props: EditableProfileCardProps) => {
                     onChangeLastname={onChangeLastname}
                     onChangeAge={onChangeAge}
                     onChangeCity={onChangeCity}
+                    onChangeUsername={onChangeUsername}
+                    onChangeAvatar={onChangeAvatar}
+                    onChangeCurrency={onChangeCurrency}
                     onChangeCountry={onChangeCountry}
                 />
             </VStack>

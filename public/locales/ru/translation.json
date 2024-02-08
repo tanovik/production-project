@@ -22,7 +22,7 @@
   "About Page": "О сайте.",
   "Main Page": "Главная.",
   "Short language": "EN",
-  "Choose your country": "Выберите страну",
+  "Choose country": "Укажите страну",
   "No comments left": "Комментарии отсутствуют",
   "Enter comment": "Введите комментарий",
   "Leave a comment": "Оставить комментарий",
@@ -30,5 +30,6 @@
   "You do not have access to this page": "У вас нет доступа к этой странице",
   "Close": "Закрыть",
   "Send": "Отправить",
-  "Thanks for your rate": "Спасибо за оценку"
+  "Thanks for your rate": "Спасибо за оценку",
+  "Select currency": "Укажите валюту"
 }

@@ -8,14 +8,19 @@ import {
     useRef,
     type ReactNode,
 } from 'react'
+import { HStack } from '../Stack'
+import { Text } from '../Text'
 
 type HTMLInputProps = Omit<
 InputHTMLAttributes<HTMLInputElement>,
-'value' | 'onChange' | 'readOnly'
+'value' | 'onChange' | 'readOnly' | 'size'
 >
+type InputSize = 's' | 'm' | 'l'
 
 interface InputProps extends HTMLInputProps {
     className?: string
+    label?: string
+    size?: InputSize
     value?: string | number
     onChange?: (value: string) => void
     autofocus?: boolean
@@ -35,6 +40,8 @@ export const Input: React.FC<InputProps> = memo(
         readonly,
         addonLeft,
         addonRight,
+        label,
+        size = 'm',
         ...otherProps
     }) => {
         const ref = useRef<HTMLInputElement>(null)
@@ -68,8 +75,8 @@ export const Input: React.FC<InputProps> = memo(
             [cls.withAddonRight]: Boolean(addonRight),
         }
 
-        return (
-            <div className={classNames(cls.inputWrapper, mods, [className])}>
+        const input = (
+            <div className={classNames(cls.inputWrapper, mods, [className, cls[size]])}>
                 <div className={cls.addonLeft}>{addonLeft}</div>
                 <input
                     ref={ref}
@@ -86,5 +93,17 @@ export const Input: React.FC<InputProps> = memo(
                 <div className={cls.addonRight}>{addonRight}</div>
             </div>
         )
+
+
+        if (label) {
+            return (
+                <HStack max gap='8'>
+                    <Text text={label}/>
+                    {input}
+                </HStack>
+            )}
+
+
+        return input
     },
 )
