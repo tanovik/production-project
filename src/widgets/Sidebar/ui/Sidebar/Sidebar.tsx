@@ -24,6 +24,8 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ className }) => {
         setCollapsed((prev) => !prev)
     }
 
+   
+    
     const itemsList = useMemo(
         () =>
             sidebarItemsList.map((item) => (
@@ -35,7 +37,6 @@ export const Sidebar: React.FC<SidebarProps> = memo(({ className }) => {
             )),
         [collapsed, sidebarItemsList],
     )
-
     return (
         <ToggleFeatures
             feature="isAppRedesigned"
