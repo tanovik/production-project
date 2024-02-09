@@ -3,10 +3,10 @@ import { componentRender } from '@/shared/lib/tests/componentRender/componentRen
 import { type Profile } from '@/entities/Profile'
 import { Country } from '../../../../entities/Country'
 import userEvent from '@testing-library/user-event'
-import { $api } from '@/shared/api/api'
+import { $api } from '../../../../shared/api/api'
 import { profileReducer } from '../../model/slice/profileSlice'
 import { EditableProfileCard } from './EditableProfileCard'
-import { Currency } from '@/shared/const/common'
+import { Currency } from '../../../../entities/Currency'
 
 const profile: Profile = {
     id: '1',
@@ -14,7 +14,7 @@ const profile: Profile = {
     lastname: 'admin',
     age: 465,
     currency: Currency.USD,
-    country: Country.Australia,
+    country: Country.Armenia,
     city: 'Moscow',
     username: 'admin213',
 }
