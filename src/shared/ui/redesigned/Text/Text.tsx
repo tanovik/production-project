@@ -15,6 +15,7 @@ interface TextProps {
     variant?: TextVariant
     align?: TextAlign
     size?: TextSize
+    bold?: boolean
     'data-testid'?: string
 }
 type HeaderTagType = 'h1' | 'h2' | 'h3'
@@ -39,6 +40,7 @@ export const Text: React.FC<TextProps> = memo(
         variant = 'primary',
         align = 'left',
         size ='m',
+        bold,
         'data-testid': dataTestId = 'Text',
     }) => {
 
@@ -50,7 +52,8 @@ export const Text: React.FC<TextProps> = memo(
 
         
         return (
-            <div className={classNames(cls.textWrapper, {}, additionalClasses)}>
+            <div className={classNames(cls.textWrapper, { [cls.bold]: bold },
+			 additionalClasses)}>
                 {title && (
                     <HeaderTag
                         className={cls.title}

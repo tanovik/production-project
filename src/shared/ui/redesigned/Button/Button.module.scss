@@ -5,11 +5,11 @@
 .button{
     cursor: pointer;
     color: var(--text-redesigned);
-    padding: 6px 16px;
+    padding: 8px 16px;
     display: flex;
     align-items: center;
 
-    &:hover{
+    &:hover {
         color: var(--accent-redesigned);
 
         .addonLeft svg, .addonRight svg {
@@ -42,6 +42,17 @@
     border: none;
     background: var(--light-bg-redesigned);
     outline: none;
+}
+
+.outline{
+    border-radius: 34px;
+    border: 1px solid var(--icon-redesigned);
+    background: none;
+
+    &:hover{
+        border: 1px solid var(--accent-redesigned);
+
+    }
 }
 
 .square {
