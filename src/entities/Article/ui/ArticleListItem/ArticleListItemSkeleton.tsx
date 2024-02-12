@@ -27,11 +27,16 @@ export const ArticleListItemSkeleton = memo(
             on: () => CardRedesigned,
             off: () => CardDeprecated,
         });
+        const mainClass = toggleFeatures({
+            name: 'isAppRedesigned',
+            on: () => cls.articleListItemRedesined,
+            off: () => cls.articleListItem,
+        })
 
         if (view === ArticleView.LIST) {
             return (
                 <div
-                    className={classNames(cls.articleListItem, {}, [
+                    className={classNames(mainClass, {}, [
                         className,
                         cls[view],
                     ])}
@@ -66,7 +71,7 @@ export const ArticleListItemSkeleton = memo(
 
         return (
             <div
-                className={classNames(cls.articleListItem, {}, [
+                className={classNames(mainClass, {}, [
                     className,
                     cls[view],
                 ])}

@@ -20,9 +20,10 @@ import { getRouteArticleDetails } from '@/shared/const/router';
 import { Button, ButtonTheme } from '@/shared/ui/deprecated/Button';
 import { type ArticleListItemProps } from '../ArticleListItem';
 
+
 export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
     const { className, article, view = ArticleView.PLATE, target } = props;
-    const { t } = useTranslation();
+    const { t } = useTranslation('article');
 
     const types = <Text text={article.type.join(', ')} className={cls.types} />;
     const views = (
@@ -31,7 +32,7 @@ export const ArticleListItemDeprecated = memo((props: ArticleListItemProps) => {
             <Icon Svg={EyeIcon} />
         </>
     );
-
+   
     if (view === ArticleView.LIST) {
         const textBlock = article.blocks.find(
             (block) => block.type === ArticleBlockType.TEXT,

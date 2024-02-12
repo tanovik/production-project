@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react'
-import { ArticleListItem } from './ArticleListItem'
+import { ArticleListItemDeprecated } from './ArticleListItemDeprecated/ArticleListItemDeprecated'
 import { type Article } from '../../model/types/article'
 import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { ArticleView } from '../../model/consts/articleConsts'
 import { Theme } from '@/shared/const/theme'
 
 const meta = {
-    title: 'entities/ArticleListItem',
-    component: ArticleListItem,
+    title: 'entities/ArticleListItemDeprecated',
+    component: ArticleListItemDeprecated,
     tags: ['autodocs'],
-} satisfies Meta<typeof ArticleListItem>
+} satisfies Meta<typeof ArticleListItemDeprecated>
 
 const article = {
     id: '1',
