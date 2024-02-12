@@ -10,19 +10,13 @@
 
 
 
-.app,
-.app_modal,
-.app_drawer {
+.app {
     font: var(--font-m);
     color: var(--primary-color);
-
-}
-
-.app {
-    min-height: 100vh;
     background: var(--bg-color);
-
+    min-height: 100vh;
 }
+
 
 .app_redesigned {
     background: var(--bg-redesigned);
