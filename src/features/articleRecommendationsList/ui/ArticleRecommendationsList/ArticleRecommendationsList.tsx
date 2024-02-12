@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { useTranslation } from 'react-i18next'
 import { memo } from 'react'
 import { Text, TextSize } from '@/shared/ui/deprecated/Text'
-import { ArticleList  } from '@/entities/Article'
+import { ArticleList, ArticleView  } from '@/entities/Article'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 import { useArticleRecommendationsList } from '../../api/articleRecommendationsApi'
 
@@ -34,6 +34,7 @@ export const ArticleRecommendationsList = memo(
                     articles={articles}
                     target="_blank"
                     isLoading={isLoading}
+                    view = {ArticleView.PLATE}
                 />
             </VStack>
         )

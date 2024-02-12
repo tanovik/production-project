@@ -193,7 +193,7 @@ export const ArticleList = memo((props: ArticleListProps) => {
     const {
         className,
         articles,
-        view = ArticleView.LIST,
+        view = ArticleView.PLATE,
         isLoading,
         target,
     } = props;
