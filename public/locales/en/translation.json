@@ -36,5 +36,8 @@
   "Interface option": "Interface option",
   "New": "New",
   "Outdated": "Outdated",
-  "Settings": "Settings"
+  "Settings": "Settings",
+  "{{count}} views_zero": "{{count}} views",
+  "{{count}} views_one": "{{count}} view",
+  "{{count}} views_other": "{{count}} views"
 }

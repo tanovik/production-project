@@ -17,6 +17,9 @@ import { ArticleRating } from '@/features/articleRating'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { Card } from '@/shared/ui/deprecated/Card'
 import { useTranslation } from 'react-i18next'
+import { StickyContentLayout } from '@/shared/layouts/StickyContentLayout'
+import { DetailsContainer } from '../DetailsContainer/DetailsContainer'
+import { AdditionalInfoContainer } from '../AdditionalInfoContainer/AdditionalInfoContainer'
 
 interface ArticleDetailsPageProps {
     className?: string
@@ -37,7 +40,50 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <Page
+            <ToggleFeatures
+                feature="isAppRedesigned"
+                on={
+                    <StickyContentLayout
+                        content={
+                            <Page
+                                className={classNames(
+                                    cls.ArticleDetailsPage,
+                                    {},
+                                    [className],
+                                )}
+                            >
+                                <VStack gap="16" max>
+                                    <DetailsContainer />
+                                    <ArticleRating articleId={id} />
+                                    <ArticleRecommendationsList />
+                                    <ArticleDetailsComments id={id} />
+                                </VStack>
+                            </Page>
+                        }
+                        right={<AdditionalInfoContainer />}
+                    />
+                }
+                off={
+                    <Page
+                        className={classNames(cls.articleDetailsPage, {}, [
+                            className,
+                        ])}
+                    >
+                        <VStack gap="16" max>
+                            <ArticleDetailsPageHeader />
+                            <ArticleDetails id={id} />
+                            <ToggleFeatures
+                                feature="isArticleRatingEnabled"
+                                on={<ArticleRating articleId={id} />}
+                                off={<Card>{t('Article evaluation coming soon!')}</Card>}
+                            />
+                            <ArticleRecommendationsList />
+                            <ArticleDetailsComments id={id} />
+                        </VStack>
+                    </Page>
+                }
+            />
+            {/* <Page
                 className={classNames(cls.articleDetailsPage, {}, [className])}
             >
                 <VStack gap={'16'} max>
@@ -51,7 +97,7 @@ const ArticleDetailsPage: React.FC<ArticleDetailsPageProps> = ({
                     <ArticleRecommendationsList />
                     <ArticleDetailsComments id={id} />
                 </VStack>
-            </Page>
+            </Page> */}
         </DynamicModuleLoader>
     )
 }

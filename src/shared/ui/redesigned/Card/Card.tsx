@@ -14,6 +14,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     children: React.ReactNode
     variant?: CardVariant;
     max?: boolean;
+    fullHeight?: boolean;
     padding?: CardPadding;
     border?: CardBorder;
 }
@@ -26,14 +27,14 @@ const mapPaddingToClass: Record<CardPadding, string> = {
 };
 
 export const Card: React.FC<CardProps> = memo(
-    ({ className, variant = 'normal', children, max, 
+    ({ className, variant = 'normal', children, max, fullHeight,
         border = 'normal_border', padding = '8', ...otherProps }) => {
 
         const paddingClass = mapPaddingToClass[padding];
 
         return (
             <div
-                className={classNames(cls.card, { [cls.max]: max }, [
+                className={classNames(cls.card, { [cls.max]: max, [cls.fullHeight]:fullHeight }, [
                     className,
                     cls[variant],
                     cls[paddingClass],
