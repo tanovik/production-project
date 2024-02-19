@@ -109,6 +109,7 @@ module.exports = {
 	"@typescript-eslint/explicit-function-return-type": "warn",
 	"@typescript-eslint/no-namespace": "warn",
 	"@typescript-eslint/array-type": "warn",
+	"@typescript-eslint/dot-notation": "warn",
 	'react/jsx-max-props-per-line': ['warn', { maximum: 4 }],
 	"tanovik-plugin/path-checker":["error", {
 		alias: '@'
