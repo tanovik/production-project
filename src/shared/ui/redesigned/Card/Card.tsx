@@ -7,7 +7,7 @@ export type CardVariant = 'normal' | 'outlined' | 'light';
 
 export type CardPadding = '0' | '8' | '16' | '24';
 
-export type CardBorder = 'round_border' | 'normal_border'
+export type CardBorder = 'round_border' | 'normal_border' | 'partial_round_border'
 
 interface CardProps extends HTMLAttributes<HTMLDivElement> {
     className?: string

@@ -26,7 +26,6 @@
   "No comments left": "No comments left",
   "Enter comment": "Enter comment",
   "Leave a comment": "Leave a comment",
-  "Admin panel": "Admin panel",
   "You do not have access to this page": "You do not have access to this page",
   "Close": "Close",
   "Send": "Send",
@@ -39,5 +38,6 @@
   "Settings": "Settings",
   "{{count}} views_zero": "{{count}} views",
   "{{count}} views_one": "{{count}} view",
-  "{{count}} views_other": "{{count}} views"
+  "{{count}} views_other": "{{count}} views",
+  "Admin Panel": "Admin Panel"
 }

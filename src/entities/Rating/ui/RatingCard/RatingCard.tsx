@@ -192,7 +192,7 @@ export const RatingCard = memo((props: RatingCardProps) => {
         <ToggleFeatures
             feature="isAppRedesigned"
             on={
-                <Card max border="round_border" padding="24">
+                <Card max border="partial_round_border" padding="24">
                     {content}
                 </Card>
 		 }
