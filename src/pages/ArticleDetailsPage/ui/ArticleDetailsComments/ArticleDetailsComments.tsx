@@ -8,11 +8,13 @@ import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch
 import { addCommentForArticle } from '../../model/services/addCommentForArticle/addCommentForArticle'
 import { useInitialEffect } from '@/shared/lib/hooks/useInitialEffect/useInitialEffect'
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId'
-import { Text } from '@/shared/ui/deprecated/Text'
+import { Text as TextDeprecated, TextSize} from '@/shared/ui/deprecated/Text'
 import { AddCommentForm } from '@/features/AddCommentForm'
 import { CommentList } from '@/entities/Comment'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 import { Loader } from '@/shared/ui/deprecated/Loader'
+import { Text } from '@/shared/ui/redesigned/Text'
+import { ToggleFeatures } from '@/shared/lib/features'
 
 interface ArticleDetailsCommentsProps {
     className?: string
@@ -37,7 +39,16 @@ export const ArticleDetailsComments: React.FC<ArticleDetailsCommentsProps> =
         })
         return (
             <VStack gap="16" max className={classNames('', {}, [className])}>
-                <Text title={t('Comments')} />
+                <ToggleFeatures
+                    feature="isAppRedesigned"
+                    on={<Text size="l" title={t('Comments')} />}
+                    off={
+                        <TextDeprecated
+                            size={TextSize.L}
+                            title={t('Комментарии')}
+                        />
+                    }
+                />
                 <Suspense fallback={<Loader />}>
                     <AddCommentForm onSendComment={onSendComment} />
                 </Suspense>

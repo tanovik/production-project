@@ -119,10 +119,7 @@ const DrawerAsync = (props: DrawerProps): ReactNode => {
 
     return <DrawerContent {...props} />
 }
-/**
- * устарел, используем новые компоненты из папки redesigned 
- * @deprecated
- */
+
 export const Drawer = (props: DrawerProps): ReactNode => {
     return (
         <AnimationProvider>
