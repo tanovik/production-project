@@ -22,6 +22,7 @@ import { ToggleFeatures } from '@/shared/lib/features'
 import { VStack } from '@/shared/ui/redesigned/Stack'
 import { Text } from '@/shared/ui/redesigned/Text'
 import { Button } from '@/shared/ui/redesigned/Button'
+import { useForceUpdate } from '@/shared/lib/render/forceUpdate'
 
 export interface LoginFormProps {
     className?: string
@@ -37,6 +38,7 @@ const LoginForm: React.FC<LoginFormProps> = memo(({ className, onSuccess }) => {
     const password = useSelector(getLoginPassword)
     const error = useSelector(getLoginError)
     const isLoading = useSelector(getLoginIsLoading)
+    const forceUpdate = useForceUpdate()
 
     const onChangeUsername = useCallback(
         (val: string) => {
@@ -56,8 +58,9 @@ const LoginForm: React.FC<LoginFormProps> = memo(({ className, onSuccess }) => {
         const result = await dispatch(loginByUsername({ username, password }))
         if (result.meta.requestStatus === 'fulfilled') {
             onSuccess()
+            forceUpdate()
         }
-    }, [dispatch, onSuccess, password, username])
+    }, [dispatch, forceUpdate, onSuccess, password, username])
 
     return (
         <DynamicModuleLoader
