@@ -11,11 +11,14 @@ import { PageLoader } from '@/widgets/PageLoader'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { MainLayout } from '@/shared/layouts/MainLayout'
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
+import { ScrollToolbar } from '@/widgets/ScrollToolbar'
+import { useAppToolbar } from './lib/useAppToolbar'
 
 const App = (): JSX.Element => {
     const { theme } = useTheme()
     const dispatch = useAppDispatch()
     const inited = useSelector(getUserInited)
+    const toolbar = useAppToolbar()
 
     useEffect(() => {
         if(!inited){
@@ -67,6 +70,7 @@ const App = (): JSX.Element => {
                             header={<Navbar />}
                             content={<AppRouter />}
                             sidebar={<Sidebar />}
+                            toolbar={toolbar}
                         />
                         
                     </Suspense>
@@ -74,25 +78,6 @@ const App = (): JSX.Element => {
             }
         />
     );
-
-    // return (
-    //     <div
-    //         className={classNames('app', { hovered: true, selected: false }, [
-    //             theme,
-    //             'cls11',
-    //             'class32',
-    //         ])}
-    //     >
-    //         <Suspense fallback="">
-    //             <Navbar />
-
-    //             <div className="content-page">
-    //                 <Sidebar />
-    //                 {inited && <AppRouter />}
-    //             </div>
-    //         </Suspense>
-    //     </div>
-    // )
 }
 
 export default App
