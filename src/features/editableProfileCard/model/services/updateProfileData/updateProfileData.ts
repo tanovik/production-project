@@ -6,9 +6,9 @@ import { type Profile } from '@/entities/Profile'
 import { ValidateProfileError } from '../../consts/consts'
 
 export const updateProfileData = createAsyncThunk<
-    Profile,
-    void,
-    ThunkConfig<ValidateProfileError[]>
+Profile,
+void,
+ThunkConfig<ValidateProfileError[]>
 >('profile/updateProfileData', async (_, thunkAPI) => {
     const formData = getProfileForm(thunkAPI.getState())
     const errors = validateProfileData(formData)

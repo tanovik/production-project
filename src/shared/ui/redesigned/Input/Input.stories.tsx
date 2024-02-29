@@ -4,7 +4,7 @@ import { Input } from './Input'
 import '@/app/styles/index.scss'
 
 const meta = {
-    title: 'shared/Input',
+    title: 'shared/redesigned/Input',
     component: Input,
     tags: ['autodocs'],
 } satisfies Meta<typeof Input>

@@ -7,9 +7,9 @@ import { type ArticleType, type ArticleSortField } from '@/entities/Article'
 import { type SortOrder } from '@/shared/types/sort'
 
 export const initArticlesPage = createAsyncThunk<
-    void,
-    URLSearchParams,
-    ThunkConfig<string>
+void,
+URLSearchParams,
+ThunkConfig<string>
 >('articlesPage/initArticlesPage', async (searchParams, thunkApi) => {
     const { getState, dispatch } = thunkApi
     const inited = getArticlesPageInited(getState())

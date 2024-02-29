@@ -6,7 +6,7 @@ import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator'
 import { Theme } from '@/shared/const/theme'
 
 const meta = {
-    title: 'shared/Text',
+    title: 'shared/redesigned/Text',
     component: Text,
     tags: ['autodocs'],
 } satisfies Meta<typeof Text>

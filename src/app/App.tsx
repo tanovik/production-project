@@ -2,7 +2,7 @@ import { classNames } from '@/shared/lib/classNames/classNames'
 import { AppRouter } from './providers/Router'
 import { Navbar } from '@/widgets/Navbar'
 import { Sidebar } from '@/widgets/Sidebar'
-import { Suspense, useEffect } from 'react'
+import { Suspense, memo, useEffect } from 'react'
 import {  useSelector } from 'react-redux'
 import { getUserInited, initAuthData  } from '@/entities/User'
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme'
@@ -11,10 +11,10 @@ import { PageLoader } from '@/widgets/PageLoader'
 import { ToggleFeatures } from '@/shared/lib/features'
 import { MainLayout } from '@/shared/layouts/MainLayout'
 import { AppLoaderLayout } from '@/shared/layouts/AppLoaderLayout'
-import { ScrollToolbar } from '@/widgets/ScrollToolbar'
 import { useAppToolbar } from './lib/useAppToolbar'
+import { withTheme } from './providers/ThemeProvider'
 
-const App = (): JSX.Element => {
+const App =  memo((): JSX.Element => {
     const { theme } = useTheme()
     const dispatch = useAppDispatch()
     const inited = useSelector(getUserInited)
@@ -55,7 +55,6 @@ const App = (): JSX.Element => {
                         <Navbar />
                         <div className="content-page">
                             <Sidebar />
-                            {/* <AppRouter /> */}
                             {inited && <AppRouter />}
                         </div>
                     </Suspense>
@@ -78,6 +77,8 @@ const App = (): JSX.Element => {
             }
         />
     );
-}
+})
 
-export default App
+
+
+export default withTheme(App)

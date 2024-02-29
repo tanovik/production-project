@@ -6,7 +6,7 @@ import '@/app/styles/index.scss'
 import { Avatar } from './Avatar'
 
 const meta = {
-    title: 'shared/Avatar',
+    title: 'shared/redesigned/Avatar',
     component: Avatar,
     tags: ['autodocs'],
 } satisfies Meta<typeof Avatar>

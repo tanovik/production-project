@@ -21,18 +21,18 @@ import { rtkApi } from '@/shared/api/rtkApi'
 export type AppStore = ReturnType<typeof configureStore>
 
 type createReduxStoreReturnType = ToolkitStore<
-    EmptyObject & StateSchema,
+EmptyObject & StateSchema,
+AnyAction,
+MiddlewareArray<
+[
+    ThunkMiddleware<
+    CombinedState<StateSchema>,
     AnyAction,
-    MiddlewareArray<
-        [
-            ThunkMiddleware<
-                CombinedState<StateSchema>,
-                AnyAction,
-                ThunkExtraArg
-            >,
-            Middleware<unknown>,
-        ]
-    >
+    ThunkExtraArg
+    >,
+    Middleware<unknown>,
+]
+>
 >
 
 export function createReduxStore(
@@ -53,8 +53,8 @@ export function createReduxStore(
     }
     const store = configureStore({
         reducer: reducerManager.reduce as Reducer<
-            CombinedState<StateSchema>,
-            AnyAction
+        CombinedState<StateSchema>,
+        AnyAction
         >,
         // reducer: reducerManager.reduce as ReducersMapObject<StateSchema>,
         devTools: __IS_DEV__,

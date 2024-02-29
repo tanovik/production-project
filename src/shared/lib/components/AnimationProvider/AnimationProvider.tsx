@@ -21,8 +21,7 @@ interface AnimationContextPayload {
 const AnimationContext = createContext<AnimationContextPayload>({})
 
 // Обе либы зависят друг от друга
-const getAsyncAnimationModules = async (): Promise<
-    [SpringType, GestureType]
+const getAsyncAnimationModules = async (): Promise<[SpringType, GestureType]
 > => {
     return await Promise.all([
         import('@react-spring/web'),

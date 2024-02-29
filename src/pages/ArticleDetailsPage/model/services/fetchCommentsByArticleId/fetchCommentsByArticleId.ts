@@ -3,9 +3,9 @@ import { type ThunkConfig } from '@/app/providers/StoreProvider'
 import { type CommentType } from '@/entities/Comment'
 
 export const fetchCommentsByArticleId = createAsyncThunk<
-    CommentType[],
-    string | undefined,
-    ThunkConfig<string>
+CommentType[],
+string | undefined,
+ThunkConfig<string>
 >('articleComments/fetchCommentsByArticleId', async (articleId, thunkApi) => {
     const { extra, rejectWithValue } = thunkApi
     if (!articleId) {

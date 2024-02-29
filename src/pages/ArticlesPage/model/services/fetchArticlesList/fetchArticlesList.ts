@@ -16,9 +16,9 @@ interface FetchArticlesListProps {
 }
 
 export const fetchArticlesList = createAsyncThunk<
-    Article[],
-    FetchArticlesListProps,
-    ThunkConfig<string>
+Article[],
+FetchArticlesListProps,
+ThunkConfig<string>
 >('articlesPage/fetchArticlesList', async (_, thunkApi) => {
     const { extra, rejectWithValue, getState } = thunkApi
     const limit = getArticlesPageLimit(getState())

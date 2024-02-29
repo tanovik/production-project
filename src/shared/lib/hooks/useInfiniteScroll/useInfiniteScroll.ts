@@ -14,7 +14,7 @@ export function useInfiniteScroll({
     const observer = useRef<IntersectionObserver | null>(null)
 
     useEffect(() => {
-        const wrapperElement = wrapperRef?.current || null
+        const wrapperElement = ((wrapperRef?.current) != null) || null
         const triggerElement = triggerRef.current
 
         if (callback != null) {
@@ -28,6 +28,7 @@ export function useInfiniteScroll({
                 if (entry.isIntersecting) {
                     callback()
                 }
+                // @ts-expect-error
             }, options)
 
             observer.current.observe(triggerElement)
