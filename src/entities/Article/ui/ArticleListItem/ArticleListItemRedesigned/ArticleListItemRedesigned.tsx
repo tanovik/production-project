@@ -26,7 +26,6 @@ export const ArticleListItemRedesigned = memo((props: ArticleListItemProps) => {
 
     const { className, article, view = ArticleView.PLATE, target } = props;
     const { t } = useTranslation('article');
-    console.log('article', article)
 
     const userInfo = (
         <>

@@ -641,6 +641,12 @@
       "userId": "1",
       "text": "qwerty",
       "id": "Crh3bi3"
+    },
+    {
+      "articleId": "7",
+      "userId": "1",
+      "text": "qwert",
+      "id": "W6_zjWy"
     }
   ],
   "users": [
@@ -726,7 +732,7 @@
       "currency": "USD",
       "country": "Kazahstan",
       "city": "Montreal",
-      "username": "admin21",
+      "username": "admin212",
       "avatar": "https://avatars.mds.yandex.net/get-zen_doc/3413519/pub_5ff887b2fe4e686f6ae6ba3f_5ff887d7f906b16872a69755/scale_1200"
     },
     {

@@ -60,13 +60,12 @@ export function ListBox<T extends string>(props: ListBoxProps<T>): ReactNode {
             >
                 <HListBox.Button
                     // disabled={readonly}
+                    as={Button}
                     className={cls.trigger}
+                    variant={'filled'}
+                    addonRight={<Icon Svg={ArrowIcon}/>}
                 >
-                    <Button disabled={readonly} variant={'filled'}
-                        addonRight={<Icon Svg={ArrowIcon}/>}
-                    >
-                        {selectedItem?.content ?? defaultValue}
-                    </Button>
+                    {selectedItem?.content ?? defaultValue}
                 </HListBox.Button>
                 <HListBox.Options
                     className={classNames(cls.options, {}, optionsClasses)}
